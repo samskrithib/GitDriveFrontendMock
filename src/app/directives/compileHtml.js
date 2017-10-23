@@ -5,7 +5,7 @@
 (function() {
   'use strict';
   angular
-    .module('dassimFrontendV03')
+    .module('dassimFrontendV04')
     .directive('compileHtml', ['$sce', '$parse', '$compile',
       function($sce, $parse, $compile) {
         return {

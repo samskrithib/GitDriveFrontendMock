@@ -3,7 +3,7 @@
 (function () {
     'use strict';
     angular
-        .module('dassimFrontendV03')
+        .module('dassimFrontendV04')
         .factory('chartColors', chartColors)
     function chartColors(DRIVE_COLORS) {
         return {

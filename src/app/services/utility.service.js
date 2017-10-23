@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   angular
-    .module('dassimFrontendV03')
+    .module('dassimFrontendV04')
     .factory('UtilityService', function UtilityService($log, typeaheadService) {
       var tabsList = [];
       var checkedItems;

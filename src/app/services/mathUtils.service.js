@@ -3,7 +3,7 @@
 (function () {
     'use strict';
     angular
-        .module('dassimFrontendV03')
+        .module('dassimFrontendV04')
         .factory('mathUtilsService', function mathUtilsService($log) {
             return {
                 convertMetersToMiles: function (givenValue, convertedValue) {

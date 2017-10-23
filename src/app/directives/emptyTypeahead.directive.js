@@ -5,7 +5,7 @@
   'use strict';
   var secretEmptyKey = '[$empty$]'
   angular
-    .module('dassimFrontendV03')
+    .module('dassimFrontendV04')
     .directive('emptyTypeahead', function () {
       return {
         require: 'ngModel',

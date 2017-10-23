@@ -3,7 +3,7 @@
 (function() {
   'use strict';
   angular
-  .module('dassimFrontendV03')
+  .module('dassimFrontendV04')
   .service('onTimeRunningCompareFactory', onTimeRunningCompareFactory);
   function onTimeRunningCompareFactory($log, $window) {
     var onTimeChart;
@@ -17,12 +17,12 @@
         var seriesNames = [
           "Actual Driving Style 1",
           "Actual Driving Style 2",
-          "Improved Driving Style 1",  
-          "Improved Driving Style 2",  
+          "Improved Driving Style 1",
+          "Improved Driving Style 2",
         ];
-         
-        actualLateness.splice(0,0, seriesNames[0]);    
-        actualLateness1.splice(0,0, seriesNames[1]);    
+
+        actualLateness.splice(0,0, seriesNames[0]);
+        actualLateness1.splice(0,0, seriesNames[1]);
         optimalLateness.splice(0,0, seriesNames[2]);
         optimalLateness1.splice(0,0, seriesNames[3]);
         return{
@@ -73,7 +73,7 @@
 
          axis: {
           y : {
-              
+
               tick: {
                 format: function(d) { return d + '%'; }
               }
@@ -82,7 +82,7 @@
               type: 'category',
               categories: graphLabels.xAxisLabels,
               height: 70
-              
+
            }
          },
          bar: {
