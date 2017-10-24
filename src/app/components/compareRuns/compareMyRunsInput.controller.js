@@ -206,7 +206,7 @@
         var compareRunsUrl = compareRunsUrlGeneratorService.generateCompareRunsUrl(vm.allRuns)
         $log.info(compareRunsUrl)
         UtilityService.addCheckedItems(compareRunsUrl);
-        $location.path("/comparemyruns");
+        $location.path("/dashboard/comparemyruns");
       }
     };
     vm.reset = function (form) {

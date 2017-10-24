@@ -56,7 +56,7 @@
       var routeIdUrl = timetableAdherenceUrlGeneratorService.generateRouteIdUrl(vm.selectRoute)
       $log.info(routeIdUrl)
       UtilityService.addCheckedItems([vm.getTabs, routeIdUrl, vm.routesFlag])
-      $location.path("timetableAdherence")
+      $location.path("/dashboard/timetableAdherence")
 
     }
 

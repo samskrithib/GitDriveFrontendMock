@@ -67,7 +67,7 @@
       vm.periodicEnergySummaryError=true;
       vm.periodicEnergySummaryErrorMessage ='<h1>'+ data.status + data.data + '</h1>' + data;
       $log.debug(data)
-      $location.path("/periodicInput")
+      $location.path("/dashboard/periodicInput")
     })
 
     vm.promise = httpCallsService.getByParams('periodicOntimeRunningReport', formData)

@@ -218,15 +218,15 @@
             routesFlag = true;
             vm.timetableRoutes = vm.response.timetableRoutes;
             UtilityService.addCheckedItems([vm.timetableRoutes, vm.RadioButtonModel, routesFlag, vm.response])
-            $location.path("/ttAInput2");
+            $location.path("/dashboard/ttAInput2");
           } else {
             routesFlag = false;
             UtilityService.addCheckedItems([vm.RadioButtonModel, ttAderenceUrl, routesFlag])
-            $location.path("timetableAdherence")
+            $location.path("/dashboard/timetableAdherence")
           }
         }).catch(function (error) {
           vm.error = error;
-          $location.path("/timetableAdherenceInput")
+          $location.path("/dashboard/timetableAdherenceInput")
         })
     }
   }

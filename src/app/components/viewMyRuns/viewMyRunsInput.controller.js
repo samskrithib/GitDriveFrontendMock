@@ -161,11 +161,11 @@
         UtilityService.addCheckedItems(vm.checkedItems);
         $log.debug(_selectedFrom, _selectedTo)
         viewMyRunsUrlGeneratorService.generateReportsUrl(vm.inputDate, vm.customTimeSelected, _selectedFrom, _selectedTo);
-        $location.path("/view-my-runs");
+        $location.path("/dashboard/view-my-runs");
       }
     };
     vm.goToView = function(){
-      $location.path("/view")
+      $location.path("/dashboard/view")
     };
     vm.reset = function(form){
       vm.input = angular.copy(master)

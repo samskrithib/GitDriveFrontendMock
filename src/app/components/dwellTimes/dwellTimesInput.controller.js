@@ -159,11 +159,11 @@
         UtilityService.addCheckedItems(vm.checkedItems);
         $log.debug(_selectedFrom, _selectedTo)
         dwellTimesUrlGeneratorService.generateDwellTimesUrl(vm.inputDate, vm.customTimeSelected, _selectedFrom, _selectedTo);
-        $location.path("/dwellTimes");
+        $location.path("/dashboard/dwellTimes");
       }
     };
     vm.goToView = function(){
-      $location.path("/view")
+      $location.path("/dashboard/view")
     };
     vm.reset = function(form){
       vm.input = angular.copy(master)
@@ -180,7 +180,7 @@
     }
 
     vm.periodicSubmit = function () {
-      $location.path("/reports");
+      $location.path("/dashboard/reports");
     }
   }
 })();

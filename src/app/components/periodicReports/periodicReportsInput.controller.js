@@ -122,7 +122,7 @@
       vm.formData.periodToDate = $filter('date')(vm.formData.periodToDate, 'yyyy-MM-dd');
       UtilityService.addCheckedItems(vm.formData)
       // $log.debug(vm.data);
-      $location.path("/periodicReports");
+      $location.path("/dashboard/periodicReports");
     }
     }
   }

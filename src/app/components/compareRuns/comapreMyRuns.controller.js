@@ -91,7 +91,7 @@
         // end of each function
       }).catch(function (error) {
         if (error.data.status == '404') {
-          $location.path("/comparemyrunsInput");
+          $location.path("/dashboard/comparemyrunsInput");
         }
       })
 
