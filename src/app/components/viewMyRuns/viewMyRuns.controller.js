@@ -17,11 +17,11 @@
     vm.tabs = [];
     //Color code for links displayed in dropdown list
     vm.getLinkClass = function (link) {
-      if (link.linkPerformanceIndicator === "POOR") {
+      if (link.linkPerformanceIndicator == "POOR") {
         return "POOR"
-      } else if (link.linkPerformanceIndicator === "AVERAGE") {
+      } else if (link.linkPerformanceIndicator == "AVERAGE") {
         return "AVERAGE"
-      } else if (link.linkPerformanceIndicator === "GOOD") {
+      } else if (link.linkPerformanceIndicator == "GOOD") {
         return "GOOD"
       }
 
@@ -90,7 +90,7 @@
 
         })
       }).catch(function (error) {
-        $location.path("/view")
+        $location.path("/dashboard/404")
       })
 
     function speedDistanceData_All(data) {
@@ -110,12 +110,14 @@
         vm.arrayOfSelectedLinksRuntimePerformanceIndicators = []
         //find index of links
         _.each(vm.stationToStationLinks, function (val, key) {
-          if (vm.stationToStationLinks[key].stations === selectedLink) {
+          $log.info(vm.stationToStationLinks[key].stations.toString(), selectedLink)
+          if (vm.stationToStationLinks[key].stations == selectedLink) {
+            $log.info("key", key)
             vm.indexOfSelectedLink = key
             return vm.indexOfSelectedLink;
           }
         })
-        $log.info(vm.indexOfSelectedLink)
+        $log.info("vm.indexOfSelectedLink", vm.indexOfSelectedLink)
         // vm.indexOfSelectedLink = _.indexOf(vm.unitPerformanceScores.trainUnitPerformancePerLink, selectedLink)
         unitPerformanceScoreOnSelectLink();
         energySummaryOnSelectLink();
@@ -134,6 +136,7 @@
       vm.arrayOfSelectedLinksPerformanceMessage = []
 
       _.each(vm.trainUnitPerformancePerLinks_allRuns, function (val, key) {
+        $log.info("index", vm.indexOfSelectedLink)
         vm.arrayOfSelectedLinksUnitPerformanceScore.push(vm.trainUnitPerformancePerLinks_allRuns[key][vm.indexOfSelectedLink])
         vm.arrayOfSelectedLinksPerformanceIndicators.push(vm.trainUnitPerformancePerLinks_allRuns[key][vm.indexOfSelectedLink].linkPerformanceIndicator)
         vm.arrayOfSelectedLinksEnergyPerformanceIndicators.push(vm.trainUnitPerformancePerLinks_allRuns[key][vm.indexOfSelectedLink].energyPerformanceIndicator)

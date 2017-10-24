@@ -90,7 +90,14 @@
         templateUrl: 'app/components/compareRuns/partials/compare-my-runs.html',
         controller: 'CompareMyRunsController',
         controllerAs: 'vm'
-      });
+      })
+      .state('dashboard.404',{
+        url: '/404',
+        templateUrl: 'app/components/error/404.html',
+        controller: 'ErrorController',
+        controllerAs:'err'
+      })
+      ;
 
     $urlRouterProvider.otherwise('/login');
   }

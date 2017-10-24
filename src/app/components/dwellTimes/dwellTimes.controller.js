@@ -6,7 +6,7 @@
     .module('dwellTimesModule')
     .controller('dwellTimesController', dwellTimesController);
 
-  function dwellTimesController($scope, $log, dwellTimesUrlGeneratorService, httpCallsService ) {
+  function dwellTimesController($scope, $log, dwellTimesUrlGeneratorService, httpCallsService, errorService) {
     var vm = this;
     vm.tabs = [];
 
@@ -22,7 +22,8 @@
 
 
       }).catch(function (error) {
-
+        errorService.addErrorMessage(error);
+        $location.path("/dashboard/404")
       })
 
   }

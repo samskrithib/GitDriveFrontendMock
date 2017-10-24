@@ -6,7 +6,7 @@
     .module('compareRunsModule')
     .controller('CompareMyRunsController', CompareMyRunsController);
 
-  function CompareMyRunsController(compareRunsUrlGeneratorService, $location, httpCallsService,
+  function CompareMyRunsController(compareRunsUrlGeneratorService, $location, httpCallsService, errorService,
     $scope, $log, unitPerformanceScoreCompareFactory, energySummaryCompareFactory,
                                    latenessSummaryCompareFactory, speedDistanceCompareDataFactory, speedDistanceCompareChartFactory, UtilityService) {
 
@@ -90,8 +90,10 @@
         })
         // end of each function
       }).catch(function (error) {
+        errorService.addErrorMessage(error);
+        $location.path("/dashboard/404")
         if (error.data.status == '404') {
-          $location.path("/dashboard/comparemyrunsInput");
+          // $location.path("/dashboard/comparemyrunsInput");
         }
       })
 

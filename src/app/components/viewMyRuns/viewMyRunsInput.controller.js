@@ -181,8 +181,6 @@
       form.$setPristine();
     }
 
-    vm.periodicSubmit = function () {
-      $location.path("/reports");
-    }
+   
   }
 })();

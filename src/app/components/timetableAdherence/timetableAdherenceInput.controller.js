@@ -6,7 +6,7 @@
     .module('timetableAdherenceModule')
     .controller('TimetableAdherenceInputController', TimetableAdherenceInputController);
 
-  function TimetableAdherenceInputController(httpCallsService, timetableAdherenceUrlGeneratorService, $scope, $location, $log, typeaheadService, UtilityService) {
+  function TimetableAdherenceInputController(httpCallsService,errorService, timetableAdherenceUrlGeneratorService, $scope, $location, $log, typeaheadService, UtilityService) {
     var vm = this;
     var defaultStartTime = function () {
       var d = new Date()
@@ -92,6 +92,7 @@
           vm.stations = data;
         }
       }).catch(function (response) {
+        
         vm.state = "NORESULTS";
         vm.statusmessage = "No Results";
         $log.info( /*"controller response: " +*/ response);
@@ -226,7 +227,8 @@
           }
         }).catch(function (error) {
           vm.error = error;
-          $location.path("/dashboard/timetableAdherenceInput")
+          errorService.addErrorMessage(error);
+          $location.path("/dashboard/404")
         })
     }
   }

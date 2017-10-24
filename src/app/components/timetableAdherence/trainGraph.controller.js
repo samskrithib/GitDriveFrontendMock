@@ -6,7 +6,7 @@
     .module('timetableAdherenceModule')
     .controller('TrainGraphController', TrainGraphController);
 
-  function TrainGraphController(httpCallsService, timetableAdherenceUrlGeneratorService, $log, UtilityService, trainGraphFactory) {
+  function TrainGraphController(httpCallsService,errorService, timetableAdherenceUrlGeneratorService, $log, $location, UtilityService, trainGraphFactory) {
     var vm = this;
     vm.isCollapsed = false;
     vm.percentilesList = [
@@ -92,7 +92,8 @@
           $log.info(error)
           vm.TTAdherenceTrackTrainsError = true;
           vm.TTAdherenceTrackTrainsErrorMessage = error.statusText + "<h3> Error Message </h3>"
-
+          errorService.addErrorMessage(error);
+          $location.path("/dashboard/404")
           // $location.path("/timetableAdherenceInput")
         })
 

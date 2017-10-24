@@ -74,7 +74,7 @@ $(function () {
 
     var url = window.location;
     var element = $('ul.nav a').filter(function () {
-        return this.ui-sref == url || url.ui-sref.indexOf(this.ui-sref) == 0;
+        return this.href == url || url.href.indexOf(this.ui-sref) == 0;
     }).addClass('active').parent().parent().addClass('in').parent();
     if (element.is('li')) {
         element.addClass('active');
