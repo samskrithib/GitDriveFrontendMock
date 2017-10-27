@@ -6,7 +6,7 @@
     .module('timetableAdherenceModule')
     .controller('TrainGraphController', TrainGraphController);
 
-  function TrainGraphController(httpCallsService,errorService, timetableAdherenceUrlGeneratorService, $log, $location, UtilityService, trainGraphFactory) {
+  function TrainGraphController(httpCallsService, errorService, timetableAdherenceUrlGeneratorService, $log, $location, UtilityService, trainGraphFactory) {
     var vm = this;
     vm.isCollapsed = false;
     vm.percentilesList = [
@@ -15,7 +15,7 @@
     ]
     // floating_Label();
     vm.currentPage = '1';
-    $log.info("getCheck : " +UtilityService.getCheckedItems())
+    $log.info("getCheck : " + UtilityService.getCheckedItems())
     vm.TTadherencePercentileError = false;
     vm.TTAdherenceTrackTrainsError = false;
     vm.getTabs = UtilityService.getCheckedItems()[0];
@@ -122,7 +122,11 @@
       _.each(data, function (val, key) {
         var obj = {};
         obj.value = data[key].distanceFromFromLocationInKms;
-        obj.text = data[key].locationName;
+        if (data[key].locationName) {
+          obj.text = data[key].locationName;
+        } else {
+          obj.text = data[key].tiploc;
+        }
         obj.tiploc = data[key].tiploc;
         lines[lines.length] = obj;
       })
