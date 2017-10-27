@@ -69,10 +69,9 @@
 
     if (vm.TTUrl) {
       vm.promise = httpCallsService.getHeaders(vm.TTUrl)
-        // vm.promise = httpCallsService.getByJson("assets/midnight.json")
+        // vm.promise = httpCallsService.getByJson("assets/Euston-Rugby.json")
         .then(function (response) {
           vm.response = response.data;
-          // vm.response = response;
           $log.info("response", response)
           if (!vm.response) {
             vm.TTAdherenceTrackTrainsError = true;
