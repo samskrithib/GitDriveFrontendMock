@@ -12,16 +12,16 @@
     .controller('ViewMyRunsController', ViewMyRunsController);
 
   function ViewMyRunsController($scope, $log,$location,viewMyRunsUrlGeneratorService, httpCallsService, unitPerformanceScoreFactory,
-    energySummaryFactory, latenessSummaryFactory, speedDistanceDataFactory, speedDistanceChartFactory, UtilityService) {
+    energySummaryFactory, latenessSummaryFactory, speedDistanceDataFactory, speedDistanceChartFactory, UtilityService, errorService) {
     var vm = this;
     vm.tabs = [];
     //Color code for links displayed in dropdown list
     vm.getLinkClass = function (link) {
-      if (link.linkPerformanceIndicator == "POOR") {
+      if (link.linkPerformanceIndicator === "POOR") {
         return "POOR"
-      } else if (link.linkPerformanceIndicator == "AVERAGE") {
+      } else if (link.linkPerformanceIndicator === "AVERAGE") {
         return "AVERAGE"
-      } else if (link.linkPerformanceIndicator == "GOOD") {
+      } else if (link.linkPerformanceIndicator === "GOOD") {
         return "GOOD"
       }
 
@@ -90,6 +90,7 @@
 
         })
       }).catch(function (error) {
+        errorService.addErrorMessage(error);
         $location.path("/dashboard/404")
       })
 
@@ -110,8 +111,9 @@
         vm.arrayOfSelectedLinksRuntimePerformanceIndicators = []
         //find index of links
         _.each(vm.stationToStationLinks, function (val, key) {
-          $log.info(vm.stationToStationLinks[key].stations.toString(), selectedLink)
-          if (vm.stationToStationLinks[key].stations == selectedLink) {
+          $log.info("xxx",vm.stationToStationLinks[key].stations, vm.stationToStationLinks[key].stations.length, selectedLink.trim(), selectedLink.trim().length)
+          // if (vm.stationToStationLinks[key].stations === selectedLink) {
+          if (angular.equals(vm.stationToStationLinks[key].stations, selectedLink.trim())) {
             $log.info("key", key)
             vm.indexOfSelectedLink = key
             return vm.indexOfSelectedLink;

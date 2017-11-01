@@ -4,14 +4,7 @@
   angular
     .module('periodicReportsModule')
     .controller('PeriodicReportsInputController', PeriodicReportsInputController)
-    .config(['$logProvider', function($logProvider){
-      $logProvider.debugEnabled(false);
-    }])
-    .factory('$exceptionHandler', function($log){
-      return function (exception, cause){
-        $log.debug(exception, cause);
-      }
-    })
+    
 
 
   /** @ngInject */
