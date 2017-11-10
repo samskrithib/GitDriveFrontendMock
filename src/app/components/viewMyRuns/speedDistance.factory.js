@@ -5,16 +5,21 @@
   angular
     .module('viewMyRunsModule')
     .factory('speedDistanceChartFactory', speedDistanceChartFactory);
+
   function speedDistanceChartFactory($log, $window, DRIVE_COLORS, mathUtilsService) {
     var SpeedDistanceChart;
-    var formatter, distanceUnits,speedUnits,TooltipTitleformatter;
+    var formatter, distanceUnits, speedUnits, TooltipTitleformatter;
     var gridOnOff = true;
+
     function updatexaxisTickFormatter(Mph) {
-      distanceUnits = (Mph ? ' Miles': 'm')
-      speedUnits = (Mph ? ' Mph': ' Kph')
-      formatter = (Mph ? function(num) {return num} :   mathUtilsService.formatNumToSIUnits)
+      distanceUnits = (Mph ? ' Miles' : 'm')
+      speedUnits = (Mph ? ' Mph' : ' Kph')
+      formatter = (Mph ? function (num) {
+        return num
+      } : mathUtilsService.formatNumToSIUnits)
       TooltipTitleformatter = d3.format(Mph ? ',.2f' : '.3s')
     }
+
     updatexaxisTickFormatter();
     return {
       getSpeedDistanceChart: function (data, graphLabels) {
@@ -60,39 +65,43 @@
               'EcoDriving': DRIVE_COLORS.green,
               'SpeedLimit': DRIVE_COLORS.black,
               'Elevation': DRIVE_COLORS.brown
+            },
+            onmouseover: function (d) {
+              // $log.info(d)
             }
 
           },
           zoom: {
-            enabled: false
+            enabled: true
           },
           point: {
             show: true,
-            r: 0
+            r: 1
           },
           grid: {
             y: {
               show: gridOnOff
             },
             x: {
-             show : gridOnOff,
-           }
+              show: gridOnOff
+            }
           },
           tooltip: {
             format: {
-              title: function (d) { return 'Position : ' + TooltipTitleformatter(d) + distanceUnits; },
+              title: function (d) {
+                return 'Position : ' + TooltipTitleformatter(d) + distanceUnits;
+              },
               value: function (value, ratio, id) {
                 var format = d3.format(',.0f');
                 var units = id === 'Elevation' ? ' meters' : speedUnits;
                 return format(value) + units;
+              }
             }
-            },
-
           },
           axis: {
             y: {
-              min: 0,
-              padding: { bottom: 0 },
+              min: -100,
+              padding: {bottom: 0},
               label: {
                 text: graphLabels.yAxisLabel,
                 position: 'outer-middle'
@@ -100,7 +109,7 @@
             },
             y2: {
               max: 80,
-              min: -80,
+              min: -180,
               label: {
                 text: "Elevation change (m)",
                 position: 'outer-middle'
@@ -110,11 +119,13 @@
             x: {
               label: {
                 text: 'Distance (km)',
-                position: 'outer-center',
+                position: 'outer-center'
               },
               height: 50,
               tick: {
-                format: function (x) { return formatter(x); },
+                format: function (x) {
+                  return formatter(x);
+                },
                 fit: false,
                 outer: false,
                 rotate: 0,
@@ -126,31 +137,20 @@
             }
           }
         });
-      },
-      setSDMarker: function (data) {
-        /*var x = ".c3-circle-"+data;
-        d3.select('.c3-circles-ActualDriving')
-        .select('.c3-circle-50')
-        .style('fill', 'red')
-        .attr('r', 10)
-        .on("mouseover", mouseover)
 
-        function mouseover() {
-         var self = d3.select('.c3-circles-ActualDriving .c3-circle-50');
-         $log.debug(self.attr('cx'));
-       }*/
-        // $log.debug('tezxt')
       },
-      setGridOnOff: function(value){
-        if(value == true){
+      setGridOnOff: function (value) {
+        if (value === true) {
           d3.selectAll('.c3-grid line')
             .style('visibility', 'visible')
-        }else{
+        } else {
           d3.selectAll('.c3-grid line')
             .style('visibility', 'hidden')
         }
       },
       setSpeedDistanceChart: function (data, selected) {
+        d3.selectAll('#actual').remove();
+        d3.selectAll('#optimal').remove();
         SpeedDistanceChart.unload({
           done: function () {
             SpeedDistanceChart.load({
@@ -166,15 +166,36 @@
                 data.Elevation[selected],
                 data.scaledPosition[selected]
               ]
-            })
+            });
+            d3.select('#testSpeedDistanceChart')
+              .append('g')
+              .insert('div')
+              .attr('id', 'actual')
+
+            d3.select('#testSpeedDistanceChart')
+              .append('g')
+              .insert('div')
+              .attr('id', 'optimal')
+
+            d3.selectAll(".c3-circle")
+              .style("fill", "red")
+
+            d3.selectAll('.c3-circles-ActualDriving .c3-circle-10')
+              .attr('r', 20)
+
           }
         })
 
+
         // $log.debug(data.ecoDriving[selected])
-        /* var x= ".c3-circle-100"
-         d3.select('.c3-circles-ecoDriving .c3-circle-100')
-         .style('fill', 'red')
-         .attr('r', 10);*/
+        //  var x= ".c3-circle-100"
+        //  d3.select('.c3-circle-10')
+        //  .style('fill', 'red')
+        //  .attr('r', 20);
+
+        /*d3.select('.c3-circles-ActualDriving .c3-circle-10')
+          .style('fill', 'red')
+          .attr('r', 10)*/
       },
 
       setSpeedDistanceKph: function (data, selected) {
@@ -202,6 +223,7 @@
             })
           }
         })
+
         // $log.debug("length" + data.ecoDriving[selected].length)
       },
       setSpeedDistanceMph: function (data, selected) {

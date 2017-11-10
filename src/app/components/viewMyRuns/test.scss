@@ -1,0 +1,35 @@
+#actual{
+  background: lightblue;
+  height: 100px;
+}#optimal{
+  background: lightgreen;
+  height: 100px;
+}
+.axis path{
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.axis line {
+  fill: none;
+  stroke: #ddd;
+  shape-rendering: crispEdges;
+  //vector-effect: non-scaling-stroke;
+}
+.line {
+  fill: none;
+  //stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.dot {
+  //fill: white;
+  //stroke: steelblue;
+  //stroke-width: 1.5px;
+  stroke: transparent;
+  stroke-width: 10px;
+  cursor: pointer;
+}
+.dot:hover {
+  stroke: rgba(68, 127, 255, 0.3);
+}

@@ -19,7 +19,8 @@
             <p class="input-group">
               <input type="text" name="date" class="form-control" id="inputDate" uib-datepicker-popup="dd/MM/yyyy"
                      ng-model="vm.input.date"
-                     is-open="vm.dpOpenStatus.withRequired" min="2016-01-01" required placeholder="Date"/>
+                     is-open="vm.dpOpenStatus.withRequired" min="2016-01-01" required placeholder="Date"
+                     ng-click="vm.setDpOpenStatus('withRequired', $event)"/>
               <span class="input-group-btn">
                 <button type="button"
                         class="btn btn-default"

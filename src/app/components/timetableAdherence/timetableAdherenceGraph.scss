@@ -1,4 +1,4 @@
-#trainGraph{
+/*#trainGraph{
   padding-right: 50px;
 
   .c3-ygrid-line{
@@ -7,17 +7,17 @@
   .c3-ygrid-line text{
     //   font-size: 1.3em;
     // font-weight: bold;
-    fill: black;   
-    /*fill:white;
+    fill: black;
+    !*fill:white;
     text-shadow:
-   -1px -1px 0 black,  
+   -1px -1px 0 black,
     1px -1px 0 black,
     -1px 1px 0 black,
-     1px 1px 0 black;*/
-  
-}
+     1px 1px 0 black;*!
 
 }
+
+}*/
 
 #inputGroupMultiselect{
     .input-group{
@@ -25,11 +25,38 @@
         padding-right: 15px;
     }
 }
-#TTAdherencePercentile{
+#TTAdherencePercentile, #trainGraph{
     .c3-ygrid-line{
       stroke-dasharray: 3,4;
   }
   .c3-ygrid-line text{
-    fill: black;   
+    fill: black;
 }
+}
+
+#TTAdherencePercentile, #trainGraph {
+  .c3-axis-x, .c3-axis-y, .c3-chart-text{
+    font-size: 1.3em;
+    font-weight: bold;
+    fill: $gray;
+  }
+  .c3-axis-x {
+    fill: $gray;
+    font-size: 1.3em;
+  }
+  .c3-title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .c3-axis-x path, .c3 .c3-axis-x line {
+    stroke: $gray-light;
+  }
+  .c3-axis-y path, .c3-axis-y line {
+    /*stroke: transparent;*/
+    stroke: $gray-light;
+  }
+  .c3-axis-y2 path, .c3-axis-y2 line {
+    /*stroke: transparent;*/
+    stroke: $c3-brown;
+  }
 }

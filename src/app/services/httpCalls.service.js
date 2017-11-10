@@ -94,7 +94,7 @@
             url: json,
             method: "GET",
           }).then(function (response) {
-            deferred.resolve(response);
+            deferred.resolve(response.data);
           }).catch(function (response) {
             deferred.reject(response);
           });

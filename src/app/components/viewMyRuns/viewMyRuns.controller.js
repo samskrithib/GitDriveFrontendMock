@@ -12,7 +12,9 @@
     .controller('ViewMyRunsController', ViewMyRunsController);
 
   function ViewMyRunsController($scope, $log,$location,viewMyRunsUrlGeneratorService, httpCallsService, unitPerformanceScoreFactory,
-    energySummaryFactory, latenessSummaryFactory, speedDistanceDataFactory, speedDistanceChartFactory, UtilityService, errorService) {
+    energySummaryFactory, latenessSummaryFactory, speedDistanceDataFactory, speedDistanceChartFactory, UtilityService, errorService,
+                                d3SDChart
+  ) {
     var vm = this;
     vm.tabs = [];
     //Color code for links displayed in dropdown list
@@ -32,8 +34,8 @@
     vm.tabs = UtilityService.getTab();
     var viewRunsUrl = viewMyRunsUrlGeneratorService.getData().viewRunsUrl;
     $log.info("url " + viewRunsUrl)
-    vm.promise = httpCallsService.getByUrl(viewRunsUrl)
-      // vm.promise = httpCallsService.getByJson(viewRunsUrl)
+    // vm.promise = httpCallsService.getByUrl(viewRunsUrl)
+      vm.promise = httpCallsService.getByJson('assets/VMRSingle.json')
       .then(function (response) {
         vm.response = response;
         vm.trainIdentifiers = vm.response.trainIdentifier;
@@ -63,6 +65,7 @@
               speedDistanceData_All(vm.speedDistanceLinks_allRuns[0])
               vm.speedDistanceData_Kph = speedDistanceDataFactory.getSpeedDistanceData_Kph();
               vm.speedDistanceData_Mph = speedDistanceDataFactory.getSpeedDistanceData_Mph();
+              // d3SDChart.getspeedDistanceData(vm.speedDistanceData_Kph)
 
               break;
             }
@@ -111,10 +114,8 @@
         vm.arrayOfSelectedLinksRuntimePerformanceIndicators = []
         //find index of links
         _.each(vm.stationToStationLinks, function (val, key) {
-          $log.info("xxx",vm.stationToStationLinks[key].stations, vm.stationToStationLinks[key].stations.length, selectedLink.trim(), selectedLink.trim().length)
           // if (vm.stationToStationLinks[key].stations === selectedLink) {
           if (angular.equals(vm.stationToStationLinks[key].stations, selectedLink.trim())) {
-            $log.info("key", key)
             vm.indexOfSelectedLink = key
             return vm.indexOfSelectedLink;
           }
@@ -138,7 +139,6 @@
       vm.arrayOfSelectedLinksPerformanceMessage = []
 
       _.each(vm.trainUnitPerformancePerLinks_allRuns, function (val, key) {
-        $log.info("index", vm.indexOfSelectedLink)
         vm.arrayOfSelectedLinksUnitPerformanceScore.push(vm.trainUnitPerformancePerLinks_allRuns[key][vm.indexOfSelectedLink])
         vm.arrayOfSelectedLinksPerformanceIndicators.push(vm.trainUnitPerformancePerLinks_allRuns[key][vm.indexOfSelectedLink].linkPerformanceIndicator)
         vm.arrayOfSelectedLinksEnergyPerformanceIndicators.push(vm.trainUnitPerformancePerLinks_allRuns[key][vm.indexOfSelectedLink].energyPerformanceIndicator)
