@@ -65,7 +65,7 @@
               speedDistanceData_All(vm.speedDistanceLinks_allRuns[0])
               vm.speedDistanceData_Kph = speedDistanceDataFactory.getSpeedDistanceData_Kph();
               vm.speedDistanceData_Mph = speedDistanceDataFactory.getSpeedDistanceData_Mph();
-              // d3SDChart.getspeedDistanceData(vm.speedDistanceData_Kph)
+
 
               break;
             }
@@ -120,12 +120,14 @@
             return vm.indexOfSelectedLink;
           }
         })
-        $log.info("vm.indexOfSelectedLink", vm.indexOfSelectedLink)
+        $log.info("vm.indexOfSelectedLink", vm.indexOfSelectedLink )
         // vm.indexOfSelectedLink = _.indexOf(vm.unitPerformanceScores.trainUnitPerformancePerLink, selectedLink)
+        // vm.response.speedDistanceReportPerJourney.speedDistanceReports
         unitPerformanceScoreOnSelectLink();
         energySummaryOnSelectLink();
         latenessSummaryOnSelectLink();
         speedDistanceOnselectLink();
+        d3SDChart.getspeedDistanceData(vm.response, vm.indexOfSelectedLink)
       } else {
         unitPerformanceScoreFactory.setUnitPerformanceScoreChart([vm.unitPerformanceScores], vm.chartIndicators)
         energySummaryFactory.setEnergySummaryChart(vm.totalEnergySummaries, vm.energyPerformanceIndicators)

@@ -100,7 +100,7 @@
           },
           axis: {
             y: {
-              min: -100,
+              min: 0,
               padding: {bottom: 0},
               label: {
                 text: graphLabels.yAxisLabel,
@@ -109,7 +109,7 @@
             },
             y2: {
               max: 80,
-              min: -180,
+              min: -80,
               label: {
                 text: "Elevation change (m)",
                 position: 'outer-middle'
@@ -167,21 +167,8 @@
                 data.scaledPosition[selected]
               ]
             });
-            d3.select('#testSpeedDistanceChart')
-              .append('g')
-              .insert('div')
-              .attr('id', 'actual')
-
-            d3.select('#testSpeedDistanceChart')
-              .append('g')
-              .insert('div')
-              .attr('id', 'optimal')
-
-            d3.selectAll(".c3-circle")
-              .style("fill", "red")
-
-            d3.selectAll('.c3-circles-ActualDriving .c3-circle-10')
-              .attr('r', 20)
+            /*d3.selectAll('.c3-circles-ActualDriving .c3-circle-10')
+              .attr('r', 20)*/
 
           }
         })

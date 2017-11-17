@@ -20,6 +20,73 @@
     <!-- Nav tabs -->
     <div class="tabscss col-lg-12">
       <uib-tabset justified="true" active="active">
+        <uib-tab index="2" heading="Speed Distance">
+          <div class="tab-container">
+            <div class="subtitle row">
+              <div class="col-md-8">
+                <div ng-show="vm.stationToStationLinks.selected" class="driverAdvice">
+                  <div class="runtimeDescription">{{vm.runtimeDescription}}</div>
+                  <div ng-if="vm.earlyDepartureAdvice">{{vm.earlyDepartureAdvice}}</div>
+                  <div ng-if="vm.earlyArrivalAdvice">{{vm.earlyArrivalAdvice}}</div>
+                  <div ng-if="vm.timeSavedAdvice">{{vm.timeSavedAdvice}}</div>
+                  <span ng-if="vm.timeSavingAdvice">{{vm.timeSavingAdvice}}</span>
+                  <div ng-if="vm.energyAdvice">{{vm.energyAdvice}}</div>
+                  <div ng-if="vm.goodDrivingAdvice">{{vm.goodDrivingAdvice}}</div>
+                  <div ng-if="vm.spareTimeAdvice">{{vm.spareTimeAdvice}}</div>
+                  <div ng-if="vm.speedingAdvice"><span class="speedingAdvice"> {{vm.speedingAdvice}}</span></div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div style="text-align: right; font-size: 0.8em" ng-bind-html="vm.chartSubtitle"></div>
+              </div>
+            </div>
+            <div cg-busy="{promise:vm.promise, message:'Loading your chart', minDuration:1000}">
+              <div ng-show="!vm.stationToStationLinks.selected">
+                <h3> Please select any Station to Station stop to view speed distance chart </h3>
+              </div>
+              <div ng-show="vm.stationToStationLinks.selected">
+                <!--<svg width="15" height="40"><g><rect x="0" y="0" height="32" width="12" style="fill: black;"></rect><line x1="6" y1="30" x2="6" y2="45" stroke-width="2" stroke="black"></line><circle cx="6" cy="5" r="5" style="stroke: black; fill: white;"></circle><circle cx="6" cy="15" r="5" style="stroke: black; fill: white;"></circle><circle cx="6" cy="25" r="5" style="stroke: black; fill: white;"></circle></g></svg>-->
+                <!--<svg width="15" height="40"><g><rect x="0" y="0" height="32" width="12" style="fill: black;"></rect><line x1="6" y1="30" x2="6" y2="45" stroke-width="2" stroke="black"></line><circle cx="6" cy="5" r="5" style="stroke: black; fill: green;"></circle><circle cx="6" cy="15" r="5" style="stroke: black; fill: yellow;"></circle><circle cx="6" cy="25" r="5" style="stroke: black; fill: red;"></circle></g></svg>-->
+                <div id="viewMyRunsSpeedDistanceChart"></div>
+                <div id="testSpeedDistanceChart"></div>
+                <hr>
+                <div class="form-group row">
+                  <div class="input-group col-md-6 col-md-offset-3">
+                    <div class="input-group-addon">Show signals</div>
+                    <select class="form-control form-control">
+                      <option>None</option>
+                      <option>Without Aspects</option>
+                      <option>Both Actual and Optimal profiles</option>
+                      <option>Actual Profile</option>
+                      <option>Optimal Profile</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div style="padding-right: 15px; margin: 16px 0; float: right">
+                    <div class="btn-group" id="status" data-toggle="buttons">
+                      <label class="btn btn-default btn-on-1 btn-sm active" ng-model="vm.radioModel"
+                             uib-btn-radio="'Kph'" value='Kph'>Kph</label>
+                      <label class="btn btn-default btn-off-1 btn-sm " ng-model="vm.radioModel" uib-btn-radio="'Mph'"
+                             value='Mph'>Mph</label>
+                    </div>
+                    <!--<div id="speedLabel">Speed in: </div>-->
+
+                  </div>
+                  <div class="col-lg-2">
+                    <div style="padding-right: 15px; margin: 16px 0; ">
+                      Gridlines:
+                      <toggle ng-model="vm.gridOnOff" size="btn-sm"
+                              ng-change="vm.gridbtnOnChange(vm.gridOnOff)"></toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!--<div class="row"></div>-->
+        </uib-tab>
         <uib-tab index="0" heading="Unit Performance">
           <div class="tab-container">
             <div class="subtitle row">
@@ -57,59 +124,7 @@
           <!--<div class="row"></div>-->
         </uib-tab>
 
-        <uib-tab index="2" heading="Speed Distance">
-          <div class="tab-container">
-            <div class="subtitle row">
-              <div class="col-md-8">
-                <div ng-show="vm.stationToStationLinks.selected" class="driverAdvice">
-                  <div class="runtimeDescription">{{vm.runtimeDescription}}</div>
-                  <div ng-if="vm.earlyDepartureAdvice">{{vm.earlyDepartureAdvice}}</div>
-                  <div ng-if="vm.earlyArrivalAdvice">{{vm.earlyArrivalAdvice}}</div>
-                  <div ng-if="vm.timeSavedAdvice">{{vm.timeSavedAdvice}}</div>
-                  <span ng-if="vm.timeSavingAdvice">{{vm.timeSavingAdvice}}</span>
-                  <div ng-if="vm.energyAdvice">{{vm.energyAdvice}}</div>
-                  <div ng-if="vm.goodDrivingAdvice">{{vm.goodDrivingAdvice}}</div>
-                  <div ng-if="vm.spareTimeAdvice">{{vm.spareTimeAdvice}}</div>
-                  <div ng-if="vm.speedingAdvice"><span class="speedingAdvice"> {{vm.speedingAdvice}}</span></div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div style="text-align: right; font-size: 0.8em" ng-bind-html="vm.chartSubtitle"></div>
-              </div>
-            </div>
-            <div cg-busy="{promise:vm.promise, message:'Loading your chart', minDuration:1000}">
-              <div ng-show="!vm.stationToStationLinks.selected">
-                <h3> Please select any Station to Station stop to view speed distance chart </h3>
-              </div>
-              <div ng-show="vm.stationToStationLinks.selected">
-                <div id="viewMyRunsSpeedDistanceChart"></div>
-                <div id="testSpeedDistanceChart"></div>
-                <hr>
-                <div class="form-group row">
-                  <div style="padding-right: 15px; margin: 16px 0; float: right">
-                    <div class="btn-group" id="status" data-toggle="buttons">
-                      <label class="btn btn-default btn-on-1 btn-sm active" ng-model="vm.radioModel"
-                             uib-btn-radio="'Kph'" value='Kph'>Kph</label>
-                      <label class="btn btn-default btn-off-1 btn-sm " ng-model="vm.radioModel" uib-btn-radio="'Mph'"
-                             value='Mph'>Mph</label>
-                    </div>
-                    <!--<div id="speedLabel">Speed in: </div>-->
 
-                  </div>
-                  <div class="col-lg-2">
-                    <div style="padding-right: 15px; margin: 16px 0; ">
-                      Gridlines:
-                      <toggle ng-model="vm.gridOnOff" size="btn-sm"
-                              ng-change="vm.gridbtnOnChange(vm.gridOnOff)"></toggle>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <!--<div class="row"></div>-->
-        </uib-tab>
       </uib-tabset>
       <!-- /.col-lg-12 -->
 
