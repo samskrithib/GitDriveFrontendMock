@@ -5,6 +5,21 @@
   background: lightgreen;
   height: 100px;
 }
+
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: top;
+  overflow: hidden;
+}
+.svg-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .axis path{
   fill: none;
   stroke: #000;
@@ -23,7 +38,7 @@
 }
 
 .axis {
-  font: 10px sans-serif;
+  font: 12px sans-serif;
 }
 
 .axis path,
@@ -63,7 +78,7 @@ rect.pane {
 }
 
 .track-inset {
-  stroke: #ddd;
+  //stroke: #ddd;
   stroke-width: 8px;
 }
 
