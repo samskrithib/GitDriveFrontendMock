@@ -35,7 +35,7 @@
     var viewRunsUrl = viewMyRunsUrlGeneratorService.getData().viewRunsUrl;
     $log.info("url " + viewRunsUrl)
     // vm.promise = httpCallsService.getByUrl(viewRunsUrl)
-      vm.promise = httpCallsService.getByJson('assets/VMRSingle.json')
+      vm.promise = httpCallsService.getByJson('assets/signalling.json')
       .then(function (response) {
         vm.response = response;
         vm.trainIdentifiers = vm.response.trainIdentifier;

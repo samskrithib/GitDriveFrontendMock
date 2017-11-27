@@ -80,7 +80,7 @@ body {
     }
 }
 #page-wrapper {
-    padding: 0 15px;
+    padding: 0 1px;
     min-height:-webkit-calc(100vh - 70px);
     background-color: white;
     /* Firefox */
@@ -95,7 +95,7 @@ body {
     #page-wrapper {
         position: inherit;
         margin: 0 0 0 200px;
-        padding: 0 30px;
+        padding: 0 0px;
         border-left: 1px solid darken($gray-lightest, 6.5%);
     }
 }
@@ -103,7 +103,7 @@ body {
     #page-wrapper {
         position: inherit;
         margin: 0 0 0 250px;
-        padding: 0 30px;
+        padding: 0 0px;
         border-left: 1px solid darken($gray-lightest, 6.5%);
     }
 }
@@ -370,7 +370,7 @@ table.dataTable thead .sorting:after {
     color: rgba(50,50,50,.5);
 }
 
-// Circle Buttons 
+// Circle Buttons
 
 .btn-circle {
     width: 30px;

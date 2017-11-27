@@ -14661,43 +14661,43 @@
         "optimalTrainPositionSignallingStateList": [
           {
             "signalID": "T261",
-            "distanceInMetres": 500,
-            "signallingColour": "YELLOW"
-          },
-          {
-            "signalID": "T267",
-            "distanceInMetres": 1150,
+            "distanceInMetres": 1000,
             "signallingColour": "RED"
           },
           {
             "signalID": "T267",
-            "distanceInMetres": 1200,
+            "distanceInMetres": 1050,
             "signallingColour": "GREEN"
           },
           {
+            "signalID": "T267",
+            "distanceInMetres": 1100,
+            "signallingColour": "RED"
+          },
+          {
             "signalID": "T261",
-            "distanceInMetres": 1200,
-            "signallingColour": "GREEN"
+            "distanceInMetres": 1100,
+            "signallingColour": "YELLOW"
           },
           {
             "signalID": "B35",
             "distanceInMetres": 2150,
-            "signallingColour": "RED"
-          },
-          {
-            "signalID": "B35",
-            "distanceInMetres": 2300,
             "signallingColour": "YELLOW"
           },
           {
+            "signalID": "B35",
+            "distanceInMetres": 2200,
+            "signallingColour": "RED"
+          },
+          {
             "signalID": "T267",
-            "distanceInMetres": 2100,
-            "signallingColour": "GREEN"
+            "distanceInMetres": 2200,
+            "signallingColour": "YELLOW"
           },
           {
             "signalID": "T261",
             "distanceInMetres": 2200,
-            "signallingColour": "RED"
+            "signallingColour": "GREEN"
           }
         ]
       },
