@@ -65,7 +65,7 @@
               speedDistanceData_All(vm.speedDistanceLinks_allRuns[0])
               vm.speedDistanceData_Kph = speedDistanceDataFactory.getSpeedDistanceData_Kph();
               vm.speedDistanceData_Mph = speedDistanceDataFactory.getSpeedDistanceData_Mph();
-
+              speedDistanceChartFactory.getSpeedDistanceChart(vm.speedDistanceData_Kph, vm.speedDistanceChartLabels);
 
               break;
             }
@@ -116,11 +116,11 @@
         _.each(vm.stationToStationLinks, function (val, key) {
           // if (vm.stationToStationLinks[key].stations === selectedLink) {
           if (angular.equals(vm.stationToStationLinks[key].stations, selectedLink.trim())) {
-            vm.indexOfSelectedLink = key
+            vm.indexOfSelectedLink = key;
             return vm.indexOfSelectedLink;
           }
-        })
-        $log.info("vm.indexOfSelectedLink", vm.indexOfSelectedLink )
+        });
+        // $log.info("vm.indexOfSelectedLink", vm.indexOfSelectedLink);
         // vm.indexOfSelectedLink = _.indexOf(vm.unitPerformanceScores.trainUnitPerformancePerLink, selectedLink)
         // vm.response.speedDistanceReportPerJourney.speedDistanceReports
         unitPerformanceScoreOnSelectLink();
@@ -129,9 +129,9 @@
         speedDistanceOnselectLink();
         d3SDChart.getspeedDistanceData(vm.response, vm.indexOfSelectedLink)
       } else {
-        unitPerformanceScoreFactory.setUnitPerformanceScoreChart([vm.unitPerformanceScores], vm.chartIndicators)
-        energySummaryFactory.setEnergySummaryChart(vm.totalEnergySummaries, vm.energyPerformanceIndicators)
-        latenessSummaryFactory.setLatenessSummaryChart(vm.totalLatenessSummaries, vm.avglatenessSummaryChartLabels, vm.latenessPerformanceIndicators)
+        unitPerformanceScoreFactory.setUnitPerformanceScoreChart([vm.unitPerformanceScores], vm.chartIndicators);
+        energySummaryFactory.setEnergySummaryChart(vm.totalEnergySummaries, vm.energyPerformanceIndicators);
+        latenessSummaryFactory.setLatenessSummaryChart(vm.totalLatenessSummaries, vm.avglatenessSummaryChartLabels, vm.latenessPerformanceIndicators);
       }
 
     };
@@ -174,7 +174,7 @@
 
     function speedDistanceOnselectLink() {
       speedDistanceDriverAdviceOfSelectedLink();
-      speedDistanceChartFactory.getSpeedDistanceChart(vm.speedDistanceData_Kph, vm.speedDistanceChartLabels);
+      // speedDistanceChartFactory.getSpeedDistanceChart(vm.speedDistanceData_Kph, vm.speedDistanceChartLabels);
       if (vm.radioModel === 'Kph') {
         speedDistanceChartFactory.setSpeedDistanceChart(vm.speedDistanceData_Kph, vm.indexOfSelectedLink)
       } else if (vm.radioModel === 'Mph') {
@@ -192,7 +192,7 @@
       vm.speedingAdvice = vm.getDriverAdvice[vm.indexOfSelectedLink].speedingAdvice
     }
 
-    vm.radioModel = 'Kph';
+    vm.radioModel = 'Mph';
     $scope.$watch('vm.radioModel', function (newValue, oldValue) {
       if (newValue !== oldValue) {
         if (newValue === 'Kph') {

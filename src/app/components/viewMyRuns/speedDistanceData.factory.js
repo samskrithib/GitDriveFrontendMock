@@ -33,7 +33,7 @@
     return{
     getSpeedDistanceGraphLabels: function () {
       var graphLabelsAndTitles = {
-        "yAxisLabel": "Speed (Kph)",
+        "yAxisLabel": "Speed (Mph)",
         "graphTitle": "Speed Distance Graph",
         "seriesLabels": null
       }

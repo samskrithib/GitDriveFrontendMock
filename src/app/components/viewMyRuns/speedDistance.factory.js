@@ -16,11 +16,11 @@
       speedUnits = (Mph ? ' Mph' : ' Kph')
       formatter = (Mph ? function (num) {
         return num
-      } : mathUtilsService.formatNumToSIUnits)
+      } : mathUtilsService.formatNumToSIUnits);
       TooltipTitleformatter = d3.format(Mph ? ',.2f' : '.3s')
     }
+    updatexaxisTickFormatter(true);
 
-    updatexaxisTickFormatter();
     return {
       getSpeedDistanceChart: function (data, graphLabels) {
         SpeedDistanceChart = c3.generate({
@@ -69,7 +69,6 @@
             onmouseover: function (d) {
               // $log.info(d)
             }
-
           },
           zoom: {
             enabled: true
@@ -118,7 +117,7 @@
             },
             x: {
               label: {
-                text: 'Distance (km)',
+                text: 'Distance (miles)',
                 position: 'outer-center'
               },
               height: 50,
@@ -169,11 +168,8 @@
             });
             /*d3.selectAll('.c3-circles-ActualDriving .c3-circle-10')
               .attr('r', 20)*/
-
           }
         })
-
-
         // $log.debug(data.ecoDriving[selected])
         //  var x= ".c3-circle-100"
         //  d3.select('.c3-circle-10')
