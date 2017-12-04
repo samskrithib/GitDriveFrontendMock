@@ -66,7 +66,7 @@
               vm.speedDistanceData_Kph = speedDistanceDataFactory.getSpeedDistanceData_Kph();
               vm.speedDistanceData_Mph = speedDistanceDataFactory.getSpeedDistanceData_Mph();
               speedDistanceChartFactory.getSpeedDistanceChart(vm.speedDistanceData_Kph, vm.speedDistanceChartLabels);
-
+              d3SDChart.getSpeedDistanceChart(vm.response.speedDistanceReportPerJourney.speedDistanceReports)
               break;
             }
             case "1": {

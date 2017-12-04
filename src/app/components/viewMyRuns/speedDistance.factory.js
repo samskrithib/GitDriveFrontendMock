@@ -6,16 +6,16 @@
     .module('viewMyRunsModule')
     .factory('speedDistanceChartFactory', speedDistanceChartFactory);
 
-  function speedDistanceChartFactory($log, $window, DRIVE_COLORS, mathUtilsService) {
+  function speedDistanceChartFactory($log, $window, DRIVE_COLORS, mathUtilsService, d3SDChart) {
     var SpeedDistanceChart;
     var formatter, distanceUnits, speedUnits, TooltipTitleformatter;
     var gridOnOff = true;
-
+    var parseFloat2f = d3.format('.2f')
     function updatexaxisTickFormatter(Mph) {
       distanceUnits = (Mph ? ' Miles' : 'm')
       speedUnits = (Mph ? ' Mph' : ' Kph')
       formatter = (Mph ? function (num) {
-        return num
+        return parseFloat2f(num)
       } : mathUtilsService.formatNumToSIUnits);
       TooltipTitleformatter = d3.format(Mph ? ',.2f' : '.3s')
     }
@@ -71,7 +71,10 @@
             }
           },
           zoom: {
-            enabled: true
+            enabled: true,
+            onzoom: function(d){
+                d3SDChart.SDSignallingOnZoom(d)
+            }
           },
           point: {
             show: true,

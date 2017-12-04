@@ -1,54 +1,12 @@
-<div>
-  <acme-navbar></acme-navbar>
-</div>
+
 <div class="wrapper">
   <!-- Page Content -->
   <div id="page-wrapper">
-    
+
     <!-- START TABLE -->
     <div class="span12">
-      <table class="table table-hover table-condensed table-striped">
-        <thead>
-          <tr>
-           
-            
-          </tr>
-        </thead>
-        <tbody data-ng-repeat="route in vm.response.timetableRoutes">
-          
-          <tr class= "clickableRow">
-            <td> <input type="radio" name="select" ng-model="vm.selectRoute"/> </td>
-            <!--<td> {{$index}} </td>-->
-            <td ng-repeat= "tiploc in route.tiplocs"> 
-              <span ng-show="$index != 0"> <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-              {{tiploc}}
-              </td>
-            <td> <a href="" ng-click="vm.selectTableRow($index)"> Show calling points </a> </td>
-          </tr>
-          <tr>
-            <td colspan="3"></td>
-            <td colspan="4">
-              <div uib-collapse="vm.dayDataCollapse[$index]">
-                <div class="span12 ">
-                  <table class="table table-hover table-condensed table-striped">
-                    <thead>
-                      <tr>
-                        <th>Stations</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr data-ng-repeat="tiploc in route.tiplocs">
-                        <td>{{tiploc}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </td>
-            <td colspan="2"></td>
-          </tr>
-        </tbody>
-      </table>
+      <div id="d3chart"></div>
+      <svg width="960" height="500"></svg>
     </div>
     <!-- END TABLE -->
   </div>
