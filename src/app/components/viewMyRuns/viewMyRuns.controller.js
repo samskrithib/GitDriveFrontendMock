@@ -35,7 +35,7 @@
     var viewRunsUrl = viewMyRunsUrlGeneratorService.getData().viewRunsUrl;
     $log.info("url " + viewRunsUrl)
     // vm.promise = httpCallsService.getByUrl(viewRunsUrl)
-      vm.promise = httpCallsService.getByJson('assets/signalling.json')
+      vm.promise = httpCallsService.getByJson('assets/DriverRunJSON.json')
       .then(function (response) {
         vm.response = response;
         vm.trainIdentifiers = vm.response.trainIdentifier;
@@ -79,9 +79,10 @@
 
               // Lateness Summary
               vm.latenessSummaries = vm.response.latenessSummaryReportPerJourney
-              vm.totalLatenessSummaries = [vm.latenessSummaries.latenessSummaryPerJourney]
+              vm.totalLatenessSummaries = vm.latenessSummaries.latenessSummaryPerJourney;
               vm.avglatenessSummaryChartLabels = latenessSummaryFactory.getavgLatenessSummaryChartLabels();
               vm.latenessSummaryChartLabelsPerLink = latenessSummaryFactory.getLatenessSummaryChartLabels();
+              vm.mod = latenessSummaryFactory.modData(vm.totalLatenessSummaries)
               latenessSummaryFactory.getLatenessSummaryChart(vm.totalLatenessSummaries, vm.avglatenessSummaryChartLabels, vm.latenessPerformanceIndicators)
               vm.latenessSummaryLinks_allRuns = [vm.latenessSummaries.latenessSummaries]
               break;

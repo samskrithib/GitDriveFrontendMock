@@ -1,0 +1,1276 @@
+{
+  "trainIdentifier": {
+    "unitNumber": "156480",
+    "originTiploc": "NWCSTLE",
+    "destinationTiploc": "CARLILE",
+    "scheduledDepartureTimeAtOrigin": [
+      2017,
+      11,
+      6,
+      18,
+      24
+    ],
+    "rollingStockID": "156",
+    "serviceCode": "21793000",
+    "headcode": "2N47"
+  },
+  "trainUnitPerformancePerJourney": {
+    "percentageScore": 95,
+    "journeyPerformanceIndicator": "GOOD",
+    "message": "Good Unit Performance",
+    "trainUnitPerformancePerLink": [
+      {
+        "link": {
+          "stations": "Metrocentre-Blaydon"
+        },
+        "percentageScore": 100,
+        "message": "Good Unit Performance",
+        "linkPerformanceIndicator": "GOOD",
+        "energyPerformanceIndicator": "GOOD",
+        "runtimePerformanceIndicator": "GOOD",
+        "speedingPerformanceIndicator": "GOOD"
+      }
+    ],
+    "energyPerformanceIndicator": "GOOD",
+    "runtimePerformanceIndicator": "GOOD",
+    "speedingPerformanceIndicator": "GOOD"
+  },
+  "energySummaryReportPerJourney": {
+    "energySummaryPerJourney": {
+      "actualEnergyConsumption": 54,
+      "optimalEnergyConsumption": 54,
+      "onTimeOptimalEnergyConsumption": 46.3,
+      "targetEnergyConsumption": 43.2
+    },
+    "energySummaryLinks": [
+      {
+        "link": {
+          "stations": "Metrocentre-Blaydon"
+        },
+        "energySummary": {
+          "actualEnergyConsumption": 2.1,
+          "optimalEnergyConsumption": 2.1,
+          "onTimeOptimalEnergyConsumption": 1.8,
+          "targetEnergyConsumption": 2
+        }
+      }
+    ]
+  },
+  "latenessSummaryReportPerJourney": {
+    "latenessSummaryPerJourney": {
+      "stackedActualArrivalLatenesss": {
+        "unitPerformanceLatenessInSeconds": 1471,
+        "signallingLatenessInSeconds": 1962,
+        "dwellTimeExceedanceLatenessInSeconds": 1962,
+        "originLateDepartureLatenessInSeconds": 0
+      },
+      "stackedAcheivableArrivalLatenesss": {
+        "unitPerformanceLatenessInSeconds": 1423,
+        "signallingLatenessInSeconds": 1898,
+        "dwellTimeExceedanceLatenessInSeconds": 1898,
+        "originLateDepartureLatenessInSeconds": 0
+      },
+      "actualArrivalEarlinessInSeconds": {
+        "unitPerformanceLatenessInSeconds": 0
+      }
+    },
+    "latenessSummaries": [
+      {
+        "link": {
+          "stations": "Metrocentre-Blaydon"
+        },
+        "latenessSummary": {
+          "stackedActualArrivalLatenesss": {
+            "unitPerformanceLatenessInSeconds": 131.5,
+            "signallingLatenessInSeconds": 175.33,
+            "dwellTimeExceedanceLatenessInSeconds": 175.33,
+            "originLateDepartureLatenessInSeconds": 0
+          },
+          "stackedAcheivableArrivalLatenesss": {
+            "unitPerformanceLatenessInSeconds": 129.5,
+            "signallingLatenessInSeconds": 172.67,
+            "dwellTimeExceedanceLatenessInSeconds": 172.67,
+            "originLateDepartureLatenessInSeconds": 0
+          },
+          "actualArrivalEarlinessInSeconds": {
+            "unitPerformanceLatenessInSeconds": 0
+          }
+        }
+      }
+    ]
+  },
+  "speedDistanceReportPerJourney": {
+    "speedDistanceReports": [
+      {
+        "link": {
+          "stations": "Metrocentre-Blaydon"
+        },
+        "speedDistanceReportPerLink": {
+          "optimumDrivingType": "Flatout Driving",
+          "driverAdvice": {
+            "runtimeDescription": "Metrocentre (P2)  at 18:33:00 (+8m 56s) - Blaydon (P2)  at 18:36:30 (+8m 46s)",
+            "earlyDepartureAdvice": null,
+            "earlyArrivalAdvice": null,
+            "timeSavingAdvice": null,
+            "timeSavedAdvice": "10s caught up",
+            "energyAdvice": null,
+            "goodDrivingAdvice": "Good Unit Performance",
+            "spareTimeAdvice": null,
+            "speedingAdvice": null
+          },
+          "speedDistanceProfiles": {
+            "actualSpeedAndPositions": [
+              {
+                "speed": 0,
+                "position": 0
+              },
+              {
+                "speed": 0.1,
+                "position": 0
+              },
+              {
+                "speed": 0.3,
+                "position": 0
+              },
+              {
+                "speed": 2.5,
+                "position": 0.5
+              },
+              {
+                "speed": 4.8,
+                "position": 1.7
+              },
+              {
+                "speed": 7.1,
+                "position": 3.7
+              },
+              {
+                "speed": 9.3,
+                "position": 6.4
+              },
+              {
+                "speed": 11.6,
+                "position": 9.9
+              },
+              {
+                "speed": 13.8,
+                "position": 14.1
+              },
+              {
+                "speed": 16.1,
+                "position": 19.1
+              },
+              {
+                "speed": 18.3,
+                "position": 24.8
+              },
+              {
+                "speed": 20.6,
+                "position": 31.3
+              },
+              {
+                "speed": 22.8,
+                "position": 38.5
+              },
+              {
+                "speed": 24.1,
+                "position": 43.1
+              },
+              {
+                "speed": 24.2,
+                "position": 43.8
+              },
+              {
+                "speed": 26.4,
+                "position": 59.3
+              },
+              {
+                "speed": 28.6,
+                "position": 76
+              },
+              {
+                "speed": 30.7,
+                "position": 94.2
+              },
+              {
+                "speed": 32.9,
+                "position": 113.6
+              },
+              {
+                "speed": 35.1,
+                "position": 134.4
+              },
+              {
+                "speed": 35.7,
+                "position": 140.3
+              },
+              {
+                "speed": 35.8,
+                "position": 141.3
+              },
+              {
+                "speed": 37.9,
+                "position": 160.8
+              },
+              {
+                "speed": 40.1,
+                "position": 181.4
+              },
+              {
+                "speed": 42.2,
+                "position": 203.1
+              },
+              {
+                "speed": 44.3,
+                "position": 225.9
+              },
+              {
+                "speed": 46.2,
+                "position": 247.3
+              },
+              {
+                "speed": 46.2,
+                "position": 248.5
+              },
+              {
+                "speed": 46.3,
+                "position": 249.8
+              },
+              {
+                "speed": 48.4,
+                "position": 281.4
+              },
+              {
+                "speed": 50.6,
+                "position": 314.4
+              },
+              {
+                "speed": 52.7,
+                "position": 348.8
+              },
+              {
+                "speed": 54.8,
+                "position": 384.6
+              },
+              {
+                "speed": 55.2,
+                "position": 392.3
+              },
+              {
+                "speed": 55.3,
+                "position": 393.8
+              },
+              {
+                "speed": 57.4,
+                "position": 439.2
+              },
+              {
+                "speed": 59.5,
+                "position": 486.3
+              },
+              {
+                "speed": 61.5,
+                "position": 535
+              },
+              {
+                "speed": 62.4,
+                "position": 557.4
+              },
+              {
+                "speed": 62.4,
+                "position": 559.1
+              },
+              {
+                "speed": 60.3,
+                "position": 664.8
+              },
+              {
+                "speed": 59.1,
+                "position": 726.2
+              },
+              {
+                "speed": 59,
+                "position": 727.8
+              },
+              {
+                "speed": 56.9,
+                "position": 769.7
+              },
+              {
+                "speed": 54.8,
+                "position": 810
+              },
+              {
+                "speed": 52.7,
+                "position": 848.8
+              },
+              {
+                "speed": 50.7,
+                "position": 886.2
+              },
+              {
+                "speed": 50.6,
+                "position": 887.6
+              },
+              {
+                "speed": 50.7,
+                "position": 889
+              },
+              {
+                "speed": 52.8,
+                "position": 935
+              },
+              {
+                "speed": 54.9,
+                "position": 982.9
+              },
+              {
+                "speed": 56.5,
+                "position": 1021.5
+              },
+              {
+                "speed": 56.5,
+                "position": 1023.1
+              },
+              {
+                "speed": 56.6,
+                "position": 1024.7
+              },
+              {
+                "speed": 58.7,
+                "position": 1077.5
+              },
+              {
+                "speed": 60.8,
+                "position": 1132.3
+              },
+              {
+                "speed": 62.9,
+                "position": 1189
+              },
+              {
+                "speed": 63,
+                "position": 1190.7
+              },
+              {
+                "speed": 63,
+                "position": 1192.5
+              },
+              {
+                "speed": 65.1,
+                "position": 1256.6
+              },
+              {
+                "speed": 67.2,
+                "position": 1322.7
+              },
+              {
+                "speed": 69.3,
+                "position": 1391
+              },
+              {
+                "speed": 69.5,
+                "position": 1396.8
+              },
+              {
+                "speed": 69.5,
+                "position": 1398.7
+              },
+              {
+                "speed": 71.6,
+                "position": 1473.2
+              },
+              {
+                "speed": 73.7,
+                "position": 1549.9
+              },
+              {
+                "speed": 74.5,
+                "position": 1580.7
+              },
+              {
+                "speed": 74.5,
+                "position": 1582.8
+              },
+              {
+                "speed": 76.6,
+                "position": 1681.4
+              },
+              {
+                "speed": 78.7,
+                "position": 1782.8
+              },
+              {
+                "speed": 78.9,
+                "position": 1793.8
+              },
+              {
+                "speed": 78.9,
+                "position": 1795.9
+              },
+              {
+                "speed": 81,
+                "position": 1909.2
+              },
+              {
+                "speed": 83,
+                "position": 2025.4
+              },
+              {
+                "speed": 83.3,
+                "position": 2043.9
+              },
+              {
+                "speed": 83.3,
+                "position": 2046.2
+              },
+              {
+                "speed": 81.2,
+                "position": 2215.3
+              },
+              {
+                "speed": 80.5,
+                "position": 2271.5
+              },
+              {
+                "speed": 80.3,
+                "position": 2273.7
+              },
+              {
+                "speed": 78.2,
+                "position": 2306.7
+              },
+              {
+                "speed": 76,
+                "position": 2338.8
+              },
+              {
+                "speed": 73.8,
+                "position": 2370
+              },
+              {
+                "speed": 71.6,
+                "position": 2400.3
+              },
+              {
+                "speed": 69.4,
+                "position": 2429.7
+              },
+              {
+                "speed": 67.9,
+                "position": 2448.8
+              },
+              {
+                "speed": 67.8,
+                "position": 2450.7
+              },
+              {
+                "speed": 65.6,
+                "position": 2484
+              },
+              {
+                "speed": 63.4,
+                "position": 2516.2
+              },
+              {
+                "speed": 61.1,
+                "position": 2547.4
+              },
+              {
+                "speed": 58.9,
+                "position": 2577.4
+              },
+              {
+                "speed": 56.6,
+                "position": 2606.2
+              },
+              {
+                "speed": 56.1,
+                "position": 2614.1
+              },
+              {
+                "speed": 56,
+                "position": 2615.6
+              },
+              {
+                "speed": 53.9,
+                "position": 2679.7
+              },
+              {
+                "speed": 51.8,
+                "position": 2741.4
+              },
+              {
+                "speed": 51.3,
+                "position": 2757.1
+              },
+              {
+                "speed": 51.2,
+                "position": 2758.6
+              },
+              {
+                "speed": 49.1,
+                "position": 2829.7
+              },
+              {
+                "speed": 47.1,
+                "position": 2897.8
+              },
+              {
+                "speed": 47,
+                "position": 2899.1
+              },
+              {
+                "speed": 46.9,
+                "position": 2900.4
+              },
+              {
+                "speed": 44.8,
+                "position": 2925.9
+              },
+              {
+                "speed": 42.6,
+                "position": 2950.2
+              },
+              {
+                "speed": 40.5,
+                "position": 2973.3
+              },
+              {
+                "speed": 38.4,
+                "position": 2995.2
+              },
+              {
+                "speed": 36.3,
+                "position": 3015.9
+              },
+              {
+                "speed": 36.2,
+                "position": 3016.9
+              },
+              {
+                "speed": 34.2,
+                "position": 3051.2
+              },
+              {
+                "speed": 32.1,
+                "position": 3083.4
+              },
+              {
+                "speed": 31,
+                "position": 3100
+              },
+              {
+                "speed": 30.9,
+                "position": 3100.9
+              },
+              {
+                "speed": 28.7,
+                "position": 3119.9
+              },
+              {
+                "speed": 26.5,
+                "position": 3137.5
+              },
+              {
+                "speed": 24.3,
+                "position": 3153.7
+              },
+              {
+                "speed": 22,
+                "position": 3168.6
+              },
+              {
+                "speed": 21.7,
+                "position": 3169.2
+              },
+              {
+                "speed": 19.2,
+                "position": 3173.8
+              },
+              {
+                "speed": 16.7,
+                "position": 3177.7
+              },
+              {
+                "speed": 14.2,
+                "position": 3181.2
+              },
+              {
+                "speed": 11.7,
+                "position": 3184.1
+              },
+              {
+                "speed": 9.2,
+                "position": 3186.4
+              },
+              {
+                "speed": 6.7,
+                "position": 3188.2
+              },
+              {
+                "speed": 6.6,
+                "position": 3188.3
+              },
+              {
+                "speed": 0,
+                "position": 3155.9
+              }
+            ],
+            "flatoutSpeedAndPositions": [
+              {
+                "speed": 0,
+                "position": 0
+              },
+              {
+                "speed": 0,
+                "position": 0
+              },
+              {
+                "speed": 0.5,
+                "position": 0
+              },
+              {
+                "speed": 0.7,
+                "position": 0.1
+              },
+              {
+                "speed": 2.8,
+                "position": 0.8
+              },
+              {
+                "speed": 5,
+                "position": 2.4
+              },
+              {
+                "speed": 7.1,
+                "position": 4.9
+              },
+              {
+                "speed": 9.3,
+                "position": 8.4
+              },
+              {
+                "speed": 11.5,
+                "position": 12.7
+              },
+              {
+                "speed": 13.6,
+                "position": 17.9
+              },
+              {
+                "speed": 15.8,
+                "position": 24.1
+              },
+              {
+                "speed": 17.9,
+                "position": 31.1
+              },
+              {
+                "speed": 20.1,
+                "position": 39
+              },
+              {
+                "speed": 22.3,
+                "position": 47.8
+              },
+              {
+                "speed": 24.4,
+                "position": 57.6
+              },
+              {
+                "speed": 26.6,
+                "position": 68.2
+              },
+              {
+                "speed": 28.7,
+                "position": 79.7
+              },
+              {
+                "speed": 30.9,
+                "position": 92.2
+              },
+              {
+                "speed": 33.1,
+                "position": 105.5
+              },
+              {
+                "speed": 35.3,
+                "position": 120.7
+              },
+              {
+                "speed": 35.6,
+                "position": 122.7
+              },
+              {
+                "speed": 35.7,
+                "position": 123.7
+              },
+              {
+                "speed": 38,
+                "position": 140
+              },
+              {
+                "speed": 40.2,
+                "position": 158.5
+              },
+              {
+                "speed": 42.4,
+                "position": 179.1
+              },
+              {
+                "speed": 44.5,
+                "position": 202.1
+              },
+              {
+                "speed": 46.7,
+                "position": 227.4
+              },
+              {
+                "speed": 48.8,
+                "position": 255.3
+              },
+              {
+                "speed": 50.9,
+                "position": 285.7
+              },
+              {
+                "speed": 53,
+                "position": 318.9
+              },
+              {
+                "speed": 55.2,
+                "position": 355
+              },
+              {
+                "speed": 57.3,
+                "position": 394.1
+              },
+              {
+                "speed": 59.4,
+                "position": 436.2
+              },
+              {
+                "speed": 61.5,
+                "position": 483.2
+              },
+              {
+                "speed": 63.6,
+                "position": 533.6
+              },
+              {
+                "speed": 63.9,
+                "position": 542.4
+              },
+              {
+                "speed": 64,
+                "position": 547.8
+              },
+              {
+                "speed": 64,
+                "position": 549.5
+              },
+              {
+                "speed": 64,
+                "position": 842.8
+              },
+              {
+                "speed": 64.1,
+                "position": 846.4
+              },
+              {
+                "speed": 64.1,
+                "position": 848.2
+              },
+              {
+                "speed": 66.2,
+                "position": 918.8
+              },
+              {
+                "speed": 68.3,
+                "position": 995.4
+              },
+              {
+                "speed": 70.4,
+                "position": 1078.2
+              },
+              {
+                "speed": 72.4,
+                "position": 1151.6
+              },
+              {
+                "speed": 74.5,
+                "position": 1229.1
+              },
+              {
+                "speed": 76.6,
+                "position": 1313.1
+              },
+              {
+                "speed": 78.7,
+                "position": 1405.8
+              },
+              {
+                "speed": 80.7,
+                "position": 1505.4
+              },
+              {
+                "speed": 82.8,
+                "position": 1612.1
+              },
+              {
+                "speed": 84.8,
+                "position": 1723.9
+              },
+              {
+                "speed": 86.9,
+                "position": 1843.1
+              },
+              {
+                "speed": 89,
+                "position": 1967.7
+              },
+              {
+                "speed": 91,
+                "position": 2097.7
+              },
+              {
+                "speed": 93.1,
+                "position": 2235.8
+              },
+              {
+                "speed": 95.1,
+                "position": 2382.1
+              },
+              {
+                "speed": 97,
+                "position": 2537.1
+              },
+              {
+                "speed": 97,
+                "position": 2539.8
+              },
+              {
+                "speed": 95.5,
+                "position": 2571.9
+              },
+              {
+                "speed": 93.1,
+                "position": 2600.7
+              },
+              {
+                "speed": 90.7,
+                "position": 2628.8
+              },
+              {
+                "speed": 88.3,
+                "position": 2656.1
+              },
+              {
+                "speed": 86,
+                "position": 2682.8
+              },
+              {
+                "speed": 83.6,
+                "position": 2708.7
+              },
+              {
+                "speed": 81.2,
+                "position": 2733.9
+              },
+              {
+                "speed": 78.8,
+                "position": 2758.3
+              },
+              {
+                "speed": 76.5,
+                "position": 2782
+              },
+              {
+                "speed": 74.1,
+                "position": 2805
+              },
+              {
+                "speed": 71.7,
+                "position": 2827.3
+              },
+              {
+                "speed": 69.3,
+                "position": 2848.9
+              },
+              {
+                "speed": 67,
+                "position": 2869.7
+              },
+              {
+                "speed": 64.6,
+                "position": 2889.8
+              },
+              {
+                "speed": 62.2,
+                "position": 2909.2
+              },
+              {
+                "speed": 59.8,
+                "position": 2927.8
+              },
+              {
+                "speed": 57.5,
+                "position": 2945.7
+              },
+              {
+                "speed": 55.1,
+                "position": 2962.9
+              },
+              {
+                "speed": 52.7,
+                "position": 2979.4
+              },
+              {
+                "speed": 50.3,
+                "position": 2995.1
+              },
+              {
+                "speed": 48,
+                "position": 3010.1
+              },
+              {
+                "speed": 45.6,
+                "position": 3024.4
+              },
+              {
+                "speed": 43.2,
+                "position": 3038
+              },
+              {
+                "speed": 40.8,
+                "position": 3050.8
+              },
+              {
+                "speed": 38.4,
+                "position": 3062.9
+              },
+              {
+                "speed": 36.1,
+                "position": 3074.3
+              },
+              {
+                "speed": 33.7,
+                "position": 3085
+              },
+              {
+                "speed": 31.3,
+                "position": 3094.9
+              },
+              {
+                "speed": 28.9,
+                "position": 3104.1
+              },
+              {
+                "speed": 26.6,
+                "position": 3112.6
+              },
+              {
+                "speed": 24.2,
+                "position": 3120.4
+              },
+              {
+                "speed": 21.8,
+                "position": 3127.4
+              },
+              {
+                "speed": 19.4,
+                "position": 3133.7
+              },
+              {
+                "speed": 17.1,
+                "position": 3139.3
+              },
+              {
+                "speed": 14.7,
+                "position": 3144.1
+              },
+              {
+                "speed": 12.3,
+                "position": 3148.2
+              },
+              {
+                "speed": 9.9,
+                "position": 3151.6
+              },
+              {
+                "speed": 7.6,
+                "position": 3154.3
+              },
+              {
+                "speed": 5.2,
+                "position": 3156.3
+              },
+              {
+                "speed": 2.8,
+                "position": 3157.5
+              },
+              {
+                "speed": 0.4,
+                "position": 3158
+              }
+            ],
+            "optimalSpeedAndPositions": null
+          }
+        },
+        "trackInformation": {
+          "speedRestrictions": [
+            {
+              "point": 0,
+              "value": 64
+            },
+            {
+              "point": 794,
+              "value": 64
+            },
+            {
+              "point": 794,
+              "value": 104
+            },
+            {
+              "point": 2478,
+              "value": 104
+            },
+            {
+              "point": 2478,
+              "value": 104
+            },
+            {
+              "point": 3078,
+              "value": 104
+            },
+            {
+              "point": 3078,
+              "value": 104
+            },
+            {
+              "point": 3155,
+              "value": 104
+            }
+          ],
+          "scaledElevations": [
+            {
+              "position": 0,
+              "scaledElevation": 0
+            },
+            {
+              "position": 541,
+              "scaledElevation": -0.8
+            },
+            {
+              "position": 1061,
+              "scaledElevation": 0.6
+            },
+            {
+              "position": 2481,
+              "scaledElevation": -1.1
+            },
+            {
+              "position": 3101,
+              "scaledElevation": 2
+            },
+            {
+              "position": 3155.9,
+              "scaledElevation": 2.2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "signallingSummaryReportPerJourney": {
+    "trainSignallingDetailsPerLinkList": [
+      {
+        "link": {
+          "stations": "Metrocentre-Blaydon"
+        },
+        "signalPositionInMetresList": [
+          {
+            "signalID": "T261",
+            "distanceInMetres": 1000
+          },
+          {
+            "signalID": "T267",
+            "distanceInMetres": 1100
+          },
+          {
+            "signalID": "B35",
+            "distanceInMetres": 2200
+          }
+        ],
+        "actualTrainPositionSignallingStateList": [
+          {
+            "distanceInMetres": 100,
+            "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "RED"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "YELLOW"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "GREEN"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 1050,
+            "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "RED"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "GREEN"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "GREEN"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 1100,
+            "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "YELLOW"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "RED"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "GREEN"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 1500,
+            "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "YELLOW"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "RED"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "YELLOW"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 2200,
+            "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "GREEN"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "YELLOW"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "RED"
+              }
+            ]
+          }
+        ],
+        "optimalTrainPositionSignallingStateList": [
+          {
+            "distanceInMetres": 0,
+            "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "RED"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "YELLOW"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "RED"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 1000,
+            "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "RED"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "YELLOW"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "RED"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 1050,
+            "values": [
+              {
+                "signalID": "T267",
+                "signallingColour": "GREEN"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "RED"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 1100,
+            "values": [
+              {
+                "signalID": "T267",
+                "signallingColour": "RED"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "YELLOW"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 2150,
+            "values": [
+              {
+                "signalID": "B35",
+                "signallingColour": "GREEN"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 2200,
+            "values": [
+              {
+                "signalID": "B35",
+                "signallingColour": "RED"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

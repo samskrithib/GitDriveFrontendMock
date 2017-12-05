@@ -247,10 +247,10 @@
 
           //////*********************************************** *************************///////////////////////////////////////////
 
-          if (signallingData.signalInitialStateAndPositionInMetresList) {
+          if (signallingData.signalPositionInMetresList) {
             // draw signals
             var signalsActual = svg.selectAll(".light")
-              .data(signallingData.signalInitialStateAndPositionInMetresList)
+              .data(signallingData.signalPositionInMetresList)
               .enter()
               .append("g")
               .attr("id", "signalsActual")
@@ -266,7 +266,7 @@
                   })
                   .selectAll("circle")
                   .attr("class", "actual")
-                  .style("fill", d.signallingColour);
+                  .style("fill", "white");
               });
             signalsActual.each(function (d) {
               signallingColor(d, "actual")
@@ -346,7 +346,7 @@
             }
 
             var signalsOptimal = svg.selectAll(".light")
-              .data(signallingData.signalInitialStateAndPositionInMetresList)
+              .data(signallingData.signalPositionInMetresList)
               .enter()
               .append("g")
               .attr("id", "signalsOptimal")

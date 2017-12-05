@@ -22,6 +22,16 @@
                 }
                 return graphLabelsAndTitles;
             },
+            modData: function (data) {
+              var modData=[];
+              _.each(data, function (v, i) {
+                console.log(v)
+              })
+              modData.push(data.stackedActualArrivalLatenesss)
+              modData.push(data.stackedAcheivableArrivalLatenesss)
+              modData.push(data.actualArrivalEarlinessInSeconds)
+              return modData;
+            },
             getLatenessSummaryChartLabels: function () {
                 var graphLabelsAndTitles = {
                     "yAxisLabel": "Lateness (s)"
@@ -36,22 +46,42 @@
                         height: 300
                     },
                     data: {
-                        json: latenessSummary,
+                      mimeType: 'json',
+                        json: [latenessSummary],
                         keys: {
-                            value: ['actualArrivalEarlinessInSeconds','actualArrivalLatenessInSeconds', 'achievableArrivalLatenessInSeconds']
+                          // x: 'stackedActualArrivalLatenesss',
+                            value: ['stackedActualArrivalLatenesss.unitPerformanceLatenessInSeconds',
+                              'stackedActualArrivalLatenesss.signallingLatenessInSeconds',
+                              'stackedActualArrivalLatenesss.dwellTimeExceedanceLatenessInSeconds',
+                              'stackedActualArrivalLatenesss.originLateDepartureLatenessInSeconds',
+                              'stackedAcheivableArrivalLatenesss.unitPerformanceLatenessInSeconds',
+                              'stackedAcheivableArrivalLatenesss.signallingLatenessInSeconds',
+                              'stackedAcheivableArrivalLatenesss.dwellTimeExceedanceLatenessInSeconds',
+                              'stackedAcheivableArrivalLatenesss.originLateDepartureLatenessInSeconds',
+                              'actualArrivalEarlinessInSeconds']
                         },
                         type: 'bar',
-                        names: graphLabels.seriesLabels,
-                        labels: true,
-                        colors: {
-                            'actualArrivalLatenessInSeconds': function () {
+                      groups: [
+                        ['stackedActualArrivalLatenesss.unitPerformanceLatenessInSeconds',
+                          'stackedActualArrivalLatenesss.signallingLatenessInSeconds',
+                          'stackedActualArrivalLatenesss.dwellTimeExceedanceLatenessInSeconds',
+                          'stackedActualArrivalLatenesss.originLateDepartureLatenessInSeconds'],
+                        ['stackedAcheivableArrivalLatenesss.unitPerformanceLatenessInSeconds',
+                          'stackedAcheivableArrivalLatenesss.signallingLatenessInSeconds',
+                          'stackedAcheivableArrivalLatenesss.dwellTimeExceedanceLatenessInSeconds',
+                          'stackedAcheivableArrivalLatenesss.originLateDepartureLatenessInSeconds']
+                      ],
+                        // names: graphLabels.seriesLabels,
+                        // labels: true
+                        /*colors: {
+                            'stackedActualArrivalLatenesss.unitPerformanceLatenessInSeconds': function () {
                                 return chartColors.colors(graphIndicator)
                             },
-                            'actualArrivalEarlinessInSeconds': function () {
+                            'stackedActualArrivalLatenesss.signallingLatenessInSeconds': function () {
                                 return chartColors.colors(graphIndicator)
                             },
-                            'achievableArrivalLatenessInSeconds': DRIVE_COLORS.green
-                        }
+                            'actualArrivalEarlinessInSeconds': DRIVE_COLORS.green
+                        }*/
                     },
                     title: {
                         text: graphLabels.graphTitle
@@ -61,14 +91,15 @@
                         show: true
                     },
                     axis: {
-                        x: {
-                            tick:{
+                        /*x: {
+                            /!*tick:{
                              format: function(){ return '' }
-                           },
+                           },*!/
                             type: 'category',
+                            // categories:['stackedActualArrivalLatenesss', 'stackedAcheivableArrivalLatenesss', 'actualArrivalEarlinessInSeconds'],
                             //   categories: graphLabels.xAxisLabels,
                             height: 50
-                        },
+                        },*/
                         y: {
                             //min: 0,
                             label: {
@@ -82,7 +113,7 @@
                     },
                     bar: {
                         width: {
-                            ratio: 0.3 // this makes bar width 30% of length between ticks
+                            ratio: 0.5 // this makes bar width 30% of length between ticks
                         }
                     },
                     grid: {
@@ -107,16 +138,24 @@
                 LatenessSummaryChart.load({
                     json: latenessSummary,
                     keys: {
-                        value: [ 'actualArrivalEarlinessInSeconds','actualArrivalLatenessInSeconds', 'achievableArrivalLatenessInSeconds']
+                        value: ['stackedActualArrivalLatenesss.unitPerformanceLatenessInSeconds',
+                          'stackedActualArrivalLatenesss.signallingLatenessInSeconds',
+                          'stackedActualArrivalLatenesss.dwellTimeExceedanceLatenessInSeconds',
+                          'stackedActualArrivalLatenesss.originLateDepartureLatenessInSeconds',
+                          'stackedAcheivableArrivalLatenesss.unitPerformanceLatenessInSeconds',
+                          'stackedAcheivableArrivalLatenesss.signallingLatenessInSeconds',
+                          'stackedAcheivableArrivalLatenesss.dwellTimeExceedanceLatenessInSeconds',
+                          'stackedAcheivableArrivalLatenesss.originLateDepartureLatenessInSeconds',
+                          'actualArrivalEarlinessInSeconds']
                     },
                     colors: {
-                        'actualArrivalLatenessInSeconds': function () {
+                        'stackedActualArrivalLatenesss.unitPerformanceLatenessInSeconds': function () {
                             return chartColors.colors(graphIndicator)
                         },
-                        'actualArrivalEarlinessInSeconds': function () {
+                        'stackedActualArrivalLatenesss.signallingLatenessInSeconds': function () {
                             return chartColors.colors(graphIndicator)
                         },
-                        'achievableArrivalLatenessInSeconds': DRIVE_COLORS.green
+                        'actualArrivalEarlinessInSeconds': DRIVE_COLORS.green
                     }
 
                 });
