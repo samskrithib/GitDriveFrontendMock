@@ -61,10 +61,16 @@
         controller: 'TrainGraphController',
         controllerAs: 'vm'
       })
-      .state('dashboard.test', {
-        url: '/test',
-        templateUrl: 'views/test.html',
-        controller: 'testController',
+      .state('dashboard.demo', {
+        url: '/viewDemo',
+        templateUrl: 'app/components/viewMyRuns/partials/view-my-runs-inputDevelop.html',
+        controller: 'ViewMyRunsInputController',
+        controllerAs: 'vm'
+      })
+      .state('dashboard.demoView', {
+        url: '/viewRunsDemo',
+        templateUrl: 'app/components/viewMyRuns/partials/view-my-runs.html',
+        controller: 'ViewMyRunsControllerDevelop',
         controllerAs: 'vm'
       })
       .state('dashboard.dwellTimesInput',{

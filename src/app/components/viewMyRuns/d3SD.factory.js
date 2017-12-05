@@ -10,9 +10,6 @@
     var yValueSLOptimal , yMapSLOptimal ;
 
     return {
-      console: function () {
-        console.log("d3SD")
-      },
       getspeedDistanceData: function (dataa, index) {
         d3.selectAll('#sign').remove();
         d3.queue()
@@ -363,7 +360,7 @@
                   .selectAll("circle")
                   // .attr("class", "dot")
                   .attr("class", "optimal")
-                  .style("fill", d.signallingColour);
+                  .style("fill", "white");
               });
             signalsOptimal.each(function (d) {
               signallingColor(d, "optimal")

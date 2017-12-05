@@ -4,9 +4,16 @@
     'use strict';
     angular
         .module('viewMyRunsModule')
-        .factory('latenessSummaryFactory', latenessSummaryFactory)
+        .factory('latenessSummaryFactoryDevelop', latenessSummaryFactoryDevelop)
 
-    function latenessSummaryFactory($log, $window, $filter, chartColors, DRIVE_COLORS) {
+    function latenessSummaryFactoryDevelop($log, $window, $filter, chartColors, DRIVE_COLORS) {
+        function modifyData (data) {
+            var modData = [];
+            modData.push(data.stackedActualArrivalLatenesss)
+            modData.push(data.stackedAcheivableArrivalLatenesss)
+            modData.push(data.actualArrivalEarlinessInSeconds)
+            return modData;
+        }
         var LatenessSummaryChart;
         return {
             //------------------------------Graph Labels --------------------------------------------------//
@@ -22,6 +29,13 @@
                 }
                 return graphLabelsAndTitles;
             },
+            modData: function (data) {
+                var modData = [];
+                modData.push(data.stackedActualArrivalLatenesss)
+                modData.push(data.stackedAcheivableArrivalLatenesss)
+                modData.push(data.actualArrivalEarlinessInSeconds)
+                return modData;
+            },
             getLatenessSummaryChartLabels: function () {
                 var graphLabelsAndTitles = {
                     "yAxisLabel": "Lateness (s)"
@@ -30,28 +44,42 @@
             },
             //------------------------------Generate c3 chart----------------------------------------------//
             getLatenessSummaryChart: function (latenessSummary, graphLabels, graphIndicator) {
+               var latenessSummaryData =  modifyData(latenessSummary)
                 LatenessSummaryChart = c3.generate({
                     bindto: '#viewMyRunslatenessSummaryChart',
                     size: {
                         height: 300
                     },
                     data: {
-                        json: latenessSummary,
+                        mimeType: 'json',
+                        json: latenessSummaryData,
                         keys: {
-                            value: ['actualArrivalEarlinessInSeconds','actualArrivalLatenessInSeconds', 'achievableArrivalLatenessInSeconds']
+                            // x: 'stackedActualArrivalLatenesss',
+                            value: ['unitPerformanceLatenessInSeconds',
+                                'signallingLatenessInSeconds',
+                                'dwellTimeExceedanceLatenessInSeconds',
+                                'originLateDepartureLatenessInSeconds',
+                            ]
                         },
                         type: 'bar',
-                        names: graphLabels.seriesLabels,
-                        labels: true,
-                        colors: {
-                            'actualArrivalLatenessInSeconds': function () {
+                        groups: [
+                            ['unitPerformanceLatenessInSeconds',
+                                'signallingLatenessInSeconds',
+                                'dwellTimeExceedanceLatenessInSeconds',
+                                'originLateDepartureLatenessInSeconds']
+
+                        ],
+                        // names: graphLabels.seriesLabels,
+                        // labels: true
+                        /*colors: {
+                            'stackedActualArrivalLatenesss.unitPerformanceLatenessInSeconds': function () {
                                 return chartColors.colors(graphIndicator)
                             },
-                            'actualArrivalEarlinessInSeconds': function () {
+                            'stackedActualArrivalLatenesss.signallingLatenessInSeconds': function () {
                                 return chartColors.colors(graphIndicator)
                             },
-                            'achievableArrivalLatenessInSeconds': DRIVE_COLORS.green
-                        }
+                            'actualArrivalEarlinessInSeconds': DRIVE_COLORS.green
+                        }*/
                     },
                     title: {
                         text: graphLabels.graphTitle
@@ -62,10 +90,11 @@
                     },
                     axis: {
                         x: {
-                            tick:{
-                             format: function(){ return '' }
-                           },
+                            /* tick: {
+                                format: function () { return '' }
+                            }, */
                             type: 'category',
+                            categories:['Actual Arrival Latenesss', 'Acheivable Arrival Latenesss', 'Actual Arrival Earliness'],
                             //   categories: graphLabels.xAxisLabels,
                             height: 50
                         },
@@ -99,24 +128,29 @@
             },
 
             setLatenessSummaryChart: function (latenessSummary, graphLabels, graphIndicator) {
-                // $log.debug(graphLabels)
+                $log.debug(latenessSummary)
                 // LatenessSummaryChart.data.names(graphLabels.seriesLabels)
+                var latenessSummaryData =  modifyData(latenessSummary)
                 LatenessSummaryChart.axis.labels({
                     y: graphLabels.yAxisLabel
                 })
                 LatenessSummaryChart.load({
-                    json: latenessSummary,
+                    json: latenessSummaryData,
                     keys: {
-                        value: [ 'actualArrivalEarlinessInSeconds','actualArrivalLatenessInSeconds', 'achievableArrivalLatenessInSeconds']
+                        value: ['unitPerformanceLatenessInSeconds',
+                            'signallingLatenessInSeconds',
+                            'dwellTimeExceedanceLatenessInSeconds',
+                            'originLateDepartureLatenessInSeconds',
+                            ]
                     },
                     colors: {
-                        'actualArrivalLatenessInSeconds': function () {
+                        'stackedActualArrivalLatenesss.unitPerformanceLatenessInSeconds': function () {
                             return chartColors.colors(graphIndicator)
                         },
-                        'actualArrivalEarlinessInSeconds': function () {
+                        'stackedActualArrivalLatenesss.signallingLatenessInSeconds': function () {
                             return chartColors.colors(graphIndicator)
                         },
-                        'achievableArrivalLatenessInSeconds': DRIVE_COLORS.green
+                        'actualArrivalEarlinessInSeconds': DRIVE_COLORS.green
                     }
 
                 });
@@ -126,3 +160,4 @@
         }
     }
 })();
+

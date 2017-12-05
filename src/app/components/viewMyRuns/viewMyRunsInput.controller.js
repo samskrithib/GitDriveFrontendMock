@@ -60,7 +60,7 @@
       return new Date(null, null, null, timeTokens[0], timeTokens[1]);
     }
     /*------------------- Default Inputs --------------------------------*/
-    var d = new Date()
+    /* var d = new Date()
     vm.input.date = d.setDate(d.getDate() - 15);
     vm.fromStation={"locationName":"Newcastle","tiploc":"NWCSTLE"}
     vm.toStation= {"locationName":"Carlisle","tiploc":"CARLILE"}
@@ -69,7 +69,7 @@
     vm.toStat="CARLILE";
     _selectedFrom ={"locationName":"Newcastle","tiploc":"NWCSTLE"};
     _selectedTo = {"locationName":"Carlisle","tiploc":"CARLILE"};
-    vm.customTimeSelected = "08:24"
+    vm.customTimeSelected = "08:24" */
 
     /*------------------- End Default Inputs --------------------------------*/
 
@@ -176,6 +176,13 @@
         $location.path("/dashboard/view-my-runs");
       }
     };
+    vm.submitDevelop =   function(isValid){
+      if (isValid) {
+      UtilityService.addCheckedItems(vm.checkedItems);
+      viewMyRunsUrlGeneratorService.generateReportsUrl(vm.inputDate, vm.customTimeSelected, _selectedFrom, _selectedTo);
+      $location.path("/dashboard/viewRunsDemo");
+      }
+    }
     vm.goToView = function () {
       $location.path("/dashboard/view")
     };

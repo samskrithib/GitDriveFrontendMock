@@ -9,10 +9,11 @@
         $log.debug(exception, cause);
       }
     })*/
-    .controller('ViewMyRunsController', ViewMyRunsController);
+    .controller('ViewMyRunsControllerDevelop', ViewMyRunsControllerDevelop);
 
-  function ViewMyRunsController($scope, $log,$location,viewMyRunsUrlGeneratorService, httpCallsService, unitPerformanceScoreFactory,
-    energySummaryFactory, latenessSummaryFactory, speedDistanceDataFactory, speedDistanceChartFactory, UtilityService, errorService                            
+  function ViewMyRunsControllerDevelop($scope, $log,$location,viewMyRunsUrlGeneratorService, httpCallsService, unitPerformanceScoreFactory,
+    energySummaryFactory, latenessSummaryFactoryDevelop, speedDistanceDataFactory, speedDistanceChartFactory, UtilityService, errorService,
+                                d3SDChart
   ) {
     var vm = this;
     vm.tabs = [];
@@ -33,8 +34,8 @@
     vm.tabs = UtilityService.getTab();
     var viewRunsUrl = viewMyRunsUrlGeneratorService.getData().viewRunsUrl;
     $log.info("url " + viewRunsUrl)
-    vm.promise = httpCallsService.getByUrl(viewRunsUrl)
-      // vm.promise = httpCallsService.getByJson('assets/DriverRunJSON.json')
+    // vm.promise = httpCallsService.getByUrl(viewRunsUrl)
+      vm.promise = httpCallsService.getByJson('assets/DriverRunJSON.json')
       .then(function (response) {
         vm.response = response;
         vm.trainIdentifiers = vm.response.trainIdentifier;
@@ -65,6 +66,7 @@
               vm.speedDistanceData_Kph = speedDistanceDataFactory.getSpeedDistanceData_Kph();
               vm.speedDistanceData_Mph = speedDistanceDataFactory.getSpeedDistanceData_Mph();
               speedDistanceChartFactory.getSpeedDistanceChart(vm.speedDistanceData_Kph, vm.speedDistanceChartLabels);
+              d3SDChart.getSpeedDistanceChart(vm.response.speedDistanceReportPerJourney.speedDistanceReports)
               break;
             }
             case "1": {
@@ -77,10 +79,10 @@
 
               // Lateness Summary
               vm.latenessSummaries = vm.response.latenessSummaryReportPerJourney
-              vm.totalLatenessSummaries = [vm.latenessSummaries.latenessSummaryPerJourney];
-              vm.avglatenessSummaryChartLabels = latenessSummaryFactory.getavgLatenessSummaryChartLabels();
-              vm.latenessSummaryChartLabelsPerLink = latenessSummaryFactory.getLatenessSummaryChartLabels();
-              latenessSummaryFactory.getLatenessSummaryChart(vm.totalLatenessSummaries, vm.avglatenessSummaryChartLabels, vm.latenessPerformanceIndicators)
+              vm.totalLatenessSummaries = vm.latenessSummaries.latenessSummaryPerJourney;
+              vm.avglatenessSummaryChartLabels = latenessSummaryFactoryDevelop.getavgLatenessSummaryChartLabels();
+              vm.latenessSummaryChartLabelsPerLink = latenessSummaryFactoryDevelop.getLatenessSummaryChartLabels();
+              latenessSummaryFactoryDevelop.getLatenessSummaryChart(vm.totalLatenessSummaries, vm.avglatenessSummaryChartLabels, vm.latenessPerformanceIndicators)
               vm.latenessSummaryLinks_allRuns = [vm.latenessSummaries.latenessSummaries]
               break;
             }
@@ -113,11 +115,12 @@
         //find index of links
         _.each(vm.stationToStationLinks, function (val, key) {
           // if (vm.stationToStationLinks[key].stations === selectedLink) {
-          if (angular.equals(vm.stationToStationLinks[key].stations, selectedLink.trim())) {
-            vm.indexOfSelectedLink = key;
-            return vm.indexOfSelectedLink;
-          }
-        });
+            if (angular.equals(vm.stationToStationLinks[key].stations, selectedLink.trim())) {
+              vm.indexOfSelectedLink = key;
+              return vm.indexOfSelectedLink;
+            }
+          });
+          
         // $log.info("vm.indexOfSelectedLink", vm.indexOfSelectedLink);
         // vm.indexOfSelectedLink = _.indexOf(vm.unitPerformanceScores.trainUnitPerformancePerLink, selectedLink)
         // vm.response.speedDistanceReportPerJourney.speedDistanceReports
@@ -125,10 +128,11 @@
         energySummaryOnSelectLink();
         latenessSummaryOnSelectLink();
         speedDistanceOnselectLink();
+        d3SDChart.getspeedDistanceData(vm.response, vm.indexOfSelectedLink)
       } else {
         unitPerformanceScoreFactory.setUnitPerformanceScoreChart([vm.unitPerformanceScores], vm.chartIndicators);
         energySummaryFactory.setEnergySummaryChart(vm.totalEnergySummaries, vm.energyPerformanceIndicators);
-        latenessSummaryFactory.setLatenessSummaryChart(vm.totalLatenessSummaries, vm.avglatenessSummaryChartLabels, vm.latenessPerformanceIndicators);
+        latenessSummaryFactoryDevelop.setLatenessSummaryChart(vm.totalLatenessSummaries, vm.avglatenessSummaryChartLabels, vm.latenessPerformanceIndicators);
       }
 
     };
@@ -162,11 +166,11 @@
     }
 
     function latenessSummaryOnSelectLink() {
-      vm.arrayOfSelectedLinksLatenessSummary = []
+      var arrayOfSelectedLinksLatenessSummary;
       _.each(vm.latenessSummaryLinks_allRuns, function (val, key) {
-        vm.arrayOfSelectedLinksLatenessSummary.push(vm.latenessSummaryLinks_allRuns[key][vm.indexOfSelectedLink].latenessSummary)
+        arrayOfSelectedLinksLatenessSummary = (vm.latenessSummaryLinks_allRuns[key][vm.indexOfSelectedLink].latenessSummary)
       })
-      latenessSummaryFactory.setLatenessSummaryChart(vm.arrayOfSelectedLinksLatenessSummary, vm.latenessSummaryChartLabelsPerLink, vm.arrayOfSelectedLinksRuntimePerformanceIndicators)
+      latenessSummaryFactoryDevelop.setLatenessSummaryChart(arrayOfSelectedLinksLatenessSummary, vm.latenessSummaryChartLabelsPerLink, vm.arrayOfSelectedLinksRuntimePerformanceIndicators)
     }
 
     function speedDistanceOnselectLink() {

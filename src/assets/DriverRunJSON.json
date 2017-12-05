@@ -71,7 +71,7 @@
         "originLateDepartureLatenessInSeconds": 0
       },
       "actualArrivalEarlinessInSeconds": {
-        "unitPerformanceLatenessInSeconds": 0
+        "unitPerformanceLatenessInSeconds": -1000
       }
     },
     "latenessSummaries": [
@@ -1092,7 +1092,7 @@
         "signalPositionInMetresList": [
           {
             "signalID": "T261",
-            "distanceInMetres": 1000
+            "distanceInMetres": 100
           },
           {
             "signalID": "T267",
@@ -1192,7 +1192,7 @@
         ],
         "optimalTrainPositionSignallingStateList": [
           {
-            "distanceInMetres": 0,
+            "distanceInMetres": 100,
             "values": [
               {
                 "signalID": "T261",
@@ -1204,24 +1204,7 @@
               },
               {
                 "signalID": "B35",
-                "signallingColour": "RED"
-              }
-            ]
-          },
-          {
-            "distanceInMetres": 1000,
-            "values": [
-              {
-                "signalID": "T261",
-                "signallingColour": "RED"
-              },
-              {
-                "signalID": "T267",
-                "signallingColour": "YELLOW"
-              },
-              {
-                "signalID": "B35",
-                "signallingColour": "RED"
+                "signallingColour": "GREEN"
               }
             ]
           },
@@ -1229,18 +1212,43 @@
             "distanceInMetres": 1050,
             "values": [
               {
+                "signalID": "T261",
+                "signallingColour": "RED"
+              },
+              {
                 "signalID": "T267",
                 "signallingColour": "GREEN"
               },
               {
                 "signalID": "B35",
-                "signallingColour": "RED"
+                "signallingColour": "GREEN"
               }
             ]
           },
           {
             "distanceInMetres": 1100,
             "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "YELLOW"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "RED"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "GREEN"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 2150,
+            "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "YELLOW"
+              },
               {
                 "signalID": "T267",
                 "signallingColour": "RED"
@@ -1249,20 +1257,20 @@
                 "signalID": "B35",
                 "signallingColour": "YELLOW"
               }
-            ]
-          },
-          {
-            "distanceInMetres": 2150,
-            "values": [
-              {
-                "signalID": "B35",
-                "signallingColour": "GREEN"
-              }
+
             ]
           },
           {
             "distanceInMetres": 2200,
             "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "GREEN"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "YELLOW"
+              },
               {
                 "signalID": "B35",
                 "signallingColour": "RED"
