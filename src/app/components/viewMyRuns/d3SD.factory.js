@@ -6,8 +6,8 @@
 
   function d3SDChart(mathUtilsService) {
     var svg, x, y, xAxis, yAxis, gX, speedLimitSymbolsOptimal;
-    var xSLValue,xSLMap, xMap, xValue ;
-    var yValueSLOptimal , yMapSLOptimal ;
+    var xSLValue, xSLMap, xMap, xValue;
+    var yValueSLOptimal, yMapSLOptimal;
 
     return {
       getspeedDistanceData: function (dataa, index) {
@@ -18,8 +18,6 @@
           .await(makeMyViz)
 
         function makeMyViz(error, light, speedlimitSymbol) {
-          // console.log("makeMyViz", light, speedlimitSymbol)
-          // d3.xml("assets/trafficlight.svg").mimeType("image/svg+xml").get(function (error, xml) {
           if (error) throw error;
           var importedNode = document.importNode(light.documentElement, true);
           var speedLimitNode = document.importNode(speedlimitSymbol.documentElement, true);
@@ -36,10 +34,9 @@
           var margin = {top: 20, right: 40, bottom: 20, left: 60},
             width = 1060 - margin.left - margin.right,
             height = 240 - margin.top - margin.bottom;
-
+          //setup x
           x = d3.scale.linear()
             .domain(d3.extent(d3.values(xaxisData), function (d) {
-              // console.log(mathUtilsService.convertMetersToMilesSingleValue(d.position))
               return mathUtilsService.convertMetersToMilesSingleValue(d.position)
             }))
             .range([0, width])
@@ -55,7 +52,6 @@
             .scale(x)
             .orient("bottom");
 
-          // console.log(signallingData.trainSignallingDetailsPerLinkList[index]);
 
           //setup y
           y = d3.scale.linear()
@@ -79,29 +75,28 @@
             .orient("left");
 
 
-          svg = d3.select("#testSpeedDistanceChart")
+          svg = d3.select("#speedDistanceSignalling")
             .append("svg")
             .attr("preserveAspectRatio", "xMinYMin meet")
             .attr("viewBox", "0 0 1060 250")
             // .classed("svg-content", true)
-            // .attr("width", width + margin.left + margin.right)
-            // .attr("height", height + margin.top + margin.bottom)
             .attr("border", border)
             .attr("id", 'sign')
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-         gX = svg.append("g")
+
+
+          gX = svg.append("g")
             .attr("class", "xaxis")
             .attr("id", "x-axis")
             .attr("transform", "translate(0," + height + ")")
-            // .call(xAxis.tickFormat(d3.format(".2s")))
             .call(xAxis)
             .append("text")
             .text("Optimal")
             .style("text-anchor", "start")
             .attr("y", width + margin.top)
             .attr("transform", function (d) {
-              return  "rotate(-90)"
+              return "rotate(-90)"
             });
 
           svg.append("g")
@@ -115,14 +110,6 @@
               return "rotate(-90)"
             });
 
-          svg.append("rect")
-            .attr("class", "pane")
-            .attr("width", width)
-            .attr("height", height);
-          // .call(d3.drag()
-          //   .on("start.interrupt", function() { optimalTrainSlider.interrupt(); })
-          //   .on("start drag", function() { optimalTrainPosition(x.invert(d3.event.x)); }));
-          // var zoom = d3.behavior.zoom()
 
           var actual = svg.append("rect")
             .attr("x", 0)
@@ -133,15 +120,14 @@
             .style("fill", fill)
             .style("stroke-width", border);
 
-          svg.append("clipPath")
-            .attr("id", "clip")
-            .append("rect")
-            .attr("x", x(0))
-            //.attr("y", y(1))
-            .attr("y", 0)
-            .attr("width", x(1) - x(0))
-            //.attr("height", y(0) - y(1));
-            .attr("height", 100);
+
+          /* svg.append("clipPath")
+             .attr("id", "clip")
+             .append("rect")
+             .attr("x", x(0))
+             .attr("y", 0)
+             .attr("width", x(1) - x(0))
+             .attr("height", 100);*/
 
           var optimal = svg.append("rect")
             .attr("x", 0)
@@ -156,19 +142,15 @@
             .attr("id", "clip")
             .append("rect")
             .attr("x", x(0))
-            //.attr("y", y(1))
             .attr("y", 0)
             .attr("width", x(1) - x(0))
-            //.attr("height", y(0) - y(1));
             .attr("height", 100)
-          // .call(zoom);
 
-          //draw speedLimit values
-           xSLValue = function (d) {
+          //draw speedLimits
+          xSLValue = function (d) {
             return mathUtilsService.convertMetersToMilesSingleValue(d.point);
           };
-           xSLMap = function (d) {
-            // console.log("xSL", x(xSLValue(d))-23)
+          xSLMap = function (d) {
             // 23 is to correct the xaxis placement of symbol
             return x(xSLValue(d)) - 23;
           };
@@ -185,10 +167,8 @@
             .append("g")
             .attr("id", "speedLimitsActual")
             .attr("transform", function (d, i) {
-              // console.log("xMap", xSLMap(d), yMapActual(d))
               return "translate(" + xSLMap(d) + "," + yMapSLActual(d) + ")"
             }).each(function (d, i) {
-              // console.log("speedlimit", d)
               speedLimit = this.appendChild(speedLimitNode.cloneNode(true));
               d3.select(speedLimit)
                 .selectAll("circle")
@@ -200,29 +180,28 @@
                 .text(function () {
                   return mathUtilsService.convertKphtoMphSingleValue(d.value)
                 })
-              // .style("fill", "blue")
             });
           //To remove last symbol as it is out of box
           speedLimitSymbolsActual.filter(function (d, i) {
             return i === speedLimitSymbolsActual.size() - 1;
           }).attr("display", "none");
 
-          var yValueSLOptimal = function (d) {
+          yValueSLOptimal = function (d) {
             return 0.4;
           };
-          var yMapSLOptimal = function (d) {
+          yMapSLOptimal = function (d) {
             return y(yValueSLOptimal(d))
           };
+
+          //Optimal speed limits
           speedLimitSymbolsOptimal = svg.selectAll(".speedLimits").append("g")
             .data(speedRestrictions.speedRestrictions)
             .enter()
             .append("g")
             .attr("id", "speedLimits")
             .attr("transform", function (d, i) {
-              // console.log("xMap", xSLMap(d), yMapActual(d))
               return "translate(" + xSLMap(d) + "," + yMapSLOptimal(d) + ")"
             }).each(function (d, i) {
-              // console.log("speedlimit", d)
               speedLimit = this.appendChild(speedLimitNode.cloneNode(true));
               d3.select(speedLimit)
                 .selectAll("circle")
@@ -232,19 +211,45 @@
                 .style("font-size", "0.8em")
                 .style("font-weight", "normal")
                 .text(function () {
-                  // console.log(mathUtilsService.convertKphtoMphSingleValue(d.value))
-                    return mathUtilsService.convertKphtoMphSingleValue(d.value)
-                  })
-              // .style("fill", "blue")
+                  return mathUtilsService.convertKphtoMphSingleValue(d.value)
+                })
             });
           //To remove last symbol as it is out of box
           speedLimitSymbolsOptimal.filter(function (d, i) {
             return i === speedLimitSymbolsOptimal.size() - 1;
           }).attr("display", "none");
 
-          //////*********************************************** *************************///////////////////////////////////////////
+// returns instance of signal texts
+          function signalText(type) {
+            var yvalueMapping;
+            if (type === "actual") {
+              yvalueMapping = yMapActual
+            } else if (type === "optimal") (
+              yvalueMapping = yMap
+            );
+            return (svg.selectAll(".signalText")
+              .data(signallingData.signalPositionInMetresList)
+              .enter()
+              .append("text")
+              .attr("id", "signalsText")
+              .attr("x", "20")
+              .attr("y", "12")
+              .attr("transform", function (d, i) {
+                return "translate(" + xMap(d) + "," + yvalueMapping(d) + ")" + "rotate(-90)"
+              })
+              .text(function (d) {
+                return d.signalID;
+              })
+              .style("text-anchor", "middle"))
+          }
+
+//////*********************************************** Signals *************************///////////////////////////////////////////
 
           if (signallingData.signalPositionInMetresList) {
+            // Signal ID text
+            signalText("actual");
+            signalText("optimal");
+
             // draw signals
             var signalsActual = svg.selectAll(".light")
               .data(signallingData.signalPositionInMetresList)
@@ -303,34 +308,20 @@
 
             var actualTrainHandle = actualTrainSlider.insert("image", ".track-overlay")
               .attr("xlink:href", "assets/train.svg")
-              .attr("width", 30)
-              .attr("height", 30)
+              .attr("width", 50)
+              .attr("height", 50)
               .attr("align", "end")
               .attr("class", "handle")
-              .attr("y", -30)
+              .attr("y", -35)
               .attr("x", 0);
 
             function actualTrainPosition(h) {
               actualTrainHandle.attr("x", x(h));
               _.each(signallingData.actualTrainPositionSignallingStateList, function (d, i) {
                 if (h >= mathUtilsService.convertMetersToMilesSingleValue(d.distanceInMetres)) {
-                  // console.log(d.values)
-                  // signallingColor(d, "optimal");
                   _.each(d.values, function (t) {
                     signallingColor(t, "actual");
                   })
-                }else {
-                  var minVal = d3.min(_.pluck(signallingData.actualTrainPositionSignallingStateList, "distanceInMetres"));
-                  if (h < mathUtilsService.convertMetersToMilesSingleValue(minVal)) {
-                    signalsActual.each(function (d) {
-                      signallingColor(d, "actual")
-                    })
-                  }
-                }
-              })
-             /* _.each(signallingData.actualTrainPositionSignallingStateList, function (d, i) {
-                if (h > mathUtilsService.convertMetersToMilesSingleValue(d.distanceInMetres)) {
-                  signallingColor(d, "actual")
                 } else {
                   var minVal = d3.min(_.pluck(signallingData.actualTrainPositionSignallingStateList, "distanceInMetres"));
                   if (h < mathUtilsService.convertMetersToMilesSingleValue(minVal)) {
@@ -339,9 +330,10 @@
                     })
                   }
                 }
-              })*/
+              })
             }
 
+            // Signals Optimal
             var signalsOptimal = svg.selectAll(".light")
               .data(signallingData.signalPositionInMetresList)
               .enter()
@@ -366,29 +358,9 @@
               signallingColor(d, "optimal")
               currentColorOptimal[d.signalID] = d.signallingColour;
             })
-            /*.attr("r", 10)
-                        .attr("cx", xMap)
-                        .attr("cy", yMap)
-                        .style("fill", function (d) {
-                          return d.signallingColour
-                        })
-                        .on("mouseover", function (d) {
-                          // tooltip.transition()
-                          //   .duration(200)
-                          //   .style("opacity", .9);
-                          // tooltip.html(d["Cereal Name"] + "<br/> (" + xValue(d)
-                          //   + ", " + yValue(d) + ")")
-                          //   .style("left", (d3.event.pageX + 5) + "px")
-                          //   .style("top", (d3.event.pageY - 28) + "px");
-                        })
-                        .on("mouseout", function (d) {
-                          // tooltip.transition()
-                          //   .duration(500)
-                          //   .style("opacity", 0);
-                        });*/
+
 
             var optimaldrag = d3.behavior.drag()
-            // .on("interrupt", function() { optimalTrainSlider.interrupt(); })
               .on("drag", function (d) {
                 optimalTrainPosition(x.invert(d3.event.x));
               });
@@ -416,34 +388,26 @@
               .attr("transform", "translate(-25," + 18 + ")")
               .selectAll("text")
               .data(x.ticks(10));
-            /*.enter().append("text")
-            .attr("x", x)
-            .attr("text-anchor", "left")
-            .text(function(d) { return d + "°"; });*/
+
 
             var optimalTrainHandle = optimalTrainSlider.insert("image", ".track-overlay")
               .attr("xlink:href", "assets/train.svg")
-              .attr("width", 30)
-              .attr("height", 30)
+              .attr("width", 50)
+              .attr("height", 50)
               .attr("align", "end")
               .attr("class", "handle")
-              .attr("y", -30)
+              .attr("y", -35)
               .attr("x", 0)
 
-            /* var optimalTrainHandle = optimalTrainSlider.insert("circle", ".track-overlay")
-               .attr("r", 9)
-               .attr("class", "optimalTrainHandle");*/
+
             function optimalTrainPosition(h) {
-              // optimalTrainHandle.attr("cx", x(h));
               optimalTrainHandle.attr("x", x(h));
               _.each(signallingData.optimalTrainPositionSignallingStateList, function (d, i) {
                 if (h >= mathUtilsService.convertMetersToMilesSingleValue(d.distanceInMetres)) {
-                  // console.log(d.values)
-                  // signallingColor(d, "optimal");
                   _.each(d.values, function (t) {
                     signallingColor(t, "optimal");
                   })
-                }else {
+                } else {
                   var minVal = d3.min(_.pluck(signallingData.optimalTrainPositionSignallingStateList, "distanceInMetres"));
                   if (h < mathUtilsService.convertMetersToMilesSingleValue(minVal)) {
                     signalsOptimal.each(function (d) {
@@ -509,24 +473,12 @@
                 .style("fill", d.signallingColour)
             }
           }
-
-
-
-          // })
         }
+      }
 
-      },
+      ,
 
-      getSpeedDistanceChart: function (data){
-        console.log("SDdata",data)
-        var margin = {top: 20, right: 40, bottom: 20, left: 60},
-          width = 1060 - margin.left - margin.right,
-          height = 240 - margin.top - margin.bottom;
-
-
-        return data;
-      },
-      SDSignallingOnZoom: function(d){
+      SDSignallingOnZoom: function (d) {
         if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
         x.domain(d)
         xAxis.scale(x)
@@ -535,26 +487,22 @@
           .call(xAxis);
         svg.selectAll("g#speedLimits").attr("transform", function (t, i) {
           // console.log("xMap", xSLMap(d), yMapActual(d))
-          return "translate(" + xSLMap(t) + "," +  " 120 )"
+          console.log("xMap", yMapSLOptimal(t))
+          return "translate(" + xSLMap(t) + "," + yMapSLOptimal(t) + " )"
         })
         svg.selectAll("g#speedLimitsActual").attr("transform", function (t, i) {
           // console.log("xMap", xSLMap(d), yMapActual(d))
-          return "translate(" + xSLMap(t) + "," +  " 20 )"
+          return "translate(" + xSLMap(t) + "," + " 20 )"
         })
         svg.selectAll("g#signalsOptimal").attr("transform", function (t, i) {
-          // console.log("xMap", xSLMap(d), yMapActual(d))
-          return "translate(" + xMap(t) + "," +  " 160 )"
+          return "translate(" + xMap(t) + "," + 160 + " )"
         })
         svg.selectAll("g#signalsActual").attr("transform", function (t, i) {
           // console.log("xMap", xSLMap(d), yMapActual(d))
-          return "translate(" + xMap(t) + "," +  " 60 )"
+          return "translate(" + xMap(t) + "," + " 60 )"
         })
-          // console.log( svg.selectAll("g#speedLimits"))
-        // gX.call(xAxis)
+
       }
-
-
-
     }
 
   }

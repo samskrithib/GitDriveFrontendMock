@@ -37,10 +37,10 @@
   },
   "energySummaryReportPerJourney": {
     "energySummaryPerJourney": {
-      "actualEnergyConsumption": 54,
-      "optimalEnergyConsumption": 54,
-      "onTimeOptimalEnergyConsumption": 46.3,
-      "targetEnergyConsumption": 43.2
+      "actualEnergyConsumption": 2.1,
+      "optimalEnergyConsumption": 2.1,
+      "onTimeOptimalEnergyConsumption": 1.8,
+      "targetEnergyConsumption": 2
     },
     "energySummaryLinks": [
       {
@@ -56,22 +56,24 @@
       }
     ]
   },
+
+
   "latenessSummaryReportPerJourney": {
     "latenessSummaryPerJourney": {
       "stackedActualArrivalLatenesss": {
-        "unitPerformanceLatenessInSeconds": 1471,
-        "signallingLatenessInSeconds": 1962,
-        "dwellTimeExceedanceLatenessInSeconds": 1962,
+        "unitPerformanceLatenessInSeconds": 30.5,
+        "signallingLatenessInSeconds": 59.5,
+        "dwellTimeExceedanceLatenessInSeconds": 30,
         "originLateDepartureLatenessInSeconds": 0
       },
       "stackedAcheivableArrivalLatenesss": {
-        "unitPerformanceLatenessInSeconds": 1423,
-        "signallingLatenessInSeconds": 1898,
-        "dwellTimeExceedanceLatenessInSeconds": 1898,
+        "unitPerformanceLatenessInSeconds": 20,
+        "signallingLatenessInSeconds": 46.7,
+        "dwellTimeExceedanceLatenessInSeconds": 0,
         "originLateDepartureLatenessInSeconds": 0
       },
       "actualArrivalEarlinessInSeconds": {
-        "unitPerformanceLatenessInSeconds": -1000
+        "unitPerformanceLatenessInSeconds": 0
       }
     },
     "latenessSummaries": [
@@ -81,15 +83,15 @@
         },
         "latenessSummary": {
           "stackedActualArrivalLatenesss": {
-            "unitPerformanceLatenessInSeconds": 131.5,
-            "signallingLatenessInSeconds": 175.33,
-            "dwellTimeExceedanceLatenessInSeconds": 175.33,
+            "unitPerformanceLatenessInSeconds": 30.5,
+            "signallingLatenessInSeconds": 59.5,
+            "dwellTimeExceedanceLatenessInSeconds": 30,
             "originLateDepartureLatenessInSeconds": 0
           },
           "stackedAcheivableArrivalLatenesss": {
-            "unitPerformanceLatenessInSeconds": 129.5,
-            "signallingLatenessInSeconds": 172.67,
-            "dwellTimeExceedanceLatenessInSeconds": 172.67,
+            "unitPerformanceLatenessInSeconds": 20,
+            "signallingLatenessInSeconds": 46.7,
+            "dwellTimeExceedanceLatenessInSeconds": 0,
             "originLateDepartureLatenessInSeconds": 0
           },
           "actualArrivalEarlinessInSeconds": {
@@ -108,11 +110,11 @@
         "speedDistanceReportPerLink": {
           "optimumDrivingType": "Flatout Driving",
           "driverAdvice": {
-            "runtimeDescription": "Metrocentre (P2)  at 18:33:00 (+8m 56s) - Blaydon (P2)  at 18:36:30 (+8m 46s)",
+            "runtimeDescription": "Metrocentre (P2)  at 18:33:00 (-) - Blaydon (P2)  at 18:38:30 (+2m)",
             "earlyDepartureAdvice": null,
             "earlyArrivalAdvice": null,
             "timeSavingAdvice": null,
-            "timeSavedAdvice": "10s caught up",
+            "timeSavedAdvice": null,
             "energyAdvice": null,
             "goodDrivingAdvice": "Good Unit Performance",
             "spareTimeAdvice": null,
@@ -1092,7 +1094,7 @@
         "signalPositionInMetresList": [
           {
             "signalID": "T261",
-            "distanceInMetres": 100
+            "distanceInMetres": 1000
           },
           {
             "signalID": "T267",
@@ -1192,7 +1194,7 @@
         ],
         "optimalTrainPositionSignallingStateList": [
           {
-            "distanceInMetres": 100,
+            "distanceInMetres": 0,
             "values": [
               {
                 "signalID": "T261",
@@ -1204,12 +1206,12 @@
               },
               {
                 "signalID": "B35",
-                "signallingColour": "GREEN"
+                "signallingColour": "RED"
               }
             ]
           },
           {
-            "distanceInMetres": 1050,
+            "distanceInMetres": 1000,
             "values": [
               {
                 "signalID": "T261",
@@ -1217,11 +1219,25 @@
               },
               {
                 "signalID": "T267",
+                "signallingColour": "YELLOW"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "RED"
+              }
+            ]
+          },
+          {
+            "distanceInMetres":
+            1050,
+            "values": [
+              {
+                "signalID": "T267",
                 "signallingColour": "GREEN"
               },
               {
                 "signalID": "B35",
-                "signallingColour": "GREEN"
+                "signallingColour": "RED"
               }
             ]
           },
@@ -1229,16 +1245,12 @@
             "distanceInMetres": 1100,
             "values": [
               {
-                "signalID": "T261",
-                "signallingColour": "YELLOW"
-              },
-              {
                 "signalID": "T267",
                 "signallingColour": "RED"
               },
               {
                 "signalID": "B35",
-                "signallingColour": "GREEN"
+                "signallingColour": "YELLOW"
               }
             ]
           },
@@ -1246,31 +1258,14 @@
             "distanceInMetres": 2150,
             "values": [
               {
-                "signalID": "T261",
-                "signallingColour": "YELLOW"
-              },
-              {
-                "signalID": "T267",
-                "signallingColour": "RED"
-              },
-              {
                 "signalID": "B35",
-                "signallingColour": "YELLOW"
+                "signallingColour": "GREEN"
               }
-
             ]
           },
           {
             "distanceInMetres": 2200,
             "values": [
-              {
-                "signalID": "T261",
-                "signallingColour": "GREEN"
-              },
-              {
-                "signalID": "T267",
-                "signallingColour": "YELLOW"
-              },
               {
                 "signalID": "B35",
                 "signallingColour": "RED"

@@ -66,7 +66,6 @@
               vm.speedDistanceData_Kph = speedDistanceDataFactory.getSpeedDistanceData_Kph();
               vm.speedDistanceData_Mph = speedDistanceDataFactory.getSpeedDistanceData_Mph();
               speedDistanceChartFactory.getSpeedDistanceChart(vm.speedDistanceData_Kph, vm.speedDistanceChartLabels);
-              d3SDChart.getSpeedDistanceChart(vm.response.speedDistanceReportPerJourney.speedDistanceReports)
               break;
             }
             case "1": {
@@ -105,7 +104,7 @@
       speedDistanceDataFactory.getElevation(data)
       speedDistanceDataFactory.getSpeedLimits(data)
       vm.getDriverAdvice = speedDistanceDataFactory.getDriverAdvice(data)
-    };
+    }
 
     vm.linkOnselect = function (selectedLink) {
       if (selectedLink) {
