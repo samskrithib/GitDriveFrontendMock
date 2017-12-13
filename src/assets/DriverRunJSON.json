@@ -37,10 +37,10 @@
   },
   "energySummaryReportPerJourney": {
     "energySummaryPerJourney": {
-      "actualEnergyConsumption": 2.1,
-      "optimalEnergyConsumption": 2.1,
-      "onTimeOptimalEnergyConsumption": 1.8,
-      "targetEnergyConsumption": 2
+      "actualEnergyConsumption": 54,
+      "optimalEnergyConsumption": 54,
+      "onTimeOptimalEnergyConsumption": 46.3,
+      "targetEnergyConsumption": 43.2
     },
     "energySummaryLinks": [
       {
@@ -56,20 +56,18 @@
       }
     ]
   },
-
-
   "latenessSummaryReportPerJourney": {
     "latenessSummaryPerJourney": {
       "stackedActualArrivalLatenesss": {
-        "unitPerformanceLatenessInSeconds": 30.5,
-        "signallingLatenessInSeconds": 59.5,
-        "dwellTimeExceedanceLatenessInSeconds": 30,
+        "unitPerformanceLatenessInSeconds": 1471,
+        "signallingLatenessInSeconds": 1962,
+        "dwellTimeExceedanceLatenessInSeconds": 1962,
         "originLateDepartureLatenessInSeconds": 0
       },
       "stackedAcheivableArrivalLatenesss": {
-        "unitPerformanceLatenessInSeconds": 20,
-        "signallingLatenessInSeconds": 46.7,
-        "dwellTimeExceedanceLatenessInSeconds": 0,
+        "unitPerformanceLatenessInSeconds": 1423,
+        "signallingLatenessInSeconds": 1898,
+        "dwellTimeExceedanceLatenessInSeconds": 1898,
         "originLateDepartureLatenessInSeconds": 0
       },
       "actualArrivalEarlinessInSeconds": {
@@ -83,15 +81,15 @@
         },
         "latenessSummary": {
           "stackedActualArrivalLatenesss": {
-            "unitPerformanceLatenessInSeconds": 30.5,
-            "signallingLatenessInSeconds": 59.5,
-            "dwellTimeExceedanceLatenessInSeconds": 30,
+            "unitPerformanceLatenessInSeconds": 131.5,
+            "signallingLatenessInSeconds": 175.33,
+            "dwellTimeExceedanceLatenessInSeconds": 175.33,
             "originLateDepartureLatenessInSeconds": 0
           },
           "stackedAcheivableArrivalLatenesss": {
-            "unitPerformanceLatenessInSeconds": 20,
-            "signallingLatenessInSeconds": 46.7,
-            "dwellTimeExceedanceLatenessInSeconds": 0,
+            "unitPerformanceLatenessInSeconds": 129.5,
+            "signallingLatenessInSeconds": 172.67,
+            "dwellTimeExceedanceLatenessInSeconds": 172.67,
             "originLateDepartureLatenessInSeconds": 0
           },
           "actualArrivalEarlinessInSeconds": {
@@ -110,11 +108,11 @@
         "speedDistanceReportPerLink": {
           "optimumDrivingType": "Flatout Driving",
           "driverAdvice": {
-            "runtimeDescription": "Metrocentre (P2)  at 18:33:00 (-) - Blaydon (P2)  at 18:38:30 (+2m)",
+            "runtimeDescription": "Metrocentre (P2)  at 18:33:00 (0s) - Blaydon (P2)  at 18:36:30 (+8m 46s)",
             "earlyDepartureAdvice": null,
             "earlyArrivalAdvice": null,
             "timeSavingAdvice": null,
-            "timeSavedAdvice": null,
+            "timeSavedAdvice": "10s caught up",
             "energyAdvice": null,
             "goodDrivingAdvice": "Good Unit Performance",
             "spareTimeAdvice": null,
@@ -619,7 +617,7 @@
                 "position": 3155.9
               }
             ],
-            "flatoutSpeedAndPositions": [
+            "flatoutSpeedAndPositions":[
               {
                 "speed": 0,
                 "position": 0
@@ -773,47 +771,79 @@
                 "position": 549.5
               },
               {
-                "speed": 64,
-                "position": 842.8
+                "speed": 64.4,
+                "position": 559.1
               },
               {
-                "speed": 64.1,
-                "position": 846.4
+                "speed": 62.3,
+                "position": 664.8
               },
               {
-                "speed": 64.1,
-                "position": 848.2
+                "speed": 61.1,
+                "position": 726.2
               },
               {
-                "speed": 66.2,
+                "speed": 61,
+                "position": 727.8
+              },
+              {
+                "speed": 58.9,
+                "position": 759.7
+              },
+              {
+                "speed": 57.9,
+                "position": 775.69
+              },
+              {
+                "speed": 56.9,
+                "position": 791.68
+              },
+              {
+                "speed": 54.9,
+                "position": 823.65
+              },
+              {
+                "speed": 50.6,
+                "position": 887.6
+              },
+              {
+                "speed": 51,
+                "position": 889
+              },
+              {
+                "speed": 52.4,
+                "position": 903.9
+              },
+              {
+                "speed": 53.4,
                 "position": 918.8
               },
               {
-                "speed": 68.3,
+                "speed": 58.3,
                 "position": 995.4
               },
               {
-                "speed": 70.4,
+                "speed": 62.4,
                 "position": 1078.2
               },
               {
-                "speed": 72.4,
+                "speed": 66.4,
                 "position": 1151.6
               },
               {
-                "speed": 74.5,
+                "speed": 70.5,
                 "position": 1229.1
               },
               {
-                "speed": 76.6,
+                "speed": 74.6,
                 "position": 1313.1
               },
               {
-                "speed": 78.7,
+                "speed": 76.7,
                 "position": 1405.8
               },
               {
-                "speed": 80.7,
+                "speed": 79.7,
                 "position": 1505.4
               },
               {
@@ -1016,10 +1046,13 @@
                 "speed": 0.4,
                 "position": 3158
               }
+
+
             ],
             "optimalSpeedAndPositions": null
           }
         },
+
         "trackInformation": {
           "speedRestrictions": [
             {
@@ -1094,7 +1127,7 @@
         "signalPositionInMetresList": [
           {
             "signalID": "T261",
-            "distanceInMetres": 1000
+            "distanceInMetres": 100
           },
           {
             "signalID": "T267",
@@ -1115,11 +1148,11 @@
               },
               {
                 "signalID": "T267",
-                "signallingColour": "YELLOW"
+                "signallingColour": "RED"
               },
               {
                 "signalID": "B35",
-                "signallingColour": "GREEN"
+                "signallingColour": "RED"
               }
             ]
           },
@@ -1132,11 +1165,11 @@
               },
               {
                 "signalID": "T267",
-                "signallingColour": "GREEN"
+                "signallingColour": "YELLOW"
               },
               {
                 "signalID": "B35",
-                "signallingColour": "GREEN"
+                "signallingColour": "RED"
               }
             ]
           },
@@ -1153,7 +1186,7 @@
               },
               {
                 "signalID": "B35",
-                "signallingColour": "GREEN"
+                "signallingColour": "RED"
               }
             ]
           },
@@ -1194,7 +1227,7 @@
         ],
         "optimalTrainPositionSignallingStateList": [
           {
-            "distanceInMetres": 0,
+            "distanceInMetres": 100,
             "values": [
               {
                 "signalID": "T261",
@@ -1202,7 +1235,7 @@
               },
               {
                 "signalID": "T267",
-                "signallingColour": "YELLOW"
+                "signallingColour": "RED"
               },
               {
                 "signalID": "B35",
@@ -1211,7 +1244,7 @@
             ]
           },
           {
-            "distanceInMetres": 1000,
+            "distanceInMetres": 1050,
             "values": [
               {
                 "signalID": "T261",
@@ -1220,20 +1253,6 @@
               {
                 "signalID": "T267",
                 "signallingColour": "YELLOW"
-              },
-              {
-                "signalID": "B35",
-                "signallingColour": "RED"
-              }
-            ]
-          },
-          {
-            "distanceInMetres":
-            1050,
-            "values": [
-              {
-                "signalID": "T267",
-                "signallingColour": "GREEN"
               },
               {
                 "signalID": "B35",
@@ -1245,6 +1264,27 @@
             "distanceInMetres": 1100,
             "values": [
               {
+                "signalID": "T261",
+                "signallingColour": "YELLOW"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "RED"
+              },
+              {
+                "signalID": "B35",
+                "signallingColour": "RED"
+              }
+            ]
+          },
+          {
+            "distanceInMetres": 1500,
+            "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "YELLOW"
+              },
+              {
                 "signalID": "T267",
                 "signallingColour": "RED"
               },
@@ -1252,20 +1292,20 @@
                 "signalID": "B35",
                 "signallingColour": "YELLOW"
               }
-            ]
-          },
-          {
-            "distanceInMetres": 2150,
-            "values": [
-              {
-                "signalID": "B35",
-                "signallingColour": "GREEN"
-              }
+
             ]
           },
           {
             "distanceInMetres": 2200,
             "values": [
+              {
+                "signalID": "T261",
+                "signallingColour": "GREEN"
+              },
+              {
+                "signalID": "T267",
+                "signallingColour": "YELLOW"
+              },
               {
                 "signalID": "B35",
                 "signallingColour": "RED"

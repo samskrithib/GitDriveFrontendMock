@@ -6,76 +6,450 @@
     .module('timetableAdherenceModule')
     .controller('testController', testController);
 
-  function testController(httpCallsService, ttD3Chart, timetableAdherenceUrlGeneratorService, $log, $location, UtilityService, trainGraphFactory) {
+  function testController() {
     var vm = this;
+// Visualization of the Hiva 'Oa map in chapter 7 of
+// 'Eloquent Javascript' by Marijn Haverbeke
+// see original example at http://eloquentjavascript.net/
+// for more detail on everything below noted as "Original example from text" in chapter7.js
 
-    // Set the dimensions of the canvas / graph
-    var margin = {top: 30, right: 20, bottom: 30, left: 50},
-      width = 600 - margin.left - margin.right,
-      height = 300 - margin.top - margin.bottom;
+//BEGIN ORIGINAL EXAMPLE FROM TEXT
+    var roads = {};
 
-    // Parse the date / time
-    var parseDate = d3.time.format("%b %Y").parse;
+    function makeRoad(from, to, length)
+    {
+      function addRoad(from, to)
+      {
+        if(!(from in roads))
+          roads[from] = [];
+        roads[from].push({to: to, distance: length});
+      }
+      addRoad(from, to);
+      addRoad(to, from);
+    }
 
-// Set the ranges
-    var y = d3.time.scale().range([height, 0]);
-    var x = d3.scale.linear().range([0, width]);
+    function makeRoads(start)
+    {
+      for ( var i = 1; i < arguments.length; i+=2)
+        makeRoad(start,arguments[i],arguments[i+1]);
+    }
 
-    // Define the axes
-    var xAxis = d3.svg.axis().scale(x)
-      .orient("bottom");
+    function roadsFrom(place) {
+      var found = roads[place];
 
-    var yAxis = d3.svg.axis().scale(y)
-      .orient("left").ticks(5);
+      if (found == undefined)
+        throw new error("No place named '"+place+"' found.");
+      else
+        return found;
+    }
 
-// Define the line
-    var priceline = d3.svg.line()
-      .x(function(d) { return x(d.identifierAndDistance['SCHEDULED 06:04 2T03']); })
-      .y(function(d) { return y(d.unixTime); });
+    function printRoads(start)
+    {
+      var temp = roadsFrom(start);
+      for( var x in temp)
+        console.log(temp[x]);
+    }
 
-    // Adds the svg canvas
-    var svg = d3.select("#d3chart")
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
+    function member(array, value) {
+      for(var x in array){
+        if(array[x] === value) return true;
+      }
+      return false;
+    }
 
-    d3.json("assets/Euston-Rugby.json", function(data) {
-      console.log(data.timetableAdherenceGraph.timetableAdherenceGraphSeriesList[0].scheduledAndActualTimetables[0].timeAndDistanceList);
-      var times =data.timetableAdherenceGraph.timetableAdherenceGraphSeriesList[0].scheduledAndActualTimetables[0].timeAndDistanceList
+    function possibleRoutes(from, to) {
+      function findRoutes(route) {
+        function notVisited(road) {
+          return !member(route.places, road.to);
+        }
+        function continueRoute(road) {
+          return findRoutes({places: route.places.concat([road.to]), length: route.length + road.distance});
+        }
+        var end = route.places[route.places.length - 1];
+        if (end == to)
+          return [route];
+        else
+          return flatten(map(continueRoute, filter(notVisited,roadsFrom(end)) ) );
+      }
 
-      _.each(times, function (v, i) {
-        console.log(moment(v.unixTime).format('M/D LT'))
-        console.log(v.identifierAndDistance['SCHEDULED 06:04 2T03'])
-      })
+      return findRoutes({places: [from], length: 0});
+    }
 
-      x.domain([0, d3.max(times, function(d) { return d.identifierAndDistance['SCHEDULED 06:04 2T03']; })]);
+    function shortestRoute(from,to) {
+      var currentShortest = null;
+      forEach(possibleRoutes(from,to), function(route){
+        if(!currentShortest || currentShortest.length > route.length)
+          currentShortest = route;
+      });
+      return currentShortest;
+    }
 
-      y.domain(d3.extent(times, function (d) {
-        return d.unixTime;
-      }))
+//Load data in to our map
+    makeRoads("Point Kiukiu", "Hanaiapa", 19, "Mt Feani", 15, "Taaoa", 15);
+    makeRoads("Airport", "Hanaiapa", 6, "Mt Feani", 5, "Atuona", 4, "Mt Ootua", 11);
+    makeRoads("Mt Temetiu", "Mt Feani", 8, "Taaoa", 4);
+    makeRoads("Atuona", "Taaoa", 3, "Hanakee Pearl Lodge", 1);
+    makeRoads("Cemetery", "Hanakee Pearl Lodge", 6, "Mt Ootua", 5);
+    makeRoads("Hanapaoa", "Mt Ootua", 3);
+    makeRoads("Puamua", "Mt Ootua", 13, "Point Teohotepapapa", 14);
+//Setup Some Parameters
+    var mapWidth = 640;
+    var mapHeight = 260;
+    var nodeSize = 7;
+    var mapRoads = [];
+    var placeKeys = [];
+    var shortRoute = {};
+    var to = "",
+      from = "";
 
-      // Add the X Axis
-      svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate("+ margin.left +"," + height + ")")
-        .call(xAxis)
+    //Note: these data points were generated by tracing the map example by hand in illustrator, and exporting an SVG.
+    var mapLocations = [{x:11.062, y:118.5, id:"Point Kiukiu" },
+      {x:230.062, y:35.5, id:"Hanaiapa" },
+      {x:150.062, y:111.5, id:"Mt Feani" },
+      {x:150.062, y:224.5, id:"Taaoa" },
+      {x:206.062, y:104.5, id:"Airport" },
+      {x:177.062, y:173.5, id:"Atuona" },
+      {x:311.062, y:114.5, id:"Mt Ootua" },
+      {x:131.062, y:173.5, id:"Mt Temetiu" },
+      {x:213.062, y:166.5, id:"Hanakee Pearl Lodge" },
+      {x:297.062, y:163.5, id:"Cemetery" },
+      {x:319.062, y:74.5, id:"Hanapaoa" },
+      {x:425.062, y:97.5, id:"Puamua" },
+      {x:549.062, y:101.5, id:"Point Teohotepapapa"}];
 
-      svg.append("g")
-        .attr("class", "y axis")
-        .attr("transform", "translate("+ margin.left +"," + 0 + ")")
-        .call(yAxis);
 
-
-      // Add the priceline path.
-      svg.append("path")
-        .attr("class", "line")
-        .attr("transform", "translate("+ margin.left +"," + 0 + ")")
-        .attr("d", priceline(times));
+//Get all possible places, we need this to lookup roads, and to load in to our selection form
+    for(var temp in roads) placeKeys.push(temp);
+// Get our Links between Nodes/Places
+// Nodes, and PlaceKeys are in the same order, so we can lookup via the index and for our purposes assume they are 1:1
+    forEach(mapLocations, function(place){
+      forEach(roads[place.id], function(road) {
+        mapRoads.push({source: place, target: mapLocations[placeKeys.indexOf(road.to)], dist: road.distance});
+      });
     });
 
+//Translate the results of the Shortest path finder in to a friendlier format for D3 to visualize
+//lookup all of the places in our roads object, and calculate distances from last place, and from start
+    function convertRoute(route)
+    {
+      var newRoute = [];
+      var lastPlace = "";
+
+      map(function(place){
+        newRoute.push({place: place, distanceFromLast: 0, distanceFromStart: 0});
+        if(roads[lastPlace]) {
+          forEach(roads[lastPlace],function(element){
+            if(element.to == place) {
+              newRoute[newRoute.length-1].distanceFromLast = element.distance;
+              newRoute[newRoute.length-1].distanceFromStart = newRoute[newRoute.length-2].distanceFromStart + element.distance;
+            }
+          });
+        }
+        lastPlace = place;
+      },route.places);
+
+      return newRoute;
+    }
+
+    //Visualize the Shortest Path on a subway style Route Map
+    function drawStraightRoute(){
+
+      var shortPath = convertRoute(shortRoute);
+
+//Clear out the old SVG if one exists.
+      d3.select("#routeContainer").selectAll("svg").remove();
+
+//Setup our chart size, radius of nodes, padding, and textSize
+      var w = 640,
+        h = 150,
+        r = 6,
+        lp = 20, //padding for left side of chart range
+        //padding for right, HACK way to make sure text labels aren't clipped.
+        //the "correct" solution might be to draw the entire chart off screen check for clipping, then redraw on-screen.
+        rp = 100,
+        xAx = h/3 + .5, // axis height
+        textSize = 12;
+
+      var x = d3.scale.linear()
+        .domain([0, shortRoute.length])
+        .range([r+lp, w-rp]);
+
+      //Quantize scale to avoid overlaps
+      function fit(val){
+
+        var scaled = x(val);
+        return scaled-scaled%((r*2));
+      }
+
+//Create the SVG needed to display the route
+      var chart = d3.select("#routeContainer").append("svg")
+        .attr("width", w)
+        .attr("height", h);
+
+//Create the circles that will represent our map points
+      var node = d3.select("#routeContainer").select("svg").selectAll("circle")
+        .data(shortPath);
+
+//Create the text labels for the node names
+      var placeLabel = d3.select("#routeContainer").select("svg").selectAll("text")
+        .data(shortPath);
+
+      var distanceLabel = d3.select("#routeContainer").select("svg").selectAll("distanceLabel")
+        .data(shortPath);
+
+      var distancePath = d3.select("#routeContainer").select("svg").selectAll("distancePath")
+        .attr("class","distancePath")
+        .data(shortPath);
+// Enter…
+      node.enter().append("circle")
+        .attr("class","routeNode")
+        .attr("cx",function(d) {
+          return fit(d.distanceFromStart);})
+        .attr("cy",xAx)
+        .attr("r",r);
+
+      placeLabel.enter().append("text")
+        .attr("class","placeLabel")
+        .style("text-anchor","start")
+        .style("font-size",textSize + "px")
+        .text(function(d) {return d.place})
+        .attr("transform",function(d) { return "translate(" + (fit(d.distanceFromStart) + r/2 ) + ", " + (xAx + r + (textSize/2)) + ") rotate(45)"; });
+
+      distanceLabel.enter().append("text")
+        .attr("class","distanceLabel")
+        .style("text-anchor","middle")
+        .style("font-size", textSize*.8 + "px")
+        .text(function(d) {return d.distanceFromLast})
+        .attr("transform",function(d) {
+          if(d.distanceFromLast != 0)
+            return "translate(" + ((fit(d.distanceFromStart - d.distanceFromLast) + fit(d.distanceFromStart))/2.0)  + ", " + (xAx - 4*r - 5) + ")";
+          // return "translate(" + (fit(d.distanceFromStart - d.distanceFromLast) + (fit(d.distanceFromStart) - fit(d.distanceFromStart - d.distanceFromLast))/2.0)  + ", " + (xAx - 4*r - 5) + ")";
+          else return ""});
+
+      distancePath.enter().append("path")
+        .attr("class","distancePath")
+        .attr("d",function(d){
+          if(d.distanceFromLast != 0) {
+            var a = d.distanceFromStart;
+            var b = d.distanceFromLast;
+
+            //Path definition for curly brackets
+            return ("M " + fit(a) + " " + (xAx-r) +
+              " Q " + fit(a) + " " + (xAx-2*r) + " " + (fit(a) - .25*(fit(a)-fit(a-b))) + " " + (xAx -2*r) +
+              " T " + ((fit(a - b) + fit(a))*.5) + " " + (xAx-4*r) +
+              " M " + (fit(a - b)) + " " + (xAx-r) +
+              " Q " + (fit(a - b)) + " " + (xAx-2*r) + " " + (fit(a) - .75*(fit(a)-fit(a-b))) + " " + (xAx - 2*r) +
+              " T " + ((fit(a - b) + fit(a))*.5) + " " + (xAx-4*r));
+          }
+          else return });
+
+// Exit…
+      node.exit().remove();
+      placeLabel.exit().remove();
+      distanceLabel.exit().remove();
+      distancePath.exit().remove();
+
+    }
+
+    function nodeClicked(place)
+    {
+      d3.select("#" + removeWhiteSpace(place)).attr("class","mapNodeActive");
+
+      from = to;
+      to = place;
+
+      if (from != "") {
+        shortRoute = shortestRoute(from,to);
+        updateMap();
+        drawStraightRoute();
+      }
+
+    }
+
+    function updateMap()
+    {
+      //reset our highlighted styles
+      d3.selectAll(".mapLinkActive").attr("class","mapLink");
+      d3.selectAll(".mapNodeActive").attr("class","mapNode");
+
+      var lastPlace = "";
+      forEach(shortRoute.places, function(place){
+        d3.select("#" + removeWhiteSpace(place)).attr("class","mapNodeActive");
+        //Try both directions to find link
+        d3.select("#" + removeWhiteSpace(place) + "-" + removeWhiteSpace(lastPlace)).attr("class","mapLinkActive");
+        d3.select("#" + removeWhiteSpace(lastPlace) + "-" + removeWhiteSpace(place)).attr("class","mapLinkActive");
+        lastPlace = place;
+      });
+    }
+
+    function drawMap()
+    {
+      var svg = d3.select("#mapContainer").append("svg")
+        .attr("width", mapWidth)
+        .attr("height", mapHeight);
+
+      var outline = d3.select("#mapContainer").select("svg")
+        // .append("polyline")
+        // .attr("points",mapOutline)
+        .attr("class","mapOutline");
+
+      var nodes = d3.select("#mapContainer").select("svg").selectAll("mapNode")
+        .attr("class", "mapNode").data(mapLocations);
+
+      var links = d3.select("#mapContainer").select("svg").selectAll("mapLinks")
+        .attr("class", "mapLinks").data(mapRoads);
+      console.log(links)
+      var labels = d3.select("#mapContainer").select("svg").selectAll("mapLabels")
+        .attr("class", "mapLabels").data(mapLocations);
+
+      links.enter().append("line")
+        .attr("class","mapLink")
+        .attr("id",function(d){ return removeWhiteSpace(d.source.id) + "-" + removeWhiteSpace(d.target.id);})
+        .attr("x1",function(d){ return d.source.x;})
+        .attr("y1",function(d){ return d.source.y;})
+        .attr("x2",function(d){ return d.target.x;})
+        .attr("y2",function(d){ return d.target.y;});
+
+      nodes.enter().append("circle")
+        .attr("class","mapNode")
+        .attr("id",function(d){ return removeWhiteSpace(d.id);})
+        .attr("cx",function(d){ return d.x;})
+        .attr("cy",function(d){ return d.y;})
+        .attr("r", nodeSize)
+        .on("click", function(d) { nodeClicked(d.id); });
+
+      labels.enter().append("text")
+        .attr("class","mapLabels")
+        .text(function(d){ return d.id;})
+        .style("text-anchor", function(d){
+          if(d.x < 100) return "start"; // Hack to prevent label clipping
+          if(d.x > 400) return "end"; // Hack to prevent label clipping
+          else return "middle";
+        })
+        .attr("transform", function(d){
+          if(d.id == "Hanakee Pearl Lodge") return "translate(" + d.x + ", " + (d.y - 10) + ")"; // Hack to prevent label overlap
+          return "translate(" + d.x + ", " + (d.y + 14) + ")";});
+
+      // outline.exit().remove();
+      links.exit().remove();
+      nodes.exit().remove();
+    }
+    function removeWhiteSpace(str)
+    {
+      return str.replace(/\s/g, '');
+    }
+
+    drawMap();
+
+
+    //Utility Functions to make JS more Functional
+    var op = {
+      "+": function(a, b){return a + b;},
+      "==": function(a, b){return a == b;},
+      "===": function(a, b){return a === b;},
+      "!": function(a){return !a;}
+      /* and so on */
+    };
+
+    function asArray(quasiArray, start) {
+      var result = [];
+      for (var i = (start || 0); i < quasiArray.length; i++)
+        result.push(quasiArray[i]);
+      return result;
+    }
+
+    function partial(func) {
+      var fixedArgs = asArray(arguments, 1);
+      return function(){
+        return func.apply(null, fixedArgs.concat(asArray(arguments)));
+      };
+    }
+
+    var Break = {toString: function() {return "Break";}};
+
+    function forEach(array, action) {
+      try {
+        for (var i = 0; i < array.length; i++)
+          action(array[i]);
+      }
+      catch (exception) {
+        if (exception != Break)
+          throw exception;
+      }
+    }
+
+    function reduce(combine, base, array) {
+      forEach(array, function (element) {
+        base = combine(base, element);
+      });
+      return base;
+    }
+
+    function map(func, array) {
+      var result = [];
+      forEach(array, function (element) {
+        result.push(func(element));
+      });
+      return result;
+    }
+
+    function any(test, array) {
+      for (var i = 0; i < array.length; i++) {
+        var found = test(array[i]);
+        if (found)
+          return found;
+      }
+      return false;
+    }
+
+    function every(test, array) {
+      for (var i = 0; i < array.length; i++) {
+        var found = test(array[i]);
+        if (!found)
+          return found;
+      }
+      return true;
+    }
+
+    function member(array, value) {
+      return any(partial(op["==="], value), array);
+    }
+
+    function flatten(arrays) {
+      var result = [];
+      forEach(arrays, function (array) {
+        forEach(array, function (element){result.push(element);});
+      });
+      return result;
+    }
+
+    function filter(test, array) {
+      var result = [];
+      forEach(array, function (element) {
+        if (test(element))
+          result.push(element);
+      });
+      return result;
+    }
+
+    function minimise(func, array) {
+      var minScore = null;
+      var found = null;
+      forEach(array, function(element) {
+        var score = func(element);
+        if (minScore == null || score < minScore) {
+          minScore = score;
+          found = element;
+        }
+      });
+      return found;
+    }
+
+    function getProperty(propName) {
+      return function(object) {
+        return object[propName];
+      };
+    }
 
   }
 })();

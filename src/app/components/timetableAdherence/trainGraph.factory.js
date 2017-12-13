@@ -165,7 +165,7 @@
         timetableAdherenceChart = c3.generate({
           bindto: '#trainGraph',
           size: {
-            height: 500
+            height: 600
           },
           padding: {
             right: 50

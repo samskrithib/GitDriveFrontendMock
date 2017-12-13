@@ -5,17 +5,79 @@
     }
 }*/
 
+#test{
+  path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+  }
 
-path {
-  stroke: steelblue;
-  stroke-width: 2;
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+  }
+}
+
+body {
+  background: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#routeContainer {
+  text-align: center;
+}
+
+#mapContainer {
+  text-align: center;
+}
+
+.routeNode {
+  fill: #4682B4;
+  stroke: #4A4A4A;
+}
+
+.distancePath {
+  stroke: #666666;
+  stroke-width: 1px;
   fill: none;
 }
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: grey;
-  stroke-width: 1;
-  shape-rendering: crispEdges;
+/*.mapOutline {
+  fill: #ADC980;
+  stroke: #E6E690;
+  stroke-width: 3px;
+}*/
+
+.mapLink {
+  stroke:#999999;
+  stroke-width: .5px;
 }
+
+.mapNode {
+  fill: #666666;
+  stroke-width: .5px;
+}
+
+.mapLinkActive {
+  fill:#4682B4;
+  stroke:#000000;
+  stroke-width:.5px;
+}
+
+.mapNodeActive {
+  fill:#4682B4;
+  stroke:#000000;
+  stroke-width:.5px;
+}
+
+.mapLabels {
+  font-size: 10px;
+}
+
+/*p {
+  text-align: center;
+  font-size: .8em;
+}*/

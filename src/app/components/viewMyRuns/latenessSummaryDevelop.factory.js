@@ -69,7 +69,12 @@
                                 'originLateDepartureLatenessInSeconds']
 
                         ],
-                        // names: graphLabels.seriesLabels,
+                        names: {
+                          unitPerformanceLatenessInSeconds: 'Unit Performance',
+                          signallingLatenessInSeconds: 'Signalling',
+                          dwellTimeExceedanceLatenessInSeconds: 'Dwell Time Exceedance',
+                          originLateDepartureLatenessInSeconds: 'Origin Late Departure'
+                        }
                         // labels: true
                         /*colors: {
                             'stackedActualArrivalLatenesss.unitPerformanceLatenessInSeconds': function () {

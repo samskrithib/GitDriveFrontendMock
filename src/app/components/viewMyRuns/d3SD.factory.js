@@ -7,6 +7,7 @@
   function d3SDChart(mathUtilsService) {
     var svg, x, y, xAxis, yAxis, gX, speedLimitSymbolsOptimal;
     var xSLValue, xSLMap, xMap, xValue;
+    var yMapActual, yMap;
     var yValueSLOptimal, yMapSLOptimal;
 
     return {
@@ -29,9 +30,7 @@
           var border = 1;
           var bordercolor = 'none';
           var fill = 'lightblue';
-          var currentColorOptimal = {}
-          var PrevColorOptimal = {}
-          var margin = {top: 20, right: 40, bottom: 20, left: 60},
+          var margin = {top: 20, right: 40, bottom: 20, left: 40},
             width = 1060 - margin.left - margin.right,
             height = 240 - margin.top - margin.bottom;
           //setup x
@@ -59,14 +58,14 @@
           var yValue = function (d) {
             return 0.2;
           }
-          var yMap = function (d) {
+          yMap = function (d) {
             return y(yValue(d));
           }
 
           var yValueActual = function (d) {
             return 0.7;
           }
-          var yMapActual = function (d) {
+          yMapActual = function (d) {
             return y(yValueActual(d))
           }
           yAxis = d3.svg.axis()
@@ -87,13 +86,13 @@
 
 
           gX = svg.append("g")
-            .attr("class", "xaxis")
+            .attr("class", "x axis")
             .attr("id", "x-axis")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis)
             .append("text")
             .text("Optimal")
-            .style("text-anchor", "start")
+            // .style("text-anchor", "start")
             .attr("y", width + margin.top)
             .attr("transform", function (d) {
               return "rotate(-90)"
@@ -231,7 +230,7 @@
               .data(signallingData.signalPositionInMetresList)
               .enter()
               .append("text")
-              .attr("id", "signalsText")
+              .attr("id", "signalsText"+type)
               .attr("x", "20")
               .attr("y", "12")
               .attr("transform", function (d, i) {
@@ -356,7 +355,6 @@
               });
             signalsOptimal.each(function (d) {
               signallingColor(d, "optimal")
-              currentColorOptimal[d.signalID] = d.signallingColour;
             })
 
 
@@ -419,30 +417,28 @@
             }
 
 // --------------------------------************ train transition Animation ***************** ----------------------------------------//
-            /*optimalTrainHandle.transition() // Gratuitous intro!
-              .duration(10000)
-              .delay(1000)
-              // .attr("x", width)
+            optimalTrainHandle.transition() // Gratuitous intro!
+              // .duration(3000)
               // .delay(100)
-              .ease("easeLinear")
+              // .ease("easeLinear")
               .tween("optimalTrainPosition", function () {
-                var i = d3.interpolate(0, x.domain()[1]);
+                var i = d3.interpolate(0, 0);
                 return function (t) {
                   optimalTrainPosition(i(t));
                 };
-              })*/
+              });
 
-            /*actualTrainHandle.transition() // Gratuitous intro!
-              .duration(10000)
+            actualTrainHandle.transition() // Gratuitous intro!
+              // .duration(10000)
               // .attr("x", width)
-              .delay(100)
+              // .delay(100)
               // .ease("easeLinear")
               .tween("actualTrainPosition", function () {
-                var i = d3.interpolate(0, x.domain()[1]);
+                var i = d3.interpolate(0, 0);
                 return function (t) {
                   actualTrainPosition(i(t));
                 };
-              });*/
+              });
 // --------------------------------************ Animation ***************** ----------------------------------------//
           }
 
@@ -482,12 +478,12 @@
         if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
         x.domain(d)
         xAxis.scale(x)
-        svg.select(".xaxis")
+        svg.select("#x-axis")
           .transition().duration(150).ease("sin-in-out")  // https://github.com/mbostock/d3/wiki/Transitions#wiki-d3_ease
           .call(xAxis);
         svg.selectAll("g#speedLimits").attr("transform", function (t, i) {
           // console.log("xMap", xSLMap(d), yMapActual(d))
-          console.log("xMap", yMapSLOptimal(t))
+          // console.log("xMap", yMapSLOptimal(t))
           return "translate(" + xSLMap(t) + "," + yMapSLOptimal(t) + " )"
         })
         svg.selectAll("g#speedLimitsActual").attr("transform", function (t, i) {
@@ -500,6 +496,13 @@
         svg.selectAll("g#signalsActual").attr("transform", function (t, i) {
           // console.log("xMap", xSLMap(d), yMapActual(d))
           return "translate(" + xMap(t) + "," + " 60 )"
+        })
+        svg.selectAll("text#signalsTextactual").attr("transform", function (t, i) {
+          return "translate(" + xMap(t) + "," + yMapActual(t) + " )" + "rotate(-90)"
+        })
+        svg.selectAll("text#signalsTextoptimal").attr("transform", function (t, i) {
+          // console.log("xMap", xSLMap(d), yMapActual(d))
+          return "translate(" + xMap(t) + "," + yMap(t) + " )" + "rotate(-90)"
         })
 
       }

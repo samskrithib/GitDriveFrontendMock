@@ -176,12 +176,10 @@
         $location.path("/dashboard/view-my-runs");
       }
     };
-    vm.submitDevelop =   function(isValid){
-      if (isValid) {
+    vm.submitDevelop =   function(){
       UtilityService.addCheckedItems(vm.checkedItems);
-      viewMyRunsUrlGeneratorService.generateReportsUrl(vm.inputDate, vm.customTimeSelected, _selectedFrom, _selectedTo);
+      // viewMyRunsUrlGeneratorService.generateReportsUrl(vm.inputDate, vm.customTimeSelected, _selectedFrom, _selectedTo);
       $location.path("/dashboard/viewRunsDemo");
-      }
     }
     vm.goToView = function () {
       $location.path("/dashboard/view")

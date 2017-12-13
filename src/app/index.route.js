@@ -73,6 +73,12 @@
         controller: 'ViewMyRunsControllerDevelop',
         controllerAs: 'vm'
       })
+      .state('dashboard.NV', {
+        url: '/NV',
+        templateUrl: 'views/test.html',
+        controller: 'testController',
+        controllerAs: 'vm'
+      })
       .state('dashboard.dwellTimesInput',{
          url: '/dwellTimesInput',
         templateUrl: 'app/components/dwellTimes/partials/dwellTimesPerJourneyInput.html',
