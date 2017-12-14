@@ -10,12 +10,11 @@
     var SpeedDistanceChart;
     var formatter, distanceUnits, speedUnits, TooltipTitleformatter;
     var gridOnOff = true;
-    var parseFloat2f = d3.format('.2f')
     function updatexaxisTickFormatter(Mph) {
-      distanceUnits = (Mph ? ' Miles' : 'm')
-      speedUnits = (Mph ? ' Mph' : ' Kph')
+      distanceUnits = (Mph ? ' Miles' : 'm');
+      speedUnits = (Mph ? ' Mph' : ' Kph');
       formatter = (Mph ? function (num) {
-        return parseFloat2f(num)
+        return (num)
       } : mathUtilsService.formatNumToSIUnits);
       TooltipTitleformatter = d3.format(Mph ? ',.2f' : '.3s')
     }
@@ -188,8 +187,8 @@
         SpeedDistanceChart.axis.labels({
           y: 'Speed (Kph)',
           x: 'Distance (Km)'
-        })
-        updatexaxisTickFormatter(false)
+        });
+        updatexaxisTickFormatter(false);
         // SpeedDistanceChart.axis.range({max: {y2: 150}, min: { y2: -150}})
         SpeedDistanceChart.unload({
           done: function () {
@@ -230,8 +229,8 @@
               ]
             })
           }
-        })
-        updatexaxisTickFormatter(true)
+        });
+        updatexaxisTickFormatter(true);
         // $log.debug(data.ecoDriving[selected])
         SpeedDistanceChart.axis.labels({
           y: 'Speed (Mph)',

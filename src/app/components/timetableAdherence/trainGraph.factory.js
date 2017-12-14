@@ -220,14 +220,13 @@
           },
           tooltip: {
             grouped: false,
-
             format: {
               title: tooltipFormat,
 
               value: function (d) {
-                var obj = _.where(gridlines, { "value": d })
+                var obj = _.where(gridlines, { "value": d });
                 // $log.info(obj[0].text)
-                return obj[0].text + " " + d;
+                return obj[0].text + " " + d3.format(".1f")(d);
               }
             }
           }

@@ -32,12 +32,11 @@
 
     return{
     getSpeedDistanceGraphLabels: function () {
-      var graphLabelsAndTitles = {
+      return {
         "yAxisLabel": "Speed (Mph)",
         "graphTitle": "Speed Distance Graph",
         "seriesLabels": null
       }
-      return graphLabelsAndTitles;
     },
     getDriverAdvice: function(data){
       var driverAdvice=[];

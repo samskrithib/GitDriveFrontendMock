@@ -5,27 +5,25 @@
   angular
     .module('dassimFrontendV04')
     .factory('mathUtilsService', function mathUtilsService($log) {
+      var conversionValueforMeterstoMiles = 0.000621371;
+      var conversionValueforKphtoMph = 0.621371;
       return {
         convertMetersToMilesSingleValue: function (val) {
-          var conversionValueforMeterstoMiles = 0.000621371;
           return val * conversionValueforMeterstoMiles;
         },
         convertKphtoMphSingleValue: function (val) {
-          var conversionValueforKphtoMph = 0.621371;
           return Math.ceil(val * conversionValueforKphtoMph)
         },
         convertMetersToMiles: function (givenValue, convertedValue) {
-          var conversionValueforMeterstoMiles = 0.000621371;
           _.each(givenValue, function (val, key) {
             convertedValue[convertedValue.length] = givenValue[key] * conversionValueforMeterstoMiles;
-          })
+          });
           return convertedValue;
         },
         convertKphtoMph: function (givenValue, convertedValue) {
-          var conversionValueforKphtoMph = 0.621371;
           _.each(givenValue, function (val, key) {
             convertedValue[convertedValue.length] = givenValue[key] * conversionValueforKphtoMph;
-          })
+          });
           return convertedValue;
         },
         formatNumToSIUnits: function (num) {

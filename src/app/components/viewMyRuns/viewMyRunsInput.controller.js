@@ -171,7 +171,7 @@
     vm.submit = function (isValid) {
       if (isValid) {
         UtilityService.addCheckedItems(vm.checkedItems);
-        $log.debug(_selectedFrom, _selectedTo)
+        $log.debug(_selectedFrom, _selectedTo);
         viewMyRunsUrlGeneratorService.generateReportsUrl(vm.inputDate, vm.customTimeSelected, _selectedFrom, _selectedTo);
         $location.path("/dashboard/view-my-runs");
       }
@@ -185,15 +185,15 @@
       $location.path("/dashboard/view")
     };
     vm.reset = function (form) {
-      vm.input = angular.copy(master)
-      _selectedTo = ''
-      _selectedFrom = ''
-      vm.times = []
-      vm.fromStat = ''
-      vm.toStat = ''
-      vm.customTimeSelected = ''
+      vm.input = angular.copy(master);
+      _selectedTo = '';
+      _selectedFrom = '';
+      vm.times = [];
+      vm.fromStat = '';
+      vm.toStat = '';
+      vm.customTimeSelected = '';
       vm.tstate = "Loading";
-      vm.timePlaceholder = ''
+      vm.timePlaceholder = '';
       form.$setUntouched();
       form.$setPristine();
     }

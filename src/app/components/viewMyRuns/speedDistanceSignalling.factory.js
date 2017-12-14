@@ -16,20 +16,19 @@
         d3.queue()
           .defer(d3.xml, "assets/trafficlight.svg")
           .defer(d3.xml, "assets/speedlimit.svg")
-          .await(makeMyViz)
+          .await(makeMyViz);
 
         function makeMyViz(error, light, speedlimitSymbol) {
           if (error) throw error;
           var importedNode = document.importNode(light.documentElement, true);
           var speedLimitNode = document.importNode(speedlimitSymbol.documentElement, true);
 
-          var light, speedLimit;
+          var speedLimit;
           var xaxisData = dataa.speedDistanceReportPerJourney.speedDistanceReports[index].speedDistanceReportPerLink.speedDistanceProfiles.actualSpeedAndPositions;
           var signallingData = dataa.signallingSummaryReportPerJourney.trainSignallingDetailsPerLinkList[index];
           var speedRestrictions = dataa.speedDistanceReportPerJourney.speedDistanceReports[index].trackInformation;
           var border = 1;
           var bordercolor = 'none';
-          var fill = 'lightblue';
           var margin = {top: 20, right: 40, bottom: 20, left: 40},
             width = 1060 - margin.left - margin.right,
             height = 240 - margin.top - margin.bottom;
@@ -43,10 +42,10 @@
 
           xValue = function (d) {
             return mathUtilsService.convertMetersToMilesSingleValue(d.distanceInMetres);
-          }
+          };
           xMap = function (d) {
             return x(xValue(d));
-          }
+          };
           xAxis = d3.svg.axis()
             .scale(x)
             .orient("bottom");
@@ -57,17 +56,17 @@
             .range([height, 0]);
           var yValue = function (d) {
             return 0.2;
-          }
+          };
           yMap = function (d) {
             return y(yValue(d));
-          }
+          };
 
           var yValueActual = function (d) {
             return 0.7;
-          }
+          };
           yMapActual = function (d) {
             return y(yValueActual(d))
-          }
+          };
           yAxis = d3.svg.axis()
             .scale(y)
             .ticks(0)
@@ -116,17 +115,8 @@
             .attr("height", 100)
             .attr("width", width)
             .style("stroke", bordercolor)
-            .style("fill", fill)
+            .style("fill", 'lightblue')
             .style("stroke-width", border);
-
-
-          /* svg.append("clipPath")
-             .attr("id", "clip")
-             .append("rect")
-             .attr("x", x(0))
-             .attr("y", 0)
-             .attr("width", x(1) - x(0))
-             .attr("height", 100);*/
 
           var optimal = svg.append("rect")
             .attr("x", 0)
@@ -143,7 +133,7 @@
             .attr("x", x(0))
             .attr("y", 0)
             .attr("width", x(1) - x(0))
-            .attr("height", 100)
+            .attr("height", 100);
 
           //draw speedLimits
           xSLValue = function (d) {
@@ -171,7 +161,7 @@
               speedLimit = this.appendChild(speedLimitNode.cloneNode(true));
               d3.select(speedLimit)
                 .selectAll("circle")
-                .attr("r", 10)
+                .attr("r", 10);
               d3.select(speedLimit)
                 .selectAll("text")
                 .style("font-size", "0.8em")
@@ -299,7 +289,7 @@
               .attr("class", "ticks")
               .attr("transform", "translate(-25," + 18 + ")")
               .selectAll("text")
-              .data(x.ticks(10))
+              .data(x.ticks(10));
             /* .enter().append("text")
              .attr("x", x)
              .attr("text-anchor", "left")
@@ -355,7 +345,7 @@
               });
             signalsOptimal.each(function (d) {
               signallingColor(d, "optimal")
-            })
+            });
 
 
             var optimaldrag = d3.behavior.drag()
@@ -455,7 +445,6 @@
                 .selectAll("." + className)
                 .style("fill", "white");
               d3.select("#" + d.signalID + className)
-              // .selectAll(".optimal")
                 .select("circle:nth-child(2)")
                 .style("fill", d.signallingColour)
             }
@@ -464,7 +453,6 @@
                 .selectAll("." + className)
                 .style("fill", "white");
               d3.select("#" + d.signalID + className)
-              // .selectAll(".optimal")
                 .select("circle:nth-child(1)")
                 .style("fill", d.signallingColour)
             }
@@ -476,35 +464,34 @@
 
       SDSignallingOnZoom: function (d) {
         if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
-        x.domain(d)
-        xAxis.scale(x)
+        x.domain(d);
+        xAxis.scale(x);
         svg.select("#x-axis")
-          .transition().duration(150).ease("sin-in-out")  // https://github.com/mbostock/d3/wiki/Transitions#wiki-d3_ease
+          .transition().duration(150).ease("sin-in-out")
           .call(xAxis);
         svg.selectAll("g#speedLimits").attr("transform", function (t, i) {
           // console.log("xMap", xSLMap(d), yMapActual(d))
           // console.log("xMap", yMapSLOptimal(t))
           return "translate(" + xSLMap(t) + "," + yMapSLOptimal(t) + " )"
-        })
+        });
         svg.selectAll("g#speedLimitsActual").attr("transform", function (t, i) {
           // console.log("xMap", xSLMap(d), yMapActual(d))
           return "translate(" + xSLMap(t) + "," + " 20 )"
-        })
+        });
         svg.selectAll("g#signalsOptimal").attr("transform", function (t, i) {
           return "translate(" + xMap(t) + "," + 160 + " )"
-        })
+        });
         svg.selectAll("g#signalsActual").attr("transform", function (t, i) {
           // console.log("xMap", xSLMap(d), yMapActual(d))
           return "translate(" + xMap(t) + "," + " 60 )"
-        })
+        });
         svg.selectAll("text#signalsTextactual").attr("transform", function (t, i) {
           return "translate(" + xMap(t) + "," + yMapActual(t) + " )" + "rotate(-90)"
-        })
+        });
         svg.selectAll("text#signalsTextoptimal").attr("transform", function (t, i) {
           // console.log("xMap", xSLMap(d), yMapActual(d))
           return "translate(" + xMap(t) + "," + yMap(t) + " )" + "rotate(-90)"
         })
-
       }
     }
 

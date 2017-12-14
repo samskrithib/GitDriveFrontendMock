@@ -1,0 +1,1479 @@
+{
+    "timetableAdherenceInputs": {
+        "pageId": 0,
+        "fromTiploc": "NWCSTLE",
+        "toTiploc": "CARLILE",
+        "fromNode": "NWCSTLE_P2",
+        "toNode": "CARLILE_P2",
+        "fromLocation": "Newcastle",
+        "toLocation": "Carlisle",
+        "fromDateTime": [
+            2017,
+            12,
+            6,
+            8,
+            23
+        ],
+        "toDateTime": [
+            2017,
+            12,
+            13,
+            8,
+            25
+        ],
+        "fromTimeInSecondsOfDay": 30180,
+        "toTimeInSecondsOfDay": 30300,
+        "serviceCodes": null,
+        "daysOfTheWeek": [
+            "MONDAY",
+            "TUESDAY",
+            "WEDNESDAY",
+            "THURSDAY",
+            "FRIDAY"
+        ],
+        "percentile": 80
+    },
+    "timetableAdherenceGraph": {
+        "totalRecords": 4,
+        "pageSize": 15,
+        "timetableAdherenceGraphLocationList": [
+            {
+                "tiploc": "NWCSTLE",
+                "locationName": "Newcastle",
+                "distanceFromFromLocationInKms": 0,
+                "platform": "2"
+            },
+            {
+                "tiploc": "KEBGSJN",
+                "locationName": "King Edward Bridge South Junction",
+                "distanceFromFromLocationInKms": 1.06,
+                "platform": null
+            },
+            {
+                "tiploc": "NRWDJN",
+                "locationName": "Norwood Junction (Newcastle)",
+                "distanceFromFromLocationInKms": 3.08,
+                "platform": null
+            },
+            {
+                "tiploc": "DNSN",
+                "locationName": "Dunston-On-Tyne",
+                "distanceFromFromLocationInKms": 3.6100000000000003,
+                "platform": "2"
+            },
+            {
+                "tiploc": "GTSHDMC",
+                "locationName": "Metrocentre",
+                "distanceFromFromLocationInKms": 5.53,
+                "platform": "2"
+            },
+            {
+                "tiploc": "BLAYDON",
+                "locationName": "Blaydon",
+                "distanceFromFromLocationInKms": 8.685880000000001,
+                "platform": "2"
+            },
+            {
+                "tiploc": "WYLAM",
+                "locationName": "Wylam",
+                "distanceFromFromLocationInKms": 15.685880000000001,
+                "platform": "2"
+            },
+            {
+                "tiploc": "PRUDHOE",
+                "locationName": "Prudhoe",
+                "distanceFromFromLocationInKms": 19.205879904,
+                "platform": "2"
+            },
+            {
+                "tiploc": "STCKSFL",
+                "locationName": "Stocksfield",
+                "distanceFromFromLocationInKms": 23.318780578000002,
+                "platform": "2"
+            },
+            {
+                "tiploc": "RIDNGML",
+                "locationName": "Riding Mill",
+                "distanceFromFromLocationInKms": 27.019780578000002,
+                "platform": "2"
+            },
+            {
+                "tiploc": "CRBG",
+                "locationName": "Corbridge",
+                "distanceFromFromLocationInKms": 30.720780578000003,
+                "platform": "2"
+            },
+            {
+                "tiploc": "HEXHAM",
+                "locationName": "Hexham",
+                "distanceFromFromLocationInKms": 35.760784778,
+                "platform": "2"
+            },
+            {
+                "tiploc": "HYDB",
+                "locationName": "Haydon Bridge",
+                "distanceFromFromLocationInKms": 47.889176158,
+                "platform": "2"
+            },
+            {
+                "tiploc": "BRDNML",
+                "locationName": "Bardon Mill",
+                "distanceFromFromLocationInKms": 54.263717727999996,
+                "platform": "2"
+            },
+            {
+                "tiploc": "HLTWHST",
+                "locationName": "Haltwhistle",
+                "distanceFromFromLocationInKms": 62.015118347999994,
+                "platform": "2"
+            },
+            {
+                "tiploc": "LOWRWSB",
+                "locationName": "Low Row Signal Box",
+                "distanceFromFromLocationInKms": 76.38511834799999,
+                "platform": null
+            },
+            {
+                "tiploc": "BRMPTNC",
+                "locationName": "Brampton",
+                "distanceFromFromLocationInKms": 81.425118348,
+                "platform": "2"
+            },
+            {
+                "tiploc": "BRMPTNF",
+                "locationName": "Brampton Fell Signal Box",
+                "distanceFromFromLocationInKms": 82.77511834799999,
+                "platform": null
+            },
+            {
+                "tiploc": "WETHCOR",
+                "locationName": "Wetheral Corby Gates Signal Box",
+                "distanceFromFromLocationInKms": 91.73511834799999,
+                "platform": null
+            },
+            {
+                "tiploc": "WETHERL",
+                "locationName": "Wetheral",
+                "distanceFromFromLocationInKms": 92.18511834799999,
+                "platform": "2"
+            },
+            {
+                "tiploc": "PETLBGJ",
+                "locationName": "Petteril Bridge Junction",
+                "distanceFromFromLocationInKms": 97.71511834799999,
+                "platform": null
+            },
+            {
+                "tiploc": "CARLLRJ",
+                "locationName": "Carlisle London Road Junction",
+                "distanceFromFromLocationInKms": 98.03511834799998,
+                "platform": null
+            },
+            {
+                "tiploc": "CARLILE",
+                "locationName": "Carlisle",
+                "distanceFromFromLocationInKms": 98.97511834799998,
+                "platform": "2"
+            }
+        ],
+        "timetableAdherenceGraphSeriesList": [
+            {
+                "timetableIdentifier": "NWCSTLE, CARLILE, 08:24:00, 21793000, 1111100",
+				"actualJourneyDataSource" : "DARWIN",
+                "scheduledActualAndFlatOutTimetables": [
+				{
+                        "timetableType": "FLATOUT",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1512548634000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 0
+                                },
+                                "timeInSeconds": 30180
+                            },
+                            {
+                                "unixTime": 1512548628000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": -1
+                                },
+                                "timeInSeconds": 30270
+                            },
+                            {
+                                "unixTime": 1512548754000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 1.06
+                                },
+                                "timeInSeconds": 30300
+                            },
+                            {
+                                "unixTime": 1512548874000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 3.08
+                                },
+                                "timeInSeconds": 30420
+                            },
+                            {
+                                "unixTime": 1512549054000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30600
+                            },
+                            {
+                                "unixTime": 1512549114000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30660
+                            },
+                            {
+                                "unixTime": 1512549294000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 8.685880000000001
+                                },
+                                "timeInSeconds": 30840
+                            },
+                            {
+                                "unixTime": 1512549594000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31140
+                            },
+                            {
+                                "unixTime": 1512549594000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31140
+                            },
+                            {
+                                "unixTime": 1512549834000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31380
+                            },
+                            {
+                                "unixTime": 1512549834000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31380
+                            },
+                            {
+                                "unixTime": 1512550134000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31680
+                            },
+                            {
+                                "unixTime": 1512550134000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31680
+                            },
+                            {
+                                "unixTime": 1512550674000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32220
+                            },
+                            {
+                                "unixTime": 1512550674000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32220
+                            },
+                            {
+                                "unixTime": 1512551214000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 32760
+                            },
+                            {
+                                "unixTime": 1512551214000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 32760
+                            },
+                            {
+                                "unixTime": 1512551574000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33120
+                            },
+                            {
+                                "unixTime": 1512551634000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33180
+                            },
+                            {
+                                "unixTime": 1512552054000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33600
+                            },
+                            {
+                                "unixTime": 1512552054000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33600
+                            },
+                            {
+                                "unixTime": 1512552684000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 76.38511834799999
+                                },
+                                "timeInSeconds": 34230
+                            },
+                            {
+                                "unixTime": 1512552684000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34500
+                            },
+                            {
+                                "unixTime": 1512552954000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34500
+                            },
+                            {
+                                "unixTime": 1512553074000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 82.77511834799999
+                                },
+                                "timeInSeconds": 34620
+                            },
+                            {
+                                "unixTime": 1512553494000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 91.73511834799999
+                                },
+                                "timeInSeconds": 35040
+                            },
+                            {
+                                "unixTime": 1512553554000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35100
+                            },
+                            {
+                                "unixTime": 1512553554000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35100
+                            },
+                            {
+                                "unixTime": 1512554064000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 97.71511834799999
+                                },
+                                "timeInSeconds": 35610
+                            },
+                            {
+                                "unixTime": 1512554124000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 98.03511834799998
+                                },
+                                "timeInSeconds": 35670
+                            },
+                            {
+                                "unixTime": 1512554334000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 98.97511834799998
+                                },
+                                "timeInSeconds": 35880
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+						
+                            {
+                                "unixTime": 1512548640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 0
+                                },
+                                "timeInSeconds": 30240
+                            },
+                            {
+                                "unixTime": 1512548730000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": -1
+                                },
+                                "timeInSeconds": 30330
+                            },
+                            {
+                                "unixTime": 1512548760000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 1.06
+                                },
+                                "timeInSeconds": 30360
+                            },
+                            {
+                                "unixTime": 1512548880000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 3.08
+                                },
+                                "timeInSeconds": 30480
+                            },
+                            {
+                                "unixTime": 1512549060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30660
+                            },
+                            {
+                                "unixTime": 1512549120000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30720
+                            },
+                            {
+                                "unixTime": 1512549300000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 8.685880000000001
+                                },
+                                "timeInSeconds": 30900
+                            },
+                            {
+                                "unixTime": 1512549600000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31200
+                            },
+                            {
+                                "unixTime": 1512549600000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31200
+                            },
+                            {
+                                "unixTime": 1512549840000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31440
+                            },
+                            {
+                                "unixTime": 1512549840000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31440
+                            },
+                            {
+                                "unixTime": 1512550140000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31740
+                            },
+                            {
+                                "unixTime": 1512550140000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31740
+                            },
+                            {
+                                "unixTime": 1512550680000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32280
+                            },
+                            {
+                                "unixTime": 1512550680000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32280
+                            },
+                            {
+                                "unixTime": 1512551220000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 32820
+                            },
+                            {
+                                "unixTime": 1512551220000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 32820
+                            },
+                            {
+                                "unixTime": 1512551580000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33180
+                            },
+                            {
+                                "unixTime": 1512551640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33240
+                            },
+                            {
+                                "unixTime": 1512552060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33660
+                            },
+                            {
+                                "unixTime": 1512552060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33660
+                            },
+                            {
+                                "unixTime": 1512552690000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 76.38511834799999
+                                },
+                                "timeInSeconds": 34290
+                            },
+                            {
+                                "unixTime": 1512552960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34560
+                            },
+                            {
+                                "unixTime": 1512552960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34560
+                            },
+                            {
+                                "unixTime": 1512553080000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 82.77511834799999
+                                },
+                                "timeInSeconds": 34680
+                            },
+                            {
+                                "unixTime": 1512553500000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 91.73511834799999
+                                },
+                                "timeInSeconds": 35100
+                            },
+                            {
+                                "unixTime": 1512553560000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35160
+                            },
+                            {
+                                "unixTime": 1512553560000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35160
+                            },
+                            {
+                                "unixTime": 1512554070000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 97.71511834799999
+                                },
+                                "timeInSeconds": 35670
+                            },
+                            {
+                                "unixTime": 1512554130000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 98.03511834799998
+                                },
+                                "timeInSeconds": 35730
+                            },
+                            {
+                                "unixTime": 1512554340000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 98.97511834799998
+                                },
+                                "timeInSeconds": 35940
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1512548662000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 0
+                                },
+                                "timeInSeconds": 30262
+                            },
+                            {
+                                "unixTime": 1512548724000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": -1
+                                },
+                                "timeInSeconds": 30324
+                            },
+                            {
+                                "unixTime": 1512548762000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 1.06
+                                },
+                                "timeInSeconds": 30362
+                            },
+                            {
+                                "unixTime": 1512548904000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 3.08
+                                },
+                                "timeInSeconds": 30504
+                            },
+                            {
+                                "unixTime": 1512549132000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30732
+                            },
+                            {
+                                "unixTime": 1512549211000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30811
+                            },
+                            {
+                                "unixTime": 1512549384000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 8.685880000000001
+                                },
+                                "timeInSeconds": 30984
+                            },
+                            {
+                                "unixTime": 1512549691000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31291
+                            },
+                            {
+                                "unixTime": 1512549737000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31337
+                            },
+                            {
+                                "unixTime": 1512549951000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31551
+                            },
+                            {
+                                "unixTime": 1512549997000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31597
+                            },
+                            {
+                                "unixTime": 1512550223000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31823
+                            },
+                            {
+                                "unixTime": 1512550273000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31873
+                            },
+                            {
+                                "unixTime": 1512550803000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32403
+                            },
+                            {
+                                "unixTime": 1512550863000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32463
+                            },
+                            {
+                                "unixTime": 1512551419000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 33019
+                            },
+                            {
+                                "unixTime": 1512551469000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 33069
+                            },
+                            {
+                                "unixTime": 1512551849000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33449
+                            },
+                            {
+                                "unixTime": 1512551895000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33495
+                            },
+                            {
+                                "unixTime": 1512552321000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33921
+                            },
+                            {
+                                "unixTime": 1512552367000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33967
+                            },
+                            {
+                                "unixTime": 1512553241000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34841
+                            },
+                            {
+                                "unixTime": 1512553291000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34891
+                            },
+                            {
+                                "unixTime": 1512553787000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35387
+                            },
+                            {
+                                "unixTime": 1512553837000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35437
+                            },
+                            {
+                                "unixTime": 1512554094000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 97.71511834799999
+                                },
+                                "timeInSeconds": 35694
+                            },
+                            {
+                                "unixTime": 1512554271000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 98.97511834799998
+                                },
+                                "timeInSeconds": 35871
+                            }
+                        ]
+                    }
+                ]
+            },
+			{
+                "timetableIdentifier": "NWCSTLE, CARLILE, 09:24:00, 21793000, 1111100",
+				"actualJourneyDataSource" : "GPS",
+                "scheduledActualAndFlatOutTimetables": [
+				{
+                        "timetableType": "FLATOUT",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1512548634000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 0
+                                },
+                                "timeInSeconds": 30180
+                            },
+                            {
+                                "unixTime": 1512548628000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": -1
+                                },
+                                "timeInSeconds": 30270
+                            },
+                            {
+                                "unixTime": 1512548754000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 1.06
+                                },
+                                "timeInSeconds": 30300
+                            },
+                            {
+                                "unixTime": 1512548874000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 3.08
+                                },
+                                "timeInSeconds": 30420
+                            },
+                            {
+                                "unixTime": 1512549054000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30600
+                            },
+                            {
+                                "unixTime": 1512549114000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30660
+                            },
+                            {
+                                "unixTime": 1512549294000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 8.685880000000001
+                                },
+                                "timeInSeconds": 30840
+                            },
+                            {
+                                "unixTime": 1512549594000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31140
+                            },
+                            {
+                                "unixTime": 1512549594000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31140
+                            },
+                            {
+                                "unixTime": 1512549834000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31380
+                            },
+                            {
+                                "unixTime": 1512549834000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31380
+                            },
+                            {
+                                "unixTime": 1512550134000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31680
+                            },
+                            {
+                                "unixTime": 1512550134000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31680
+                            },
+                            {
+                                "unixTime": 1512550674000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32220
+                            },
+                            {
+                                "unixTime": 1512550674000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32220
+                            },
+                            {
+                                "unixTime": 1512551214000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 32760
+                            },
+                            {
+                                "unixTime": 1512551214000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 32760
+                            },
+                            {
+                                "unixTime": 1512551574000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33120
+                            },
+                            {
+                                "unixTime": 1512551634000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33180
+                            },
+                            {
+                                "unixTime": 1512552054000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33600
+                            },
+                            {
+                                "unixTime": 1512552054000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33600
+                            },
+                            {
+                                "unixTime": 1512552684000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 76.38511834799999
+                                },
+                                "timeInSeconds": 34230
+                            },
+                            {
+                                "unixTime": 1512552684000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34500
+                            },
+                            {
+                                "unixTime": 1512552954000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34500
+                            },
+                            {
+                                "unixTime": 1512553074000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 82.77511834799999
+                                },
+                                "timeInSeconds": 34620
+                            },
+                            {
+                                "unixTime": 1512553494000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 91.73511834799999
+                                },
+                                "timeInSeconds": 35040
+                            },
+                            {
+                                "unixTime": 1512553554000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35100
+                            },
+                            {
+                                "unixTime": 1512553554000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35100
+                            },
+                            {
+                                "unixTime": 1512554064000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 97.71511834799999
+                                },
+                                "timeInSeconds": 35610
+                            },
+                            {
+                                "unixTime": 1512554124000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 98.03511834799998
+                                },
+                                "timeInSeconds": 35670
+                            },
+                            {
+                                "unixTime": 1512554334000,
+                                "identifierAndDistance": {
+                                    "FLATOUT 08:24 2N09": 98.97511834799998
+                                },
+                                "timeInSeconds": 35880
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+						
+                            {
+                                "unixTime": 1512548640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 0
+                                },
+                                "timeInSeconds": 30240
+                            },
+                            {
+                                "unixTime": 1512548730000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": -1
+                                },
+                                "timeInSeconds": 30330
+                            },
+                            {
+                                "unixTime": 1512548760000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 1.06
+                                },
+                                "timeInSeconds": 30360
+                            },
+                            {
+                                "unixTime": 1512548880000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 3.08
+                                },
+                                "timeInSeconds": 30480
+                            },
+                            {
+                                "unixTime": 1512549060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30660
+                            },
+                            {
+                                "unixTime": 1512549120000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30720
+                            },
+                            {
+                                "unixTime": 1512549300000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 8.685880000000001
+                                },
+                                "timeInSeconds": 30900
+                            },
+                            {
+                                "unixTime": 1512549600000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31200
+                            },
+                            {
+                                "unixTime": 1512549600000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31200
+                            },
+                            {
+                                "unixTime": 1512549840000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31440
+                            },
+                            {
+                                "unixTime": 1512549840000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31440
+                            },
+                            {
+                                "unixTime": 1512550140000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31740
+                            },
+                            {
+                                "unixTime": 1512550140000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31740
+                            },
+                            {
+                                "unixTime": 1512550680000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32280
+                            },
+                            {
+                                "unixTime": 1512550680000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32280
+                            },
+                            {
+                                "unixTime": 1512551220000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 32820
+                            },
+                            {
+                                "unixTime": 1512551220000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 32820
+                            },
+                            {
+                                "unixTime": 1512551580000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33180
+                            },
+                            {
+                                "unixTime": 1512551640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33240
+                            },
+                            {
+                                "unixTime": 1512552060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33660
+                            },
+                            {
+                                "unixTime": 1512552060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33660
+                            },
+                            {
+                                "unixTime": 1512552690000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 76.38511834799999
+                                },
+                                "timeInSeconds": 34290
+                            },
+                            {
+                                "unixTime": 1512552960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34560
+                            },
+                            {
+                                "unixTime": 1512552960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34560
+                            },
+                            {
+                                "unixTime": 1512553080000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 82.77511834799999
+                                },
+                                "timeInSeconds": 34680
+                            },
+                            {
+                                "unixTime": 1512553500000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 91.73511834799999
+                                },
+                                "timeInSeconds": 35100
+                            },
+                            {
+                                "unixTime": 1512553560000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35160
+                            },
+                            {
+                                "unixTime": 1512553560000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35160
+                            },
+                            {
+                                "unixTime": 1512554070000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 97.71511834799999
+                                },
+                                "timeInSeconds": 35670
+                            },
+                            {
+                                "unixTime": 1512554130000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 98.03511834799998
+                                },
+                                "timeInSeconds": 35730
+                            },
+                            {
+                                "unixTime": 1512554340000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 08:24 2N09": 98.97511834799998
+                                },
+                                "timeInSeconds": 35940
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1512548662000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 0
+                                },
+                                "timeInSeconds": 30262
+                            },
+                            {
+                                "unixTime": 1512548724000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": -1
+                                },
+                                "timeInSeconds": 30324
+                            },
+                            {
+                                "unixTime": 1512548762000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 1.06
+                                },
+                                "timeInSeconds": 30362
+                            },
+                            {
+                                "unixTime": 1512548904000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 3.08
+                                },
+                                "timeInSeconds": 30504
+                            },
+                            {
+                                "unixTime": 1512549132000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30732
+                            },
+                            {
+                                "unixTime": 1512549211000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 5.53
+                                },
+                                "timeInSeconds": 30811
+                            },
+                            {
+                                "unixTime": 1512549384000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 8.685880000000001
+                                },
+                                "timeInSeconds": 30984
+                            },
+                            {
+                                "unixTime": 1512549691000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31291
+                            },
+                            {
+                                "unixTime": 1512549737000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 15.685880000000001
+                                },
+                                "timeInSeconds": 31337
+                            },
+                            {
+                                "unixTime": 1512549951000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31551
+                            },
+                            {
+                                "unixTime": 1512549997000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 19.205879904
+                                },
+                                "timeInSeconds": 31597
+                            },
+                            {
+                                "unixTime": 1512550223000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31823
+                            },
+                            {
+                                "unixTime": 1512550273000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 23.318780578000002
+                                },
+                                "timeInSeconds": 31873
+                            },
+                            {
+                                "unixTime": 1512550803000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32403
+                            },
+                            {
+                                "unixTime": 1512550863000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 35.760784778
+                                },
+                                "timeInSeconds": 32463
+                            },
+                            {
+                                "unixTime": 1512551419000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 33019
+                            },
+                            {
+                                "unixTime": 1512551469000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 47.889176158
+                                },
+                                "timeInSeconds": 33069
+                            },
+                            {
+                                "unixTime": 1512551849000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33449
+                            },
+                            {
+                                "unixTime": 1512551895000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 54.263717727999996
+                                },
+                                "timeInSeconds": 33495
+                            },
+                            {
+                                "unixTime": 1512552321000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33921
+                            },
+                            {
+                                "unixTime": 1512552367000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 62.015118347999994
+                                },
+                                "timeInSeconds": 33967
+                            },
+                            {
+                                "unixTime": 1512553241000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34841
+                            },
+                            {
+                                "unixTime": 1512553291000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 81.425118348
+                                },
+                                "timeInSeconds": 34891
+                            },
+                            {
+                                "unixTime": 1512553787000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35387
+                            },
+                            {
+                                "unixTime": 1512553837000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 92.18511834799999
+                                },
+                                "timeInSeconds": 35437
+                            },
+                            {
+                                "unixTime": 1512554094000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 97.71511834799999
+                                },
+                                "timeInSeconds": 35694
+                            },
+                            {
+                                "unixTime": 1512554271000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 08:24 2N09": 98.97511834799998
+                                },
+                                "timeInSeconds": 35871
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "timetableRoutes": null
+}
