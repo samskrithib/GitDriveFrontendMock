@@ -92,10 +92,10 @@
           vm.stations = data;
         }
       }).catch(function (response) {
-        
+
         vm.state = "NORESULTS";
         vm.statusmessage = "No Results";
-        $log.info( /*"controller response: " +*/ response);
+        // $log.info( /*"controller response: " +*/ response);
       });
     };
 
@@ -154,7 +154,7 @@
     vm.formData.daysRange = vm.formData.weekdays;
     $scope.$watchGroup(['vm.daysRangeOptionSelected', 'vm.formData.weekdays', 'vm.formData.weekends'], function (newVal, oldVal) {
       if (newVal != oldVal) {
-        $log.info(vm.daysRangeOptionSelected)
+        // $log.info(vm.daysRangeOptionSelected)
         if (vm.daysRangeOptionSelected == 'Weekdays') {
           vm.formData.daysRange = vm.formData.weekdays
         } else if (vm.daysRangeOptionSelected == 'Weekends') {
@@ -178,7 +178,7 @@
 
     vm.timetableAdherenceSubmit = function (isValid) {
       if (isValid) {
-        $log.info(vm.formData)
+        // $log.info(vm.formData)
         UtilityService.addCheckedItems(vm.RadioButtonModel)
         var ttAderenceUrl = getTtAderenceUrl();
         getResponse(ttAderenceUrl)
@@ -198,7 +198,6 @@
         keyxValue = 'timeInSeconds';
         stinglength = 9;
       }
-      $log.info(ttAdherenceUrl)
       return ttAdherenceUrl;
     }
 

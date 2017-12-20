@@ -67,7 +67,7 @@
           TTAdherenceTrackTrains = "traingraphs-main?fromTiploc=" + data.fromStation.tiploc + "&toTiploc=" + data.toStation.tiploc + "&fromDate=" + modifiedData.fromDate + "&toDate=" + modifiedData.toDate + "&fromTime=" + modifiedData.fromTime + "&toTime=" + modifiedData.toTime + "&daysOfTheWeek=" + modifiedData.daysOfTheWeek + "&pageId=0";
         }
 
-        console.log("generateTTAdherenceUrls", TTAdherencePercentile)
+        // console.log("generateTTAdherenceUrls", TTAdherencePercentile)
         return {
           percentile: TTAdherencePercentile,
           trackTrains: TTAdherenceTrackTrains

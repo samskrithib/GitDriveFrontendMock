@@ -13,7 +13,7 @@
     vm.getTabs = UtilityService.getCheckedItems()[1]
     vm.routesFlag = UtilityService.getCheckedItems()[2]
     vm.inputValues = UtilityService.getCheckedItems()[3].timetableAdherenceInputs
-    $log.info(vm.inputValues)
+    // $log.info(vm.inputValues)
     vm.tableRowExpanded = false;
     vm.tableRowIndexCurrExpanded = "";
     vm.tableRowIndexPrevExpanded = "";
@@ -21,7 +21,7 @@
     _.each(vm.timetableRoutes, function (val, key) {
       vm.dayDataCollapse.push(true)
     })
-    $log.info(vm.dayDataCollapse, vm.dayDataCollapse.length)
+    // $log.info(vm.dayDataCollapse, vm.dayDataCollapse.length)
     vm.selectTableRow = function (index) {
       if (vm.dayDataCollapse === 'undefined') {
         vm.dayDataCollapse = vm.dayDataCollapseFn();
@@ -54,7 +54,7 @@
 
     vm.routeIdSelected = function ($valid) {
       var routeIdUrl = timetableAdherenceUrlGeneratorService.generateRouteIdUrl(vm.selectRoute)
-      $log.info(routeIdUrl)
+      // $log.info(routeIdUrl)
       UtilityService.addCheckedItems([vm.getTabs, routeIdUrl, vm.routesFlag])
       $location.path("/dashboard/timetableAdherence")
 

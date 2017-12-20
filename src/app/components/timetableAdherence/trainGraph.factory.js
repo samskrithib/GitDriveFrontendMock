@@ -5,9 +5,9 @@
   angular
     .module('timetableAdherenceModule')
     .factory('trainGraphFactory', trainGraphFactory);
-  function trainGraphFactory($log, UtilityService, DRIVE_COLORS) {
-    var timetableAdherenceChart;
 
+  function trainGraphFactory($log, UtilityService, DRIVE_COLORS, trainGraphLegend) {
+    var timetableAdherenceChart;
     // OVERLAP FIXING
     var fixOverlaps = function (data) {
       // sort from highest to smallest
@@ -30,136 +30,99 @@
       return data;
     };
 
-    function dataLoop(data, xvalue, newnames, scheduledSeriesNames, ActualRunSeriesNames, xs, columns) {
+    function dataLoop(data, xvalue, newnames, scheduledSeriesNames, ActualRunSeriesNames, FlatOutSeriesNames, xs, columns) {
       _.each(data, function (val, key) {
-        var array = data[key].scheduledAndActualTimetables;
+        // var array = data[key].scheduledAndActualTimetables; // old version
+        var array = data[key].scheduledActualAndFlatOutTimetables; // withflatout json
 
         _.each(array, function (val, index) {
           var timeDistanceArray = array[index].timeAndDistanceList
           var identifier = d3.keys(timeDistanceArray[0].identifierAndDistance)
           var seriesName = identifier;
-          var splitIdentifier = _.rest(identifier.toString().split(" "), [1]);
-          newnames[seriesName] = splitIdentifier.join(" ")
+          var splitIdentifier = _.rest(identifier.toString().split(" "), [1]);// using underscore.js here
+          newnames[seriesName] = splitIdentifier.join(" ");
           // allNames[allNames.length] = seriesName;
           if (array[index].timetableType === 'SCHEDULED') {
             scheduledSeriesNames[scheduledSeriesNames.length] = seriesName.toString();
+          } else if (array[index].timetableType === 'FLATOUT') {
+            FlatOutSeriesNames.push(seriesName.toString())
           } else {
-            ActualRunSeriesNames.push(seriesName)
-            // $log.info(ActualRunSeriesNames)
+            ActualRunSeriesNames.push(seriesName.toString())
           }
-          var distances = _.pluck(_.pluck(timeDistanceArray, 'identifierAndDistance'), identifier)
-          var distancesArray = _.map(distances, function (num) { return num == -1 ? null : num })
+          var distances = _.pluck(_.pluck(timeDistanceArray, 'identifierAndDistance'), identifier) // using underscore.js here
+          var distancesArray = _.map(distances, function (num) {
+            return num === -1 ? null : num
+          });
           var seriesDistances = identifier.concat(distancesArray)
           var timesArray = _.pluck(timeDistanceArray, xvalue)
+          // for JSON , to be removed when working with server
+          if (key === 1) {
+            if (xvalue === 'unixTime') {
+              _.map(timesArray, function (num, i) {
+                return timesArray[i] = (num + 3600000);
+              })
+            } else {
+              _.map(timesArray, function (num, i) {
+                return timesArray[i] = (num + 3600);
+              })
+            }
+          }
+          /*end to be removed when working with server*/
           var seriesTimesArrayName = [];
-          seriesTimesArrayName.push(identifier + "_time")
-          var seriesTimes = seriesTimesArrayName.concat(timesArray)
-          xs[identifier] = seriesTimesArrayName[0]
-          columns.push(seriesDistances)
+          seriesTimesArrayName.push(identifier + "_time");
+          var seriesTimes = seriesTimesArrayName.concat(timesArray);
+          xs[identifier] = seriesTimesArrayName[0];
+          columns.push(seriesDistances);
           columns.push(seriesTimes)
         })
-      })
+      });
 
       return {
         newnames: newnames,
         ActualRunSeriesNames: ActualRunSeriesNames,
         scheduledSeriesNames: scheduledSeriesNames,
+        FlatOutSeriesNames: FlatOutSeriesNames,
         columns: columns,
         xs: xs
       }
     }
 
-    function customTrainGraphLegend(ActualRunSeriesNames, newnames, scheduledSeriesNames) {
-      d3.select('#legendItems').remove();
-      d3.select('#toggle').remove();
-      d3.select('#index0')
-        .insert('div')
-        .attr('class', 'container-fluid')
-        .append('button').attr('type', 'button')
-        .attr("id", "toggle")
-        .attr("class", "btn btn-primary ")
-        .text("Hide Trains")
-        .on("click", function (d) {
-          var active = legendItems.active ? false : true,
-            visibility = active ? 'none' : 'block',
-            text = active ? 'Show Trains' : 'Hide Trains'
-          d3.select('#legendItems').style("display", visibility)
-          d3.select('#toggle').text(text)
-          $log.info(active)
-          legendItems.active = active;
-        })
+    function computeDimensions(selection) {
+      var dimensions = null;
+      var node = selection.node();
 
-      d3.select('#index0')
-        .insert('div')
-        .attr('id', 'legendItems')
-        .attr('class', 'container-fluid')
-        .insert('div')
-        .attr('class', 'legend')
-        .insert('ul').attr('class', 'list-group list-group-horizontal')
-        .selectAll('span')
-        .data(ActualRunSeriesNames)
-        .enter().append('li').attr('class', 'list-group-item')
-        .attr('data-id', function (id) { return id; })
-        .append('div', '.legend-label')
-        .html(function (id) { return newnames[id]; })
-        .on('mouseover', function (id) {
-          var fields = _.rest(id.toString().split(" "), [1]);
-          $log.info(fields.join(" "))
-          var string = fields.join(" ");
-          var newArray = [];
-          var index_of_matchedString = UtilityService._findStringinArray(string, scheduledSeriesNames)
-          newArray.push(scheduledSeriesNames[index_of_matchedString])
-          newArray.push(id)
-          $log.info(index_of_matchedString)
-          d3.select(this).style("cursor", "pointer");
-          timetableAdherenceChart.focus(newArray);
-        })
-        .on('mouseout', function (id) {
-          d3.select(this).style("cursor", "pointer");
-          timetableAdherenceChart.revert();
-        })
-        .on('click', function (id) {
-          var fields = _.rest(id.toString().split(" "), [1]);
-          $log.info(fields.join(" "))
-          var string = fields.join(" ");
-          var newArray = [];
-          var index_of_matchedString = UtilityService._findStringinArray(string, scheduledSeriesNames)
-          newArray.push(scheduledSeriesNames[index_of_matchedString])
-          newArray.push(id.toString())
-          $(this).toggleClass("c3-legend-item-hidden")
-          timetableAdherenceChart.toggle(newArray);
-        })
-        .insert('span', '.legend-label').attr('class', 'badge-pill')
-        .each(function (id) {
-          d3.select(this).style('background-color', timetableAdherenceChart.color(id));
-        })
-        .html(function (id) {
-          return '&nbsp&nbsp&nbsp&nbsp&nbsp'
-        })
+      if (node instanceof SVGElement) {
+        dimensions = node.getBBox();
+      } else {
+        dimensions = node.getBoundingClientRect();
+      }
+      console.clear();
+      console.log(dimensions);
+      return dimensions;
     }
+
     return {
       getDataFormat: function (data, xvalue) {
         var columns = [];
         var xs = {};
         var newnames = {};
-        // var allNames = [];
         var ActualRunSeriesNames = [];
+        var FlatOutSeriesNames = [];
         var scheduledSeriesNames = [];
         var modifiedData;
-        dataLoop(data, xvalue, newnames, scheduledSeriesNames, ActualRunSeriesNames, xs, columns)
+        dataLoop(data, xvalue, newnames, scheduledSeriesNames, ActualRunSeriesNames, FlatOutSeriesNames, xs, columns)
         modifiedData = {
           xs: xs,
           columns: columns,
           xSort: false
-        }
-        $log.info(modifiedData)
+        };
         return {
           modifiedData: modifiedData,
           newnames: newnames,
           ActualRunSeriesNames: ActualRunSeriesNames,
-          scheduledSeriesNames: scheduledSeriesNames
+          scheduledSeriesNames: scheduledSeriesNames,
+          FlatOutSeriesNames: FlatOutSeriesNames
         };
-
       },
       getTrainGraphChart: function (modifiedData, tickFormat, tooltipFormat, gridlines) {
         timetableAdherenceChart = c3.generate({
@@ -168,14 +131,15 @@
             height: 600
           },
           padding: {
-            right: 50
+            right: 50,
+            top: 10
           },
           data: modifiedData.modifiedData,
           line: {
             connectNull: false
           },
           color: {
-            pattern: DRIVE_COLORS.twoRunsColorPattern
+            pattern: DRIVE_COLORS.trainGraphColorPattern
           },
           legend: {
             show: false
@@ -187,7 +151,7 @@
                 position: 'outer-middle'
               },
               min: 0,
-              padding: { bottom: 0 }
+              padding: {bottom: 0}
             },
             x: {
               type: "timeseries",
@@ -222,16 +186,18 @@
             grouped: false,
             format: {
               title: tooltipFormat,
-
               value: function (d) {
-                var obj = _.where(gridlines, { "value": d });
-                // $log.info(obj[0].text)
+                var obj = _.where(gridlines, {"value": d});// using underscore.js here
                 return obj[0].text + " " + d3.format(".1f")(d);
               }
             }
+          },
+          onrendered: function () {
+            var tG = d3.select('#trainGraph')
+            var dimensions = computeDimensions(tG)
+            trainGraphLegend.linestyleLegend(timetableAdherenceChart, modifiedData.ActualRunSeriesNames, modifiedData.scheduledSeriesNames, modifiedData.FlatOutSeriesNames, dimensions.width)
           }
-
-        })
+        });
         // draw plotlines/gridlines
         fixOverlaps(gridlines).forEach(function (station) {
           timetableAdherenceChart.ygrids.add({
@@ -243,31 +209,41 @@
           d3.select(selector).select('text')
             .attr('dx', function (id) {
               if (station.offset) {
-                // $log.debug(id)
                 return -station.offset * 4.5;
               }
             })
         })
-        customTrainGraphLegend(modifiedData.ActualRunSeriesNames, modifiedData.newnames, modifiedData.scheduledSeriesNames)
-      },
+        //Style Flatout profile
+        _.each(modifiedData.FlatOutSeriesNames, function (v) {
+          var val = v.replace(/ |:/gi, "-");
+          d3.selectAll(".c3-line-" + val)
+            .style("stroke-dasharray", '10, 4')
+        });
+        //Style Actual profile
+        _.each(modifiedData.ActualRunSeriesNames, function (v, i) {
+          var val = v.replace(/ |:/gi, "-");
+          d3.selectAll(".c3-line-" + val)
+            .style("stroke-dasharray", '0.9')
+            .style("stroke", 'black !important')
+        });
 
+        trainGraphLegend.customTrainGraphLegend(timetableAdherenceChart, modifiedData.ActualRunSeriesNames, modifiedData.newnames, modifiedData.scheduledSeriesNames, modifiedData.FlatOutSeriesNames)
+      },
 
       LoadTrainGraphData: function (data, gridlines, xvalue) {
         var columns = [];
         var xs = {}
         var newnames = {};
-        var allNames = [];
-        var ActualRunSeriesNames = [];
+        var ActualRunSeriesNames = [], FlatOutSeriesNames = [];
         var scheduledSeriesNames = [];
         timetableAdherenceChart.unload({
           done: function () {
-            $log.info(data.length)
-            dataLoop(data, xvalue, newnames, scheduledSeriesNames, ActualRunSeriesNames, xs, columns)
+            dataLoop(data, xvalue, newnames, scheduledSeriesNames, ActualRunSeriesNames, FlatOutSeriesNames, xs, columns)
             timetableAdherenceChart.load({
               columns: columns,
               xs: xs
-            })
-            customTrainGraphLegend(ActualRunSeriesNames, newnames, scheduledSeriesNames)
+            });
+            trainGraphLegend.customTrainGraphLegend(timetableAdherenceChart, ActualRunSeriesNames, newnames, scheduledSeriesNames, FlatOutSeriesNames)
           }
         })
 

@@ -1,0 +1,2675 @@
+{
+    "timetableAdherenceInputs": {
+        "pageId": 0,
+        "fromTiploc": "NWCSTLE",
+        "toTiploc": "CARLILE",
+        "fromLocation": "Newcastle",
+        "toLocation": "Carlisle",
+        "fromDateTime": [
+            2017,
+            10,
+            2,
+            6,
+            0
+        ],
+        "toDateTime": [
+            2017,
+            10,
+            5,
+            23,
+            0
+        ],
+        "fromTimeInSecondsOfDay": 21600,
+        "toTimeInSecondsOfDay": 82800,
+        "serviceCodes": null,
+        "daysOfTheWeek": [
+            "MONDAY",
+            "TUESDAY",
+            "WEDNESDAY",
+            "THURSDAY",
+            "FRIDAY"
+        ],
+        "percentile": 0
+    },
+    "timetableAdherenceGraph": {
+        "totalRecords": 174,
+        "pageSize": 15,
+        "timetableAdherenceGraphLocationList": [
+            {
+                "tiploc": "NWCSTLE",
+                "locationName": "Newcastle",
+                "distanceFromFromLocationInKms": 0
+            },
+            {
+                "tiploc": "HLBDGJN",
+                "locationName": "High Level Bridge Junction",
+                "distanceFromFromLocationInKms": 0.82
+            },
+            {
+                "tiploc": "GRNSFDJ",
+                "locationName": "Greensfield Junction",
+                "distanceFromFromLocationInKms": 1.14
+            },
+            {
+                "tiploc": "KEBGEJN",
+                "locationName": "King Edward Bridge East Junction",
+                "distanceFromFromLocationInKms": 1.42
+            },
+            {
+                "tiploc": "KEBGSJN",
+                "locationName": "King Edward Bridge South Junction",
+                "distanceFromFromLocationInKms": 1.76
+            },
+            {
+                "tiploc": "NRWDJN",
+                "locationName": "Norwood Junction",
+                "distanceFromFromLocationInKms": 2.79
+            },
+            {
+                "tiploc": "DNSN",
+                "locationName": "Dunston-on-Tyne",
+                "distanceFromFromLocationInKms": 5.14
+            },
+            {
+                "tiploc": "GTSHDMC",
+                "locationName": "Metrocentre",
+                "distanceFromFromLocationInKms": 7.1
+            },
+            {
+                "tiploc": "BLAYDON",
+                "locationName": "Blaydon",
+                "distanceFromFromLocationInKms": 10.2
+            },
+            {
+                "tiploc": "WYLAM",
+                "locationName": "Wylam",
+                "distanceFromFromLocationInKms": 17.35
+            },
+            {
+                "tiploc": "PRUDHOE",
+                "locationName": "Prudhoe",
+                "distanceFromFromLocationInKms": 20.78
+            },
+            {
+                "tiploc": "STCKSFL",
+                "locationName": "Stocksfield",
+                "distanceFromFromLocationInKms": 24.92
+            },
+            {
+                "tiploc": "RIDNGML",
+                "locationName": "Riding Mill",
+                "distanceFromFromLocationInKms": 28.6
+            },
+            {
+                "tiploc": "CRBG",
+                "locationName": "Corbridge",
+                "distanceFromFromLocationInKms": 32.31
+            },
+            {
+                "tiploc": "HEXHAM",
+                "locationName": "Hexham",
+                "distanceFromFromLocationInKms": 37.22
+            },
+            {
+                "tiploc": "HYDB",
+                "locationName": "Haydon Bridge",
+                "distanceFromFromLocationInKms": 49.47
+            },
+            {
+                "tiploc": "BRDNML",
+                "locationName": "Bardon Mill",
+                "distanceFromFromLocationInKms": 55.85
+            },
+            {
+                "tiploc": "HLTWHST",
+                "locationName": "Haltwhistle",
+                "distanceFromFromLocationInKms": 63.65
+            },
+            {
+                "tiploc": "LOWRWSB",
+                "locationName": "Low Row Signal Box",
+                "distanceFromFromLocationInKms": 75.16
+            },
+            {
+                "tiploc": "BRMPTNC",
+                "locationName": "Brampton",
+                "distanceFromFromLocationInKms": 79.94
+            },
+            {
+                "tiploc": "BRMPTNF",
+                "locationName": "Brampton Fell Signal Box",
+                "distanceFromFromLocationInKms": 81.37
+            },
+            {
+                "tiploc": "WETHCOR",
+                "locationName": "Wetheral Corby Gates Signal Box",
+                "distanceFromFromLocationInKms": 90.12
+            },
+            {
+                "tiploc": "WETHERL",
+                "locationName": "Wetheral",
+                "distanceFromFromLocationInKms": 93.82
+            },
+            {
+                "tiploc": "PETLBGJ",
+                "locationName": "Petteril Bridge Junction",
+                "distanceFromFromLocationInKms": 96.22
+            },
+            {
+                "tiploc": "CARLLRJ",
+                "locationName": "Carlisle London Road Junction",
+                "distanceFromFromLocationInKms": 96.66
+            },
+            {
+                "tiploc": "CARLILE",
+                "locationName": "Carlisle",
+                "distanceFromFromLocationInKms": 100.61
+            }
+        ],
+        "timetableAdherenceGraphSeriesList": [
+            {
+                "timetableIdentifier": "NWCSTLE, LEEDS, 06:02:00, 21731000, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506920520000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 06:02 1F62": 0
+                                },
+                                "timeInSeconds": 21720
+                            },
+                            {
+                                "unixTime": 1506920610000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 06:02 1F62": 0.82
+                                },
+                                "timeInSeconds": 21810
+                            },
+                            {
+                                "unixTime": 1506920670000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 06:02 1F62": 1.14
+                                },
+                                "timeInSeconds": 21870
+                            },
+                            {
+                                "unixTime": 1506920700000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 06:02 1F62": 1.42
+                                },
+                                "timeInSeconds": 21900
+                            },
+                            {
+                                "unixTime": 1506920730000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 06:02 1F62": 1.76
+                                },
+                                "timeInSeconds": 21930
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506920547000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 06:02 1F62": 0
+                                },
+                                "timeInSeconds": 21747
+                            },
+                            {
+                                "unixTime": 1506920640000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 06:02 1F62": 0.82
+                                },
+                                "timeInSeconds": 21840
+                            },
+                            {
+                                "unixTime": 1506920688000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 06:02 1F62": 1.14
+                                },
+                                "timeInSeconds": 21888
+                            },
+                            {
+                                "unixTime": 1506920700000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 06:02 1F62": 1.42
+                                },
+                                "timeInSeconds": 21900
+                            },
+                            {
+                                "unixTime": 1506920992000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 06:02 1F62": 1.76
+                                },
+                                "timeInSeconds": 22192
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "HEXHAM, MDLSBRO, 06:12:00, 21796000, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506923700000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 06:12 2N00": 0
+                                },
+                                "timeInSeconds": 24900
+                            },
+                            {
+                                "unixTime": 1506924000000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 06:12 2N00": 0
+                                },
+                                "timeInSeconds": 25200
+                            },
+                            {
+                                "unixTime": 1506924090000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 06:12 2N00": 0.82
+                                },
+                                "timeInSeconds": 25290
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506923692000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 06:12 2N00": 0
+                                },
+                                "timeInSeconds": 24892
+                            },
+                            {
+                                "unixTime": 1506924005000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 06:12 2N00": 0
+                                },
+                                "timeInSeconds": 25205
+                            },
+                            {
+                                "unixTime": 1506924060000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 06:12 2N00": 0.82
+                                },
+                                "timeInSeconds": 25260
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "HRTLEPL, HEXHAM, 07:03:00, 11792920, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506927060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 0
+                                },
+                                "timeInSeconds": 28260
+                            },
+                            {
+                                "unixTime": 1506927180000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 0
+                                },
+                                "timeInSeconds": 28380
+                            },
+                            {
+                                "unixTime": 1506927270000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": -1
+                                },
+                                "timeInSeconds": 28470
+                            },
+                            {
+                                "unixTime": 1506927300000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 1.76
+                                },
+                                "timeInSeconds": 28500
+                            },
+                            {
+                                "unixTime": 1506927420000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 2.79
+                                },
+                                "timeInSeconds": 28620
+                            },
+                            {
+                                "unixTime": 1506927480000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 5.14
+                                },
+                                "timeInSeconds": 28680
+                            },
+                            {
+                                "unixTime": 1506927480000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 5.14
+                                },
+                                "timeInSeconds": 28680
+                            },
+                            {
+                                "unixTime": 1506927660000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 7.1
+                                },
+                                "timeInSeconds": 28860
+                            },
+                            {
+                                "unixTime": 1506927720000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 7.1
+                                },
+                                "timeInSeconds": 28920
+                            },
+                            {
+                                "unixTime": 1506927960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 10.2
+                                },
+                                "timeInSeconds": 29160
+                            },
+                            {
+                                "unixTime": 1506927960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 10.2
+                                },
+                                "timeInSeconds": 29160
+                            },
+                            {
+                                "unixTime": 1506928320000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 17.35
+                                },
+                                "timeInSeconds": 29520
+                            },
+                            {
+                                "unixTime": 1506928320000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 17.35
+                                },
+                                "timeInSeconds": 29520
+                            },
+                            {
+                                "unixTime": 1506928560000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 20.78
+                                },
+                                "timeInSeconds": 29760
+                            },
+                            {
+                                "unixTime": 1506928620000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 20.78
+                                },
+                                "timeInSeconds": 29820
+                            },
+                            {
+                                "unixTime": 1506928860000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 24.92
+                                },
+                                "timeInSeconds": 30060
+                            },
+                            {
+                                "unixTime": 1506928860000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 24.92
+                                },
+                                "timeInSeconds": 30060
+                            },
+                            {
+                                "unixTime": 1506929100000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 28.6
+                                },
+                                "timeInSeconds": 30300
+                            },
+                            {
+                                "unixTime": 1506929160000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 28.6
+                                },
+                                "timeInSeconds": 30360
+                            },
+                            {
+                                "unixTime": 1506929400000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 32.31
+                                },
+                                "timeInSeconds": 30600
+                            },
+                            {
+                                "unixTime": 1506929400000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 32.31
+                                },
+                                "timeInSeconds": 30600
+                            },
+                            {
+                                "unixTime": 1506929880000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:03 2N07": 37.22
+                                },
+                                "timeInSeconds": 31080
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506927034000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 0
+                                },
+                                "timeInSeconds": 28234
+                            },
+                            {
+                                "unixTime": 1506927199000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 0
+                                },
+                                "timeInSeconds": 28399
+                            },
+                            {
+                                "unixTime": 1506927240000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": -1
+                                },
+                                "timeInSeconds": 28440
+                            },
+                            {
+                                "unixTime": 1506927288000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 1.76
+                                },
+                                "timeInSeconds": 28488
+                            },
+                            {
+                                "unixTime": 1506927420000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 2.79
+                                },
+                                "timeInSeconds": 28620
+                            },
+                            {
+                                "unixTime": 1506927480000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 5.14
+                                },
+                                "timeInSeconds": 28680
+                            },
+                            {
+                                "unixTime": 1506927540000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 5.14
+                                },
+                                "timeInSeconds": 28740
+                            },
+                            {
+                                "unixTime": 1506927711000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 7.1
+                                },
+                                "timeInSeconds": 28911
+                            },
+                            {
+                                "unixTime": 1506927742000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 7.1
+                                },
+                                "timeInSeconds": 28942
+                            },
+                            {
+                                "unixTime": 1506927900000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 10.2
+                                },
+                                "timeInSeconds": 29100
+                            },
+                            {
+                                "unixTime": 1506928560000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 20.78
+                                },
+                                "timeInSeconds": 29760
+                            },
+                            {
+                                "unixTime": 1506928620000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 20.78
+                                },
+                                "timeInSeconds": 29820
+                            },
+                            {
+                                "unixTime": 1506929760000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:03 2N07": 37.22
+                                },
+                                "timeInSeconds": 30960
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "NUNTHRP, HEXHAM, 07:18:00, 21800000, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506930780000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 0
+                                },
+                                "timeInSeconds": 31980
+                            },
+                            {
+                                "unixTime": 1506930840000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 0
+                                },
+                                "timeInSeconds": 32040
+                            },
+                            {
+                                "unixTime": 1506930930000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": -1
+                                },
+                                "timeInSeconds": 32130
+                            },
+                            {
+                                "unixTime": 1506930960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 1.76
+                                },
+                                "timeInSeconds": 32160
+                            },
+                            {
+                                "unixTime": 1506931080000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 2.79
+                                },
+                                "timeInSeconds": 32280
+                            },
+                            {
+                                "unixTime": 1506931140000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 5.14
+                                },
+                                "timeInSeconds": 32340
+                            },
+                            {
+                                "unixTime": 1506931140000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 5.14
+                                },
+                                "timeInSeconds": 32340
+                            },
+                            {
+                                "unixTime": 1506931320000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 7.1
+                                },
+                                "timeInSeconds": 32520
+                            },
+                            {
+                                "unixTime": 1506931380000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 7.1
+                                },
+                                "timeInSeconds": 32580
+                            },
+                            {
+                                "unixTime": 1506931560000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 10.2
+                                },
+                                "timeInSeconds": 32760
+                            },
+                            {
+                                "unixTime": 1506931860000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 17.35
+                                },
+                                "timeInSeconds": 33060
+                            },
+                            {
+                                "unixTime": 1506931860000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 17.35
+                                },
+                                "timeInSeconds": 33060
+                            },
+                            {
+                                "unixTime": 1506932100000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 20.78
+                                },
+                                "timeInSeconds": 33300
+                            },
+                            {
+                                "unixTime": 1506932100000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 20.78
+                                },
+                                "timeInSeconds": 33300
+                            },
+                            {
+                                "unixTime": 1506932400000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 24.92
+                                },
+                                "timeInSeconds": 33600
+                            },
+                            {
+                                "unixTime": 1506932400000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 24.92
+                                },
+                                "timeInSeconds": 33600
+                            },
+                            {
+                                "unixTime": 1506932640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 28.6
+                                },
+                                "timeInSeconds": 33840
+                            },
+                            {
+                                "unixTime": 1506932640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 28.6
+                                },
+                                "timeInSeconds": 33840
+                            },
+                            {
+                                "unixTime": 1506932880000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 32.31
+                                },
+                                "timeInSeconds": 34080
+                            },
+                            {
+                                "unixTime": 1506932880000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 32.31
+                                },
+                                "timeInSeconds": 34080
+                            },
+                            {
+                                "unixTime": 1506933420000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:18 2N11": 37.22
+                                },
+                                "timeInSeconds": 34620
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506930669000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 0
+                                },
+                                "timeInSeconds": 31869
+                            },
+                            {
+                                "unixTime": 1506930903000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 0
+                                },
+                                "timeInSeconds": 32103
+                            },
+                            {
+                                "unixTime": 1506930900000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": -1
+                                },
+                                "timeInSeconds": 32100
+                            },
+                            {
+                                "unixTime": 1506930948000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 1.76
+                                },
+                                "timeInSeconds": 32148
+                            },
+                            {
+                                "unixTime": 1506931080000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 2.79
+                                },
+                                "timeInSeconds": 32280
+                            },
+                            {
+                                "unixTime": 1506931140000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 5.14
+                                },
+                                "timeInSeconds": 32340
+                            },
+                            {
+                                "unixTime": 1506931200000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 5.14
+                                },
+                                "timeInSeconds": 32400
+                            },
+                            {
+                                "unixTime": 1506931372000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 7.1
+                                },
+                                "timeInSeconds": 32572
+                            },
+                            {
+                                "unixTime": 1506931405000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 7.1
+                                },
+                                "timeInSeconds": 32605
+                            },
+                            {
+                                "unixTime": 1506931560000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 10.2
+                                },
+                                "timeInSeconds": 32760
+                            },
+                            {
+                                "unixTime": 1506932040000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 20.78
+                                },
+                                "timeInSeconds": 33240
+                            },
+                            {
+                                "unixTime": 1506932100000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 20.78
+                                },
+                                "timeInSeconds": 33300
+                            },
+                            {
+                                "unixTime": 1506933240000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:18 2N11": 37.22
+                                },
+                                "timeInSeconds": 34440
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "NWCSTLE, NUNTHRP, 07:30:00, 11792920, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506925800000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:30 2W07": 0
+                                },
+                                "timeInSeconds": 27000
+                            },
+                            {
+                                "unixTime": 1506925890000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 07:30 2W07": 0.82
+                                },
+                                "timeInSeconds": 27090
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506925811000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:30 2W07": 0
+                                },
+                                "timeInSeconds": 27011
+                            },
+                            {
+                                "unixTime": 1506925860000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 07:30 2W07": 0.82
+                                },
+                                "timeInSeconds": 27060
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "NWCSTLE, CARLILE, 08:24:00, 21793000, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506929040000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 0
+                                },
+                                "timeInSeconds": 30240
+                            },
+                            {
+                                "unixTime": 1506929130000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": -1
+                                },
+                                "timeInSeconds": 30330
+                            },
+                            {
+                                "unixTime": 1506929160000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 1.76
+                                },
+                                "timeInSeconds": 30360
+                            },
+                            {
+                                "unixTime": 1506929280000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 2.79
+                                },
+                                "timeInSeconds": 30480
+                            },
+                            {
+                                "unixTime": 1506929460000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 7.1
+                                },
+                                "timeInSeconds": 30660
+                            },
+                            {
+                                "unixTime": 1506929520000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 7.1
+                                },
+                                "timeInSeconds": 30720
+                            },
+                            {
+                                "unixTime": 1506929700000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 10.2
+                                },
+                                "timeInSeconds": 30900
+                            },
+                            {
+                                "unixTime": 1506929970000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 17.35
+                                },
+                                "timeInSeconds": 31170
+                            },
+                            {
+                                "unixTime": 1506930000000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 17.35
+                                },
+                                "timeInSeconds": 31200
+                            },
+                            {
+                                "unixTime": 1506930210000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 20.78
+                                },
+                                "timeInSeconds": 31410
+                            },
+                            {
+                                "unixTime": 1506930270000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 20.78
+                                },
+                                "timeInSeconds": 31470
+                            },
+                            {
+                                "unixTime": 1506930510000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 24.92
+                                },
+                                "timeInSeconds": 31710
+                            },
+                            {
+                                "unixTime": 1506930540000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 24.92
+                                },
+                                "timeInSeconds": 31740
+                            },
+                            {
+                                "unixTime": 1506931050000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 37.22
+                                },
+                                "timeInSeconds": 32250
+                            },
+                            {
+                                "unixTime": 1506931110000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 37.22
+                                },
+                                "timeInSeconds": 32310
+                            },
+                            {
+                                "unixTime": 1506931620000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 49.47
+                                },
+                                "timeInSeconds": 32820
+                            },
+                            {
+                                "unixTime": 1506931650000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 49.47
+                                },
+                                "timeInSeconds": 32850
+                            },
+                            {
+                                "unixTime": 1506931980000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 55.85
+                                },
+                                "timeInSeconds": 33180
+                            },
+                            {
+                                "unixTime": 1506932040000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 55.85
+                                },
+                                "timeInSeconds": 33240
+                            },
+                            {
+                                "unixTime": 1506932430000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 63.65
+                                },
+                                "timeInSeconds": 33630
+                            },
+                            {
+                                "unixTime": 1506932460000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 63.65
+                                },
+                                "timeInSeconds": 33660
+                            },
+                            {
+                                "unixTime": 1506933090000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 75.16
+                                },
+                                "timeInSeconds": 34290
+                            },
+                            {
+                                "unixTime": 1506933330000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 79.94
+                                },
+                                "timeInSeconds": 34530
+                            },
+                            {
+                                "unixTime": 1506933390000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 79.94
+                                },
+                                "timeInSeconds": 34590
+                            },
+                            {
+                                "unixTime": 1506933480000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 81.37
+                                },
+                                "timeInSeconds": 34680
+                            },
+                            {
+                                "unixTime": 1506933900000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 90.12
+                                },
+                                "timeInSeconds": 35100
+                            },
+                            {
+                                "unixTime": 1506933930000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 93.82
+                                },
+                                "timeInSeconds": 35130
+                            },
+                            {
+                                "unixTime": 1506933960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 93.82
+                                },
+                                "timeInSeconds": 35160
+                            },
+                            {
+                                "unixTime": 1506934350000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 96.22
+                                },
+                                "timeInSeconds": 35550
+                            },
+                            {
+                                "unixTime": 1506934410000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 96.66
+                                },
+                                "timeInSeconds": 35610
+                            },
+                            {
+                                "unixTime": 1506934560000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:24 2N09": 100.61
+                                },
+                                "timeInSeconds": 35760
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506929175000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 0
+                                },
+                                "timeInSeconds": 30375
+                            },
+                            {
+                                "unixTime": 1506929220000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": -1
+                                },
+                                "timeInSeconds": 30420
+                            },
+                            {
+                                "unixTime": 1506929238000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 1.76
+                                },
+                                "timeInSeconds": 30438
+                            },
+                            {
+                                "unixTime": 1506929400000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 2.79
+                                },
+                                "timeInSeconds": 30600
+                            },
+                            {
+                                "unixTime": 1506929606000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 7.1
+                                },
+                                "timeInSeconds": 30806
+                            },
+                            {
+                                "unixTime": 1506929747000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 7.1
+                                },
+                                "timeInSeconds": 30947
+                            },
+                            {
+                                "unixTime": 1506929940000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 10.2
+                                },
+                                "timeInSeconds": 31140
+                            },
+                            {
+                                "unixTime": 1506931080000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 20.78
+                                },
+                                "timeInSeconds": 32280
+                            },
+                            {
+                                "unixTime": 1506931140000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 20.78
+                                },
+                                "timeInSeconds": 32340
+                            },
+                            {
+                                "unixTime": 1506932040000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 37.22
+                                },
+                                "timeInSeconds": 33240
+                            },
+                            {
+                                "unixTime": 1506932160000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 37.22
+                                },
+                                "timeInSeconds": 33360
+                            },
+                            {
+                                "unixTime": 1506933660000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 63.65
+                                },
+                                "timeInSeconds": 34860
+                            },
+                            {
+                                "unixTime": 1506933720000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 63.65
+                                },
+                                "timeInSeconds": 34920
+                            },
+                            {
+                                "unixTime": 1506935751000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 96.22
+                                },
+                                "timeInSeconds": 36951
+                            },
+                            {
+                                "unixTime": 1506935947000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:24 2N09": 100.61
+                                },
+                                "timeInSeconds": 37147
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "MDLSBRO, HEXHAM, 08:32:00, 11792920, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506934320000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 0
+                                },
+                                "timeInSeconds": 35520
+                            },
+                            {
+                                "unixTime": 1506934440000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 0
+                                },
+                                "timeInSeconds": 35640
+                            },
+                            {
+                                "unixTime": 1506934530000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": -1
+                                },
+                                "timeInSeconds": 35730
+                            },
+                            {
+                                "unixTime": 1506934560000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 1.76
+                                },
+                                "timeInSeconds": 35760
+                            },
+                            {
+                                "unixTime": 1506934680000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 2.79
+                                },
+                                "timeInSeconds": 35880
+                            },
+                            {
+                                "unixTime": 1506934860000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 7.1
+                                },
+                                "timeInSeconds": 36060
+                            },
+                            {
+                                "unixTime": 1506934920000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 7.1
+                                },
+                                "timeInSeconds": 36120
+                            },
+                            {
+                                "unixTime": 1506935160000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 10.2
+                                },
+                                "timeInSeconds": 36360
+                            },
+                            {
+                                "unixTime": 1506935160000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 10.2
+                                },
+                                "timeInSeconds": 36360
+                            },
+                            {
+                                "unixTime": 1506935520000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 17.35
+                                },
+                                "timeInSeconds": 36720
+                            },
+                            {
+                                "unixTime": 1506935520000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 17.35
+                                },
+                                "timeInSeconds": 36720
+                            },
+                            {
+                                "unixTime": 1506935760000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 20.78
+                                },
+                                "timeInSeconds": 36960
+                            },
+                            {
+                                "unixTime": 1506935820000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 20.78
+                                },
+                                "timeInSeconds": 37020
+                            },
+                            {
+                                "unixTime": 1506936060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 24.92
+                                },
+                                "timeInSeconds": 37260
+                            },
+                            {
+                                "unixTime": 1506936060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 24.92
+                                },
+                                "timeInSeconds": 37260
+                            },
+                            {
+                                "unixTime": 1506936300000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 28.6
+                                },
+                                "timeInSeconds": 37500
+                            },
+                            {
+                                "unixTime": 1506936360000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 28.6
+                                },
+                                "timeInSeconds": 37560
+                            },
+                            {
+                                "unixTime": 1506936600000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 32.31
+                                },
+                                "timeInSeconds": 37800
+                            },
+                            {
+                                "unixTime": 1506936600000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 32.31
+                                },
+                                "timeInSeconds": 37800
+                            },
+                            {
+                                "unixTime": 1506937080000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:32 2W18": 37.22
+                                },
+                                "timeInSeconds": 38280
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506934286000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 0
+                                },
+                                "timeInSeconds": 35486
+                            },
+                            {
+                                "unixTime": 1506934461000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 0
+                                },
+                                "timeInSeconds": 35661
+                            },
+                            {
+                                "unixTime": 1506934500000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": -1
+                                },
+                                "timeInSeconds": 35700
+                            },
+                            {
+                                "unixTime": 1506934542000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 1.76
+                                },
+                                "timeInSeconds": 35742
+                            },
+                            {
+                                "unixTime": 1506934680000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 2.79
+                                },
+                                "timeInSeconds": 35880
+                            },
+                            {
+                                "unixTime": 1506934883000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 7.1
+                                },
+                                "timeInSeconds": 36083
+                            },
+                            {
+                                "unixTime": 1506934917000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 7.1
+                                },
+                                "timeInSeconds": 36117
+                            },
+                            {
+                                "unixTime": 1506935100000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 10.2
+                                },
+                                "timeInSeconds": 36300
+                            },
+                            {
+                                "unixTime": 1506935760000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 20.78
+                                },
+                                "timeInSeconds": 36960
+                            },
+                            {
+                                "unixTime": 1506935820000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 20.78
+                                },
+                                "timeInSeconds": 37020
+                            },
+                            {
+                                "unixTime": 1506936960000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:32 2W18": 37.22
+                                },
+                                "timeInSeconds": 38160
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "HEXHAM, NUNTHRP, 08:45:00, 21796000, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506932940000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:45 2N10": 0
+                                },
+                                "timeInSeconds": 34140
+                            },
+                            {
+                                "unixTime": 1506933000000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:45 2N10": 0
+                                },
+                                "timeInSeconds": 34200
+                            },
+                            {
+                                "unixTime": 1506933090000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:45 2N10": 0.82
+                                },
+                                "timeInSeconds": 34290
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506932814000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:45 2N10": 0
+                                },
+                                "timeInSeconds": 34014
+                            },
+                            {
+                                "unixTime": 1506933005000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:45 2N10": 0
+                                },
+                                "timeInSeconds": 34205
+                            },
+                            {
+                                "unixTime": 1506933060000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:45 2N10": 0.82
+                                },
+                                "timeInSeconds": 34260
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "LEEDS, CARLILE, 08:49:00, 21151900, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506940020000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:49 2H10": 96.22
+                                },
+                                "timeInSeconds": 41220
+                            },
+                            {
+                                "unixTime": 1506940080000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:49 2H10": 96.66
+                                },
+                                "timeInSeconds": 41280
+                            },
+                            {
+                                "unixTime": 1506940320000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 08:49 2H10": 100.61
+                                },
+                                "timeInSeconds": 41520
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506940123000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:49 2H10": 96.22
+                                },
+                                "timeInSeconds": 41323
+                            },
+                            {
+                                "unixTime": 1506940320000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 08:49 2H10": 100.61
+                                },
+                                "timeInSeconds": 41520
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "NWCSTLE, CARLILE, 09:24:00, 21793000, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506932640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 0
+                                },
+                                "timeInSeconds": 33840
+                            },
+                            {
+                                "unixTime": 1506932730000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": -1
+                                },
+                                "timeInSeconds": 33930
+                            },
+                            {
+                                "unixTime": 1506932760000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 1.76
+                                },
+                                "timeInSeconds": 33960
+                            },
+                            {
+                                "unixTime": 1506932880000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 2.79
+                                },
+                                "timeInSeconds": 34080
+                            },
+                            {
+                                "unixTime": 1506933060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 7.1
+                                },
+                                "timeInSeconds": 34260
+                            },
+                            {
+                                "unixTime": 1506933120000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 7.1
+                                },
+                                "timeInSeconds": 34320
+                            },
+                            {
+                                "unixTime": 1506933300000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 10.2
+                                },
+                                "timeInSeconds": 34500
+                            },
+                            {
+                                "unixTime": 1506933540000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 17.35
+                                },
+                                "timeInSeconds": 34740
+                            },
+                            {
+                                "unixTime": 1506933690000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 20.78
+                                },
+                                "timeInSeconds": 34890
+                            },
+                            {
+                                "unixTime": 1506933720000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 20.78
+                                },
+                                "timeInSeconds": 34920
+                            },
+                            {
+                                "unixTime": 1506934470000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 37.22
+                                },
+                                "timeInSeconds": 35670
+                            },
+                            {
+                                "unixTime": 1506934530000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 37.22
+                                },
+                                "timeInSeconds": 35730
+                            },
+                            {
+                                "unixTime": 1506935040000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 49.47
+                                },
+                                "timeInSeconds": 36240
+                            },
+                            {
+                                "unixTime": 1506935610000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 63.65
+                                },
+                                "timeInSeconds": 36810
+                            },
+                            {
+                                "unixTime": 1506935640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 63.65
+                                },
+                                "timeInSeconds": 36840
+                            },
+                            {
+                                "unixTime": 1506936300000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 75.16
+                                },
+                                "timeInSeconds": 37500
+                            },
+                            {
+                                "unixTime": 1506936570000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 81.37
+                                },
+                                "timeInSeconds": 37770
+                            },
+                            {
+                                "unixTime": 1506936930000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 90.12
+                                },
+                                "timeInSeconds": 38130
+                            },
+                            {
+                                "unixTime": 1506937290000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 96.22
+                                },
+                                "timeInSeconds": 38490
+                            },
+                            {
+                                "unixTime": 1506937350000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 96.66
+                                },
+                                "timeInSeconds": 38550
+                            },
+                            {
+                                "unixTime": 1506937440000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:24 2N13": 100.61
+                                },
+                                "timeInSeconds": 38640
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506932658000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 0
+                                },
+                                "timeInSeconds": 33858
+                            },
+                            {
+                                "unixTime": 1506932700000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": -1
+                                },
+                                "timeInSeconds": 33900
+                            },
+                            {
+                                "unixTime": 1506932741000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 1.76
+                                },
+                                "timeInSeconds": 33941
+                            },
+                            {
+                                "unixTime": 1506932880000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 2.79
+                                },
+                                "timeInSeconds": 34080
+                            },
+                            {
+                                "unixTime": 1506933074000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 7.1
+                                },
+                                "timeInSeconds": 34274
+                            },
+                            {
+                                "unixTime": 1506933118000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 7.1
+                                },
+                                "timeInSeconds": 34318
+                            },
+                            {
+                                "unixTime": 1506933300000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 10.2
+                                },
+                                "timeInSeconds": 34500
+                            },
+                            {
+                                "unixTime": 1506933720000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 20.78
+                                },
+                                "timeInSeconds": 34920
+                            },
+                            {
+                                "unixTime": 1506933780000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 20.78
+                                },
+                                "timeInSeconds": 34980
+                            },
+                            {
+                                "unixTime": 1506934440000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 37.22
+                                },
+                                "timeInSeconds": 35640
+                            },
+                            {
+                                "unixTime": 1506934500000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 37.22
+                                },
+                                "timeInSeconds": 35700
+                            },
+                            {
+                                "unixTime": 1506935640000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 63.65
+                                },
+                                "timeInSeconds": 36840
+                            },
+                            {
+                                "unixTime": 1506935640000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 63.65
+                                },
+                                "timeInSeconds": 36840
+                            },
+                            {
+                                "unixTime": 1506937500000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 96.22
+                                },
+                                "timeInSeconds": 38700
+                            },
+                            {
+                                "unixTime": 1506937667000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:24 2N13": 100.61
+                                },
+                                "timeInSeconds": 38867
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "LEEDS, CARLILE, 09:47:00, 21151900, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506942660000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:47 1M53": 96.22
+                                },
+                                "timeInSeconds": 43860
+                            },
+                            {
+                                "unixTime": 1506942720000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:47 1M53": 96.66
+                                },
+                                "timeInSeconds": 43920
+                            },
+                            {
+                                "unixTime": 1506943020000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:47 1M53": 100.61
+                                },
+                                "timeInSeconds": 44220
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506942503000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:47 1M53": 96.22
+                                },
+                                "timeInSeconds": 43703
+                            },
+                            {
+                                "unixTime": 1506942693000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:47 1M53": 100.61
+                                },
+                                "timeInSeconds": 43893
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "MRPTHRP, GTSHDMC, 09:49:00, 21794000, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506935640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:49 2N15": 0
+                                },
+                                "timeInSeconds": 36840
+                            },
+                            {
+                                "unixTime": 1506935700000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:49 2N15": 0
+                                },
+                                "timeInSeconds": 36900
+                            },
+                            {
+                                "unixTime": 1506935790000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:49 2N15": -1
+                                },
+                                "timeInSeconds": 36990
+                            },
+                            {
+                                "unixTime": 1506935820000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:49 2N15": 1.76
+                                },
+                                "timeInSeconds": 37020
+                            },
+                            {
+                                "unixTime": 1506935940000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:49 2N15": 2.79
+                                },
+                                "timeInSeconds": 37140
+                            },
+                            {
+                                "unixTime": 1506936300000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 09:49 2N15": 7.1
+                                },
+                                "timeInSeconds": 37500
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506935562000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:49 2N15": 0
+                                },
+                                "timeInSeconds": 36762
+                            },
+                            {
+                                "unixTime": 1506935777000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:49 2N15": 0
+                                },
+                                "timeInSeconds": 36977
+                            },
+                            {
+                                "unixTime": 1506935820000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:49 2N15": -1
+                                },
+                                "timeInSeconds": 37020
+                            },
+                            {
+                                "unixTime": 1506935835000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:49 2N15": 1.76
+                                },
+                                "timeInSeconds": 37035
+                            },
+                            {
+                                "unixTime": 1506935940000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:49 2N15": 2.79
+                                },
+                                "timeInSeconds": 37140
+                            },
+                            {
+                                "unixTime": 1506936186000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 09:49 2N15": 7.1
+                                },
+                                "timeInSeconds": 37386
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "NWCSTLE, CARLILE, 10:24:00, 21793000, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506936240000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 0
+                                },
+                                "timeInSeconds": 37440
+                            },
+                            {
+                                "unixTime": 1506936330000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 0.82
+                                },
+                                "timeInSeconds": 37530
+                            },
+                            {
+                                "unixTime": 1506936360000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 1.14
+                                },
+                                "timeInSeconds": 37560
+                            },
+                            {
+                                "unixTime": 1506936390000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 1.42
+                                },
+                                "timeInSeconds": 37590
+                            },
+                            {
+                                "unixTime": 1506936420000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 1.76
+                                },
+                                "timeInSeconds": 37620
+                            },
+                            {
+                                "unixTime": 1506936540000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 2.79
+                                },
+                                "timeInSeconds": 37740
+                            },
+                            {
+                                "unixTime": 1506936720000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 7.1
+                                },
+                                "timeInSeconds": 37920
+                            },
+                            {
+                                "unixTime": 1506936780000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 7.1
+                                },
+                                "timeInSeconds": 37980
+                            },
+                            {
+                                "unixTime": 1506936960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 10.2
+                                },
+                                "timeInSeconds": 38160
+                            },
+                            {
+                                "unixTime": 1506937200000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 17.35
+                                },
+                                "timeInSeconds": 38400
+                            },
+                            {
+                                "unixTime": 1506937380000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 20.78
+                                },
+                                "timeInSeconds": 38580
+                            },
+                            {
+                                "unixTime": 1506937410000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 20.78
+                                },
+                                "timeInSeconds": 38610
+                            },
+                            {
+                                "unixTime": 1506938070000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 37.22
+                                },
+                                "timeInSeconds": 39270
+                            },
+                            {
+                                "unixTime": 1506938130000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 37.22
+                                },
+                                "timeInSeconds": 39330
+                            },
+                            {
+                                "unixTime": 1506938640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 49.47
+                                },
+                                "timeInSeconds": 39840
+                            },
+                            {
+                                "unixTime": 1506938670000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 49.47
+                                },
+                                "timeInSeconds": 39870
+                            },
+                            {
+                                "unixTime": 1506939000000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 55.85
+                                },
+                                "timeInSeconds": 40200
+                            },
+                            {
+                                "unixTime": 1506939060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 55.85
+                                },
+                                "timeInSeconds": 40260
+                            },
+                            {
+                                "unixTime": 1506939450000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 63.65
+                                },
+                                "timeInSeconds": 40650
+                            },
+                            {
+                                "unixTime": 1506939480000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 63.65
+                                },
+                                "timeInSeconds": 40680
+                            },
+                            {
+                                "unixTime": 1506940110000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 75.16
+                                },
+                                "timeInSeconds": 41310
+                            },
+                            {
+                                "unixTime": 1506940350000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 79.94
+                                },
+                                "timeInSeconds": 41550
+                            },
+                            {
+                                "unixTime": 1506940410000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 79.94
+                                },
+                                "timeInSeconds": 41610
+                            },
+                            {
+                                "unixTime": 1506940500000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 81.37
+                                },
+                                "timeInSeconds": 41700
+                            },
+                            {
+                                "unixTime": 1506940890000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 90.12
+                                },
+                                "timeInSeconds": 42090
+                            },
+                            {
+                                "unixTime": 1506940920000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 93.82
+                                },
+                                "timeInSeconds": 42120
+                            },
+                            {
+                                "unixTime": 1506940950000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 93.82
+                                },
+                                "timeInSeconds": 42150
+                            },
+                            {
+                                "unixTime": 1506941340000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 96.22
+                                },
+                                "timeInSeconds": 42540
+                            },
+                            {
+                                "unixTime": 1506941400000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 96.66
+                                },
+                                "timeInSeconds": 42600
+                            },
+                            {
+                                "unixTime": 1506941520000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:24 2N17": 100.61
+                                },
+                                "timeInSeconds": 42720
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506936253000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 0
+                                },
+                                "timeInSeconds": 37453
+                            },
+                            {
+                                "unixTime": 1506936360000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 0.82
+                                },
+                                "timeInSeconds": 37560
+                            },
+                            {
+                                "unixTime": 1506936387000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 1.14
+                                },
+                                "timeInSeconds": 37587
+                            },
+                            {
+                                "unixTime": 1506936360000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 1.42
+                                },
+                                "timeInSeconds": 37560
+                            },
+                            {
+                                "unixTime": 1506936420000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 1.76
+                                },
+                                "timeInSeconds": 37620
+                            },
+                            {
+                                "unixTime": 1506936540000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 2.79
+                                },
+                                "timeInSeconds": 37740
+                            },
+                            {
+                                "unixTime": 1506936752000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 7.1
+                                },
+                                "timeInSeconds": 37952
+                            },
+                            {
+                                "unixTime": 1506936786000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 7.1
+                                },
+                                "timeInSeconds": 37986
+                            },
+                            {
+                                "unixTime": 1506936960000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 10.2
+                                },
+                                "timeInSeconds": 38160
+                            },
+                            {
+                                "unixTime": 1506937200000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 17.35
+                                },
+                                "timeInSeconds": 38400
+                            },
+                            {
+                                "unixTime": 1506937380000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 20.78
+                                },
+                                "timeInSeconds": 38580
+                            },
+                            {
+                                "unixTime": 1506937440000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 20.78
+                                },
+                                "timeInSeconds": 38640
+                            },
+                            {
+                                "unixTime": 1506938100000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 37.22
+                                },
+                                "timeInSeconds": 39300
+                            },
+                            {
+                                "unixTime": 1506938160000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 37.22
+                                },
+                                "timeInSeconds": 39360
+                            },
+                            {
+                                "unixTime": 1506938700000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 49.47
+                                },
+                                "timeInSeconds": 39900
+                            },
+                            {
+                                "unixTime": 1506938700000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 49.47
+                                },
+                                "timeInSeconds": 39900
+                            },
+                            {
+                                "unixTime": 1506939120000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 55.85
+                                },
+                                "timeInSeconds": 40320
+                            },
+                            {
+                                "unixTime": 1506939540000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 63.65
+                                },
+                                "timeInSeconds": 40740
+                            },
+                            {
+                                "unixTime": 1506939600000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 63.65
+                                },
+                                "timeInSeconds": 40800
+                            },
+                            {
+                                "unixTime": 1506940500000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 79.94
+                                },
+                                "timeInSeconds": 41700
+                            },
+                            {
+                                "unixTime": 1506940500000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 79.94
+                                },
+                                "timeInSeconds": 41700
+                            },
+                            {
+                                "unixTime": 1506941160000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 93.82
+                                },
+                                "timeInSeconds": 42360
+                            },
+                            {
+                                "unixTime": 1506941524000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 96.22
+                                },
+                                "timeInSeconds": 42724
+                            },
+                            {
+                                "unixTime": 1506941695000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:24 2N17": 100.61
+                                },
+                                "timeInSeconds": 42895
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "MDLSBRO, HEXHAM, 10:33:00, 11792920, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506941520000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 0
+                                },
+                                "timeInSeconds": 42720
+                            },
+                            {
+                                "unixTime": 1506941640000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 0
+                                },
+                                "timeInSeconds": 42840
+                            },
+                            {
+                                "unixTime": 1506941730000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": -1
+                                },
+                                "timeInSeconds": 42930
+                            },
+                            {
+                                "unixTime": 1506941760000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 1.76
+                                },
+                                "timeInSeconds": 42960
+                            },
+                            {
+                                "unixTime": 1506941880000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 2.79
+                                },
+                                "timeInSeconds": 43080
+                            },
+                            {
+                                "unixTime": 1506942060000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 7.1
+                                },
+                                "timeInSeconds": 43260
+                            },
+                            {
+                                "unixTime": 1506942120000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 7.1
+                                },
+                                "timeInSeconds": 43320
+                            },
+                            {
+                                "unixTime": 1506942360000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 10.2
+                                },
+                                "timeInSeconds": 43560
+                            },
+                            {
+                                "unixTime": 1506942360000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 10.2
+                                },
+                                "timeInSeconds": 43560
+                            },
+                            {
+                                "unixTime": 1506942720000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 17.35
+                                },
+                                "timeInSeconds": 43920
+                            },
+                            {
+                                "unixTime": 1506942720000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 17.35
+                                },
+                                "timeInSeconds": 43920
+                            },
+                            {
+                                "unixTime": 1506942960000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 20.78
+                                },
+                                "timeInSeconds": 44160
+                            },
+                            {
+                                "unixTime": 1506943020000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 20.78
+                                },
+                                "timeInSeconds": 44220
+                            },
+                            {
+                                "unixTime": 1506943260000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 24.92
+                                },
+                                "timeInSeconds": 44460
+                            },
+                            {
+                                "unixTime": 1506943260000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 24.92
+                                },
+                                "timeInSeconds": 44460
+                            },
+                            {
+                                "unixTime": 1506943500000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 28.6
+                                },
+                                "timeInSeconds": 44700
+                            },
+                            {
+                                "unixTime": 1506943560000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 28.6
+                                },
+                                "timeInSeconds": 44760
+                            },
+                            {
+                                "unixTime": 1506943800000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 32.31
+                                },
+                                "timeInSeconds": 45000
+                            },
+                            {
+                                "unixTime": 1506943800000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 32.31
+                                },
+                                "timeInSeconds": 45000
+                            },
+                            {
+                                "unixTime": 1506944280000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:33 2N23": 37.22
+                                },
+                                "timeInSeconds": 45480
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506941664000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 0
+                                },
+                                "timeInSeconds": 42864
+                            },
+                            {
+                                "unixTime": 1506941922000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 0
+                                },
+                                "timeInSeconds": 43122
+                            },
+                            {
+                                "unixTime": 1506941940000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": -1
+                                },
+                                "timeInSeconds": 43140
+                            },
+                            {
+                                "unixTime": 1506941968000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 1.76
+                                },
+                                "timeInSeconds": 43168
+                            },
+                            {
+                                "unixTime": 1506942120000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 2.79
+                                },
+                                "timeInSeconds": 43320
+                            },
+                            {
+                                "unixTime": 1506942322000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 7.1
+                                },
+                                "timeInSeconds": 43522
+                            },
+                            {
+                                "unixTime": 1506942379000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 7.1
+                                },
+                                "timeInSeconds": 43579
+                            },
+                            {
+                                "unixTime": 1506942540000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 10.2
+                                },
+                                "timeInSeconds": 43740
+                            },
+                            {
+                                "unixTime": 1506943200000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 20.78
+                                },
+                                "timeInSeconds": 44400
+                            },
+                            {
+                                "unixTime": 1506943260000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 20.78
+                                },
+                                "timeInSeconds": 44460
+                            },
+                            {
+                                "unixTime": 1506944280000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:33 2N23": 37.22
+                                },
+                                "timeInSeconds": 45480
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "timetableIdentifier": "HEXHAM, NUNTHRP, 10:45:00, 21796000, 1111100",
+                "scheduledAndActualTimetables": [
+                    {
+                        "timetableType": "SCHEDULED",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506940020000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:45 2N18": 0
+                                },
+                                "timeInSeconds": 41220
+                            },
+                            {
+                                "unixTime": 1506940200000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:45 2N18": 0
+                                },
+                                "timeInSeconds": 41400
+                            },
+                            {
+                                "unixTime": 1506940290000,
+                                "identifierAndDistance": {
+                                    "SCHEDULED 2017-10-02 10:45 2N18": 0.82
+                                },
+                                "timeInSeconds": 41490
+                            }
+                        ]
+                    },
+                    {
+                        "timetableType": "ACTUAL",
+                        "rollingStockID": null,
+                        "timeAndDistanceList": [
+                            {
+                                "unixTime": 1506939825000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:45 2N18": 0
+                                },
+                                "timeInSeconds": 41025
+                            },
+                            {
+                                "unixTime": 1506940240000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:45 2N18": 0
+                                },
+                                "timeInSeconds": 41440
+                            },
+                            {
+                                "unixTime": 1506940320000,
+                                "identifierAndDistance": {
+                                    "ACTUAL 2017-10-02 10:45 2N18": 0.82
+                                },
+                                "timeInSeconds": 41520
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "timetableRoutes": null
+}
