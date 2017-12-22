@@ -119,7 +119,7 @@
               return vm.indexOfSelectedLink;
             }
           });
-          
+
         // $log.info("vm.indexOfSelectedLink", vm.indexOfSelectedLink);
         // vm.indexOfSelectedLink = _.indexOf(vm.unitPerformanceScores.trainUnitPerformancePerLink, selectedLink)
         // vm.response.speedDistanceReportPerJourney.speedDistanceReports
@@ -131,7 +131,7 @@
       } else {
         unitPerformanceScoreFactory.setUnitPerformanceScoreChart([vm.unitPerformanceScores], vm.chartIndicators);
         energySummaryFactory.setEnergySummaryChart(vm.totalEnergySummaries, vm.energyPerformanceIndicators);
-        latenessSummaryFactoryDevelop.setLatenessSummaryChart(vm.totalLatenessSummaries, vm.avglatenessSummaryChartLabels, vm.latenessPerformanceIndicators);
+        latenessSummaryFactoryDevelop.setLatenessSummaryAllChart(vm.totalLatenessSummaries, vm.avglatenessSummaryChartLabels, vm.latenessPerformanceIndicators);
       }
 
     };

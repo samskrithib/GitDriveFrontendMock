@@ -12,7 +12,7 @@
     .controller('ViewMyRunsController', ViewMyRunsController);
 
   function ViewMyRunsController($scope, $log,$location,viewMyRunsUrlGeneratorService, httpCallsService, unitPerformanceScoreFactory,
-    energySummaryFactory, latenessSummaryFactory, speedDistanceDataFactory, speedDistanceChartFactory, UtilityService, errorService                            
+    energySummaryFactory, latenessSummaryFactory, speedDistanceDataFactory, speedDistanceChartFactory, UtilityService, errorService
   ) {
     var vm = this;
     vm.tabs = [];
