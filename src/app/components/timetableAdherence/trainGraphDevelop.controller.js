@@ -4,9 +4,9 @@
 
   angular
     .module('timetableAdherenceModule')
-    .controller('TrainGraphController', TrainGraphController);
+    .controller('TrainGraphDevelopController', TrainGraphDevelopController);
 
-  function TrainGraphController(httpCallsService, errorService, timetableAdherenceUrlGeneratorService, $log, $location, UtilityService, trainGraphFactory) {
+  function TrainGraphDevelopController(httpCallsService, errorService, timetableAdherenceUrlGeneratorService, $log, $location, UtilityService, trainGraphDevelopFactory) {
     var vm = this;
     vm.isCollapsed = false;
     vm.percentilesList = [
@@ -15,27 +15,37 @@
     ]
     // floating_Label();
     vm.currentPage = '1';
-    $log.info("getCheck : " + UtilityService.getCheckedItems())
     vm.TTadherencePercentileError = false;
     vm.TTAdherenceTrackTrainsError = false;
     vm.getTabs = UtilityService.getCheckedItems()[0];
     vm.routesFlag = UtilityService.getCheckedItems()[2];
     var subtitle = timetableAdherenceUrlGeneratorService.getTTAdherenceUrl().data;
     // $log.info(vm.getTabs)
-    vm.subTitle = subtitle.fromStation.locationName + "  to  " + subtitle.toStation.locationName +
-      "<p>" + subtitle.fromDate + " to " + subtitle.toDate + "</p> " + "<strong> Days : </strong> " + subtitle.daysRange
-      + " <strong>| Time :  </strong>" + subtitle.fromTime + " - " + subtitle.toTime
+    if(subtitle) {
+      vm.subTitle = subtitle.fromStation.locationName + "  to  " + subtitle.toStation.locationName +
+        "<p>" + subtitle.fromDate + " to " + subtitle.toDate + "</p> " + "<strong> Days : </strong> " + subtitle.daysRange
+        + " <strong>| Time :  </strong>" + subtitle.fromTime + " - " + subtitle.toTime;
+    }
+    var keyxValue = 'timeInSeconds';
+    var stinglength = 9;
+    var tickFormat = function (x) {
+      return moment().startOf('day').seconds(x).format('LT')
+    };
+    var tooltipFormat = function (d) {
+      return moment().startOf('day').seconds(d).format('h:mm:ss a');
+    };
 
-    if (vm.getTabs == 'TTTrackTrains') {
+    if (vm.getTabs === 'TTTrackTrains') {
       vm.pageHeader = 'Timetable Adherence Track Trains';
       var TTAdherenceTrackTrainsUrl;
-      var keyxValue = 'unixTime';
-      var stinglength = 7;
-      var tickFormat = function (x) { return moment(x).format('M/D LT') };
-      var tooltipFormat = function (d) {
-        var x = moment(d).format("MMMM Do YYYY, h:mm:ss a")
-        return x;
-      }
+      keyxValue = 'unixTime';
+      stinglength = 7;
+      tickFormat = function (x) {
+        return moment(x).format('M/D LT')
+      };
+      tooltipFormat = function (d) {
+        return moment(d).format("MMMM Do YYYY, h:mm:ss a");
+      };
       if (vm.routesFlag) {
         TTAdherenceTrackTrainsUrl = UtilityService.getCheckedItems()[1]
       }
@@ -43,18 +53,8 @@
         TTAdherenceTrackTrainsUrl = timetableAdherenceUrlGeneratorService.getTTAdherenceUrl().trackTrains;
       }
       vm.TTUrl = TTAdherenceTrackTrainsUrl;
-
-    }
-
-    if (vm.getTabs == 'TTPercentile') {
+    } else if (vm.getTabs === 'TTPercentile') {
       vm.pageHeader = 'Timetable Adherence Percentiles';
-      var keyxValue = 'timeInSeconds';
-      var stinglength = 9;
-      var tickFormat = function (x) { return moment().startOf('day').seconds(x).format('LT') };
-      var tooltipFormat = function (d) {
-        var x = moment().startOf('day').seconds(d).format('h:mm:ss a')
-        return x;
-      }
       vm.subTitle += "<p> Percentile Selected : " + subtitle.percentileSingle + "% </p>"
       var percentileUrl;
       if (vm.routesFlag) {
@@ -63,26 +63,21 @@
       else {
         percentileUrl = timetableAdherenceUrlGeneratorService.getTTAdherenceUrl().percentile;
       }
-
       vm.TTUrl = percentileUrl;
     }
 
     if (vm.TTUrl) {
-      vm.promise = httpCallsService.getHeaders(vm.TTUrl)
-      // vm.promise = httpCallsService.getByJson("assets/Euston-Rugby.json")
+      vm.promise = httpCallsService.getByJson("assets/TimetableAdherenceFlatOut.json")
         .then(function (response) {
-          vm.response = response.data;
-          $log.info("response", response)
+          vm.response = response;
           if (!vm.response) {
             vm.TTAdherenceTrackTrainsError = true;
             vm.TTAdherenceTrackTrainsErrorMessage = response.statusText + "<h3> Error Message </h3>"
           } else {
-            // $log.info(keyxValue)
             vm.lines = gridlines(vm.response.timetableAdherenceGraph.timetableAdherenceGraphLocationList);
-            /* Performance Test */
-            var modData = trainGraphFactory.getDataFormat(vm.response.timetableAdherenceGraph.timetableAdherenceGraphSeriesList, keyxValue)
-            $log.info("modData", modData)
-            trainGraphFactory.getTrainGraphChart(modData, tickFormat, tooltipFormat, vm.lines)
+            /* Modify data to suit c3js format */
+            var modData = trainGraphDevelopFactory.getDataFormat(vm.response.timetableAdherenceGraph.timetableAdherenceGraphSeriesList, keyxValue)
+            trainGraphDevelopFactory.getTrainGraphChart(modData, tickFormat, tooltipFormat, vm.lines); //Generate chart
             /*End */
             vm.totalItems = vm.response.timetableAdherenceGraph.totalRecords;
           }
@@ -93,7 +88,6 @@
           vm.TTAdherenceTrackTrainsErrorMessage = error.statusText + "<h3> Error Message </h3>"
           errorService.addErrorMessage(error);
           $location.path("/dashboard/404")
-          // $location.path("/timetableAdherenceInput")
         })
 
     }
@@ -107,7 +101,7 @@
           vm.pageResponse = response.data;
           // $log.info(vm.pageResponse)
           var data = vm.pageResponse.timetableAdherenceGraph.timetableAdherenceGraphSeriesList
-          trainGraphFactory.LoadTrainGraphData(data, vm.lines, keyxValue)
+          trainGraphDevelopFactory.LoadTrainGraphData(data, vm.lines, keyxValue)
         }).catch(function (error) {
         $log.info(error)
         vm.TTAdherenceTrackTrainsError = true;
@@ -128,10 +122,11 @@
         }
         obj.tiploc = data[key].tiploc;
         lines[lines.length] = obj;
-      })
+      });
       return lines;
     }
 
   }
 })();
+
 

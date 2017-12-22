@@ -6,9 +6,9 @@
     .module('timetableAdherenceModule')
     .controller('TimetableAdherenceInput_2_Controller', TimetableAdherenceInput_2_Controller);
 
-  function TimetableAdherenceInput_2_Controller(timetableAdherenceUrlGeneratorService, $location, $log, UtilityService) {
+  function TimetableAdherenceInput_2_Controller(timetableAdherenceUrlGeneratorService, $location, $log, UtilityService, $state) {
     var vm = this;
-
+    console.log($state.current.name)
     vm.timetableRoutes = UtilityService.getCheckedItems()[0];
     vm.getTabs = UtilityService.getCheckedItems()[1]
     vm.routesFlag = UtilityService.getCheckedItems()[2]
@@ -56,8 +56,11 @@
       var routeIdUrl = timetableAdherenceUrlGeneratorService.generateRouteIdUrl(vm.selectRoute)
       // $log.info(routeIdUrl)
       UtilityService.addCheckedItems([vm.getTabs, routeIdUrl, vm.routesFlag])
-      $location.path("/dashboard/timetableAdherence")
-
+      if($state.current.name != 'dashboard.trainGraphDemopage2'){
+        $location.path("/dashboard/timetableAdherence")
+      }else{
+        $location.path("/dashboard/trainGraphDemo")
+      }
     }
 
   }

@@ -73,6 +73,24 @@
         controller: 'ViewMyRunsControllerDevelop',
         controllerAs: 'vm'
       })
+      .state('dashboard.trainGraphDemoInput', {
+        url: '/trainGraphDemoInput',
+        templateUrl: 'app/components/timetableAdherence/partials/trainGraphInput.html',
+        controller: 'TimetableAdherenceInputController',
+        controllerAs: 'vm'
+      })
+      .state('dashboard.trainGraphDemopage2', {
+        url: '/trainGraphDemoInput2',
+        templateUrl: 'app/components/timetableAdherence/partials/trainGraphInputScreen2.html',
+        controller: 'TimetableAdherenceInput_2_Controller',
+        controllerAs: 'vm'
+      })
+      .state('dashboard.trainGraphDemo', {
+        url: '/trainGraphDemo',
+        templateUrl: 'app/components/timetableAdherence/partials/trainGraph.html',
+        controller: 'TrainGraphDevelopController',
+        controllerAs: 'vm'
+      })
       .state('dashboard.NV', {
         url: '/NV',
         templateUrl: 'views/test.html',

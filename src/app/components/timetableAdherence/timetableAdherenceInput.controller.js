@@ -6,7 +6,7 @@
     .module('timetableAdherenceModule')
     .controller('TimetableAdherenceInputController', TimetableAdherenceInputController);
 
-  function TimetableAdherenceInputController(httpCallsService,errorService, timetableAdherenceUrlGeneratorService, $scope, $location, $log, typeaheadService, UtilityService) {
+  function TimetableAdherenceInputController(httpCallsService, errorService, timetableAdherenceUrlGeneratorService, $scope, $location, $log, typeaheadService, UtilityService, $state) {
     var vm = this;
     var defaultStartTime = function () {
       var d = new Date()
@@ -35,8 +35,8 @@
       startingDay: 1
     }
     vm.templates = [{
-        name: 'TTPercentile'
-      },
+      name: 'TTPercentile'
+    },
       {
         name: 'TTTrackTrains'
       }
@@ -56,8 +56,8 @@
     })
 
     vm.selectWeekdayOrWeekend = [{
-        name: 'Weekdays'
-      },
+      name: 'Weekdays'
+    },
       {
         name: 'Weekends'
       },
@@ -208,8 +208,8 @@
         serviceCodes = vm.formData.serviceCodes.toString()
       }
       httpCallsService.getHeaders(ttAderenceUrl, serviceCodes)
-        // httpCallsService.getByJson("assets/timetableAdherenceGraph.json")
-        // httpCallsService.getByJson("assets/old/timetableRoutes.json")
+      // httpCallsService.getByJson("assets/timetableAdherenceGraph.json")
+      // httpCallsService.getByJson("assets/old/timetableRoutes.json")
         .then(function (response) {
           vm.response = response.data;
           // vm.response = response;
@@ -218,17 +218,26 @@
             routesFlag = true;
             vm.timetableRoutes = vm.response.timetableRoutes;
             UtilityService.addCheckedItems([vm.timetableRoutes, vm.RadioButtonModel, routesFlag, vm.response])
-            $location.path("/dashboard/ttAInput2");
+            if ($state.current.name != 'dashboard.trainGraphDemoInput') {
+              $location.path("/dashboard/ttAInput2");
+            }else{
+              $location.path("/dashboard/trainGraphDemoInput2");
+            }
+
           } else {
             routesFlag = false;
             UtilityService.addCheckedItems([vm.RadioButtonModel, ttAderenceUrl, routesFlag])
-            $location.path("/dashboard/timetableAdherence")
+            if ($state.current.name != 'dashboard.trainGraphDemoInput') {
+              $location.path("/dashboard/timetableAdherence")
+            }else{
+              $location.path("/dashboard/trainGraphDemo")
+            }
           }
         }).catch(function (error) {
-          vm.error = error;
-          errorService.addErrorMessage(error);
-          $location.path("/dashboard/404")
-        })
+        vm.error = error;
+        errorService.addErrorMessage(error);
+        $location.path("/dashboard/404")
+      })
     }
   }
 
