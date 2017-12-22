@@ -4,7 +4,7 @@
     describe('MainController', function () {
       var vm;
       beforeEach(function () {
-        angular.mock.module('dassimFrontendV03');
+        angular.mock.module('driveFrontend');
             inject(function ($rootScope, $controller, $q, $timeout, _mainService_, _$httpBackend_) {
               scope = $rootScope.$new(); // create a scope for DemoCtrl to use
               //services
@@ -17,7 +17,7 @@
                 $scope: scope,
                 mainService: mainService
               }); // give scope to DemoCtrl
-              
+
             });
       });
 
@@ -28,5 +28,5 @@
       });
 
     });
-  
+
 })();

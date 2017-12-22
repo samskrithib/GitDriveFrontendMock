@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('dassimFrontendV04', [
+    .module('driveFrontend', [
       'timetableAdherenceModule',
       'viewMyRunsModule',
       'periodicReportsModule',

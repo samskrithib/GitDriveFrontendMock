@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   angular
-    .module('dassimFrontendV04')
+    .module('driveFrontend')
     .factory('energySummaryBarColors', energySummaryBarColors)
 
   function energySummaryBarColors(DRIVE_COLORS, $log) {

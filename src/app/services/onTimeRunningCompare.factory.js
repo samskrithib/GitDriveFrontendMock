@@ -3,7 +3,7 @@
 (function() {
   'use strict';
   angular
-  .module('dassimFrontendV04')
+  .module('driveFrontend')
   .service('onTimeRunningCompareFactory', onTimeRunningCompareFactory);
   function onTimeRunningCompareFactory($log, $window) {
     var onTimeChart;

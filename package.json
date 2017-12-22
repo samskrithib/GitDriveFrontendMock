@@ -1,6 +1,6 @@
 {
-  "name": "dassimFrontendV04",
-  "version": "0.0.0",
+  "name": "driveFrontend",
+  "version": "1.0.0",
   "dependencies": {},
   "scripts": {
     "test": "gulp test"

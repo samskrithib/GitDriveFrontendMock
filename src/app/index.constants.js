@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('dassimFrontendV04')
+    .module('driveFrontend')
     .constant('malarkey', malarkey)
     .constant('moment', moment)
     .constant('DRIVE_COLORS', {
