@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('dassimFrontendV04')
+    .module('driveFrontend')
     .config(config)
 /*
     .factory('$exceptionHandler', function($log, $location){

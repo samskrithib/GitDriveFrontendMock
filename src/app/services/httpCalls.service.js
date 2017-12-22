@@ -3,16 +3,13 @@
 (function () {
   'use strict';
   angular
-    .module('dassimFrontendV04')
+    .module('driveFrontend')
     .factory('httpCallsService', function httpCallsService($http, $q, $log) {
 
       // var path = '/dassim/';
       var path = 'http://localhost:8080/dassim/';
-      // var path = 'http://192.168.1.9:8080/dassim/';
-
 
       return {
-
         getByParams: function (url, params) {
           var deferred = $q.defer();
           $http({
@@ -30,8 +27,8 @@
         get: function (url) {
           var deferred = $q.defer();
           $http.get(path + url, {
-              cache: false
-            })
+            cache: false
+          })
             .then(function (response) {
               deferred.resolve(response.data);
             })
@@ -43,9 +40,9 @@
         getStations: function () {
           var deferred = $q.defer();
           $http.get(path + 'locationnamesandtiplocs', {
-              cache: true
-            })
-            // $http.get('assets/old/locationandTiplocs.json')
+            cache: true
+          })
+          // $http.get('assets/old/locationandTiplocs.json')
             .then(function (response) {
               deferred.resolve(response.data);
             })

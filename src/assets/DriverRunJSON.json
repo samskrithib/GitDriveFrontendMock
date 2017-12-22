@@ -15,32 +15,32 @@
     "headcode": "2N47"
   },
   "trainUnitPerformancePerJourney": {
-    "percentageScore": 95,
-    "journeyPerformanceIndicator": "GOOD",
-    "message": "Good Unit Performance",
+    "percentageScore": 80,
+    "journeyPerformanceIndicator": "AVERAGE",
+    "message": "Average Unit Performance",
     "trainUnitPerformancePerLink": [
       {
         "link": {
           "stations": "Metrocentre-Blaydon"
         },
-        "percentageScore": 100,
+        "percentageScore": 80,
         "message": "Good Unit Performance",
-        "linkPerformanceIndicator": "GOOD",
+        "linkPerformanceIndicator": "AVERAGE",
         "energyPerformanceIndicator": "GOOD",
-        "runtimePerformanceIndicator": "GOOD",
+        "runtimePerformanceIndicator": "AVERAGE",
         "speedingPerformanceIndicator": "GOOD"
       }
     ],
     "energyPerformanceIndicator": "GOOD",
-    "runtimePerformanceIndicator": "GOOD",
+    "runtimePerformanceIndicator": "AVERAGE",
     "speedingPerformanceIndicator": "GOOD"
   },
   "energySummaryReportPerJourney": {
     "energySummaryPerJourney": {
-      "actualEnergyConsumption": 54,
-      "optimalEnergyConsumption": 54,
-      "onTimeOptimalEnergyConsumption": 46.3,
-      "targetEnergyConsumption": 43.2
+      "actualEnergyConsumption": 2.1,
+      "optimalEnergyConsumption": 2.1,
+      "onTimeOptimalEnergyConsumption": 1.8,
+      "targetEnergyConsumption": 2
     },
     "energySummaryLinks": [
       {
@@ -58,21 +58,11 @@
   },
   "latenessSummaryReportPerJourney": {
     "latenessSummaryPerJourney": {
-      "stackedActualArrivalLatenesss": {
-        "unitPerformanceLatenessInSeconds": 1471,
-        "signallingLatenessInSeconds": 1962,
-        "dwellTimeExceedanceLatenessInSeconds": 1962,
-        "originLateDepartureLatenessInSeconds": 0
-      },
-      "stackedAcheivableArrivalLatenesss": {
-        "unitPerformanceLatenessInSeconds": 1423,
-        "signallingLatenessInSeconds": 1898,
-        "dwellTimeExceedanceLatenessInSeconds": 1898,
-        "originLateDepartureLatenessInSeconds": 0
-      },
-      "actualArrivalEarlinessInSeconds": {
-        "unitPerformanceLatenessInSeconds": 0
-      }
+      "stackedActualArrivalLatenesss": null,
+      "stackedAcheivableArrivalLatenesss": null,
+      "optimalArrivalLatenessInSeconds": 1151,
+      "actualArrivalLatenessInSeconds": 1426,
+      "actualArrivalEarlinessInSeconds": 752
     },
     "latenessSummaries": [
       {
@@ -81,15 +71,15 @@
         },
         "latenessSummary": {
           "stackedActualArrivalLatenesss": {
-            "unitPerformanceLatenessInSeconds": 131.5,
-            "signallingLatenessInSeconds": 175.33,
-            "dwellTimeExceedanceLatenessInSeconds": 175.33,
+            "unitPerformanceLatenessInSeconds": 26,
+            "signallingLatenessInSeconds": 24,
+            "dwellTimeExceedanceLatenessInSeconds": 10,
             "originLateDepartureLatenessInSeconds": 0
           },
           "stackedAcheivableArrivalLatenesss": {
-            "unitPerformanceLatenessInSeconds": 129.5,
-            "signallingLatenessInSeconds": 172.67,
-            "dwellTimeExceedanceLatenessInSeconds": 172.67,
+            "unitPerformanceLatenessInSeconds": 0,
+            "signallingLatenessInSeconds": 24,
+            "dwellTimeExceedanceLatenessInSeconds": 0,
             "originLateDepartureLatenessInSeconds": 0
           },
           "actualArrivalEarlinessInSeconds": {
@@ -108,13 +98,13 @@
         "speedDistanceReportPerLink": {
           "optimumDrivingType": "Flatout Driving",
           "driverAdvice": {
-            "runtimeDescription": "Metrocentre (P2)  at 18:33:00 (0s) - Blaydon (P2)  at 18:36:30 (+8m 46s)",
+            "runtimeDescription": "Metrocentre (P2)  at 18:33:00 (+30s) - Blaydon (P2)  at 18:36:30 (+1m30s)",
             "earlyDepartureAdvice": null,
             "earlyArrivalAdvice": null,
-            "timeSavingAdvice": null,
-            "timeSavedAdvice": "10s caught up",
+            "timeSavingAdvice": "36s could have been saved",
+            "timeSavedAdvice": null,
             "energyAdvice": null,
-            "goodDrivingAdvice": "Good Unit Performance",
+            "goodDrivingAdvice": "Average Unit Performance",
             "spareTimeAdvice": null,
             "speedingAdvice": null
           },
@@ -1140,7 +1130,7 @@
         ],
         "actualTrainPositionSignallingStateList": [
           {
-            "distanceInMetres": 100,
+            "distanceInMetres": 0,
             "values": [
               {
                 "signalID": "T261",
@@ -1227,7 +1217,7 @@
         ],
         "optimalTrainPositionSignallingStateList": [
           {
-            "distanceInMetres": 100,
+            "distanceInMetres": 0,
             "values": [
               {
                 "signalID": "T261",

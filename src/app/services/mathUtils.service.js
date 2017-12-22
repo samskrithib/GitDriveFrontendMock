@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   angular
-    .module('dassimFrontendV04')
+    .module('driveFrontend')
     .factory('mathUtilsService', function mathUtilsService($log) {
       var conversionValueforMeterstoMiles = 0.000621371;
       var conversionValueforKphtoMph = 0.621371;
